@@ -1,0 +1,292 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.79]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{3cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Jerin} % Your first name
+\familyname{Roberts} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+%\address{3731 6th Ave West}{Vancouver, BC, Canada} %V6R 1T8
+\address{Vancouver, BC, Canada}{}
+\mobile{(250) 682 6536}
+\email{robertsj@snolab.ca}
+
+%\address{2165 Westsyde Rd}{Kamloops, BC, Canada}
+%\mobile{(250) 682 6536}
+%\email{robertsj@snolab.ca}
+ % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\cventry{2016-Current}{Master of Applied Science}{University of British Columbia}{}{\textit{\newline Mechanical Engineering}}{}
+
+\cventry{April, 2015}{Bachelor of Science}{Thompson Rivers University}{}{\textit{\newline Physics}}{} % Arguments not required can be left empty
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+
+\cventry{2014-2015}{Research Assistant}{\textsc{TRIUMF}}{Vancouver, BC}{}{M9 Prototype Muon Spectrometer Project
+\newline{}
+Detailed Achievements:
+\begin{itemize}
+\item Designed and constructed Experimental Spectrometer for Silicon Photomultiplier (SiPM) and DAQ testing on beam-line. 
+\item Designed Linux based Simulation (C/C++) to determine theoretical spectrometer resolution using imported .stl meshes with openGL visualization, and ROOT analysis.
+\item Setup and Conducted experimental tests of spectrometer DAQ using VME hardware and Midas software.
+\newline{}
+\end{itemize}}
+
+
+\cventry{Summer 2014}{Undergraduate Research Assistant}{\textsc{SNOLAB}}{Sudbury, Ontario}{}{ SNO+ Experiment: Umbilical Retrieval Mechanism (URM) Project 
+\newline{}
+Detailed Achievements:
+\begin{itemize}
+\item Designed and implemented chain drive system on URM vastly improving performance
+\item Re-Designed/fabricated Pulley Wheels using AutoCAD/3D printer
+\item FEM analysis to verify pulley integrity 
+\item Assisted PMT assembly on SNO+ in class 2000 and 5000 underground clean labs
+\newline{}
+\end{itemize}}
+
+
+\cventry{Summer 2013}{Undergraduate Research Assistant}{\textsc{Thompson Rivers University}}{\newline Kamloops, BC}{}{Bluebird tracking using RFID technology.
+\newline{}
+Detailed Achievements:
+\begin{itemize}
+\item Designed housings for electronics/feeders optimized for 3D-printing
+\item Designed/Fabricated RFID circuit boards using EagleCAD software
+\item Wrote software for Interfacing sensors with Raspberry Pi and Arduino platforms.
+\item RFID Antenna tuning and construction.
+\newline{}
+\end{itemize}}
+
+
+%\cventry{2010-2013}{Senior Bicycle Mechanic}{\textsc{Spoke n Motion}}{Kamloops, BC}{}{Lead Bicycle Mechanic Specializing in Suspension Rebuilds.
+%\newline{}
+%Detailed achievements:
+%\begin{itemize}
+%\item Rebuilt High Performance Suspension Forks and Shocks (Fox,Rockshox, and Manitou)
+%\item Delicate Assembly of Expensive Carbon Components.
+%\item Assembly and Service of High Performance Downhill Mountain and Road Bicycles.
+%\item Leading and Working as part of a Mechanical Team.
+%\end{itemize}}
+
+\cventry{2012-2014}{Physics TA}{\textsc{Thompson Rivers University}}{Kamloops, BC}{}{Undergraduate Physics 1100 and 1200 Laboratories Courses
+\newline{}
+Detailed Achievements:
+\begin{itemize}
+\item Composing and Presenting 1hr lecture on required material (2x per week)
+\item Leading and Guiding 30+ students through physics experiments
+\item Answering questions and providing one on one support for students
+\item Marking Exams and Assignments
+\item Lab Equipment Set-up and Maintenance
+\end{itemize}}
+\newpage
+\section{Awards}
+
+\cvitem{2013}{Undergraduate Research Experience Award Program (UREAP)}
+
+
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{Languages/\newline Libraries}{\textsc{C/C++}, Java, Visual Basic, \LaTeX , Assembly, OpenGL, cURL, OpenCV, ROOT, CUDA, Midas}
+\cvitem{OS/Programs}{Ubuntu 14, Bash, Github, Windows 7/8/10, Solidworks, AutoCAD, Eagle CAD, MS Excel,  ROOT, \textsc R, MIDAS, Labview, Z88Aurora}
+\cvitem{Devices}{VME QDC/ADC/TDC, Arduino, Altera FPGA, Raspberry pi, 
+Newport Stepper Motors/Drivers, Tektronix Scopes}
+
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+%\section{Mechanical Skills}
+%Small Engine Repair
+%\begin{itemize}
+%\item valve adjustment (shimming + lapping)
+%\item Cylinder honing + ring/piston replacement
+%\item Bearing replacement (Bottom End + Transmission)
+%\item Carburetor tuning/jetting
+%\end{itemize}
+  
+%Suspension Service
+%\begin{itemize}
+%\item All Fox FIT cartridges (service/rebuild)
+%\item Fox DHX rear shocks
+%\item All Fox, RockShox, and Marzocchi Forks (service seals and internals)
+%\end{itemize}
+%Miscellaneous
+%\begin{itemize}
+%\item Surface Mount Soldering (circuit boards)
+%\item Welding (wire feed and stick) and Cutting (oxy-acetylene)
+%\item Drill press, Milling, and grinding buffing
+%\item Tapping + Helicoiling damaged threads
+%\end{itemize}
+
+\section{Volunteer Work}
+
+\cvitem{2010-2015}{Physics Help Center hosted by Phi-6 Club (active member)}
+\cvitem{2012-2014}{Physics Magic Show Presentation}
+\cvitem{2012-2013}{Open House Science Night Presenter}
+
+
+
+\section{Hobbies and Interests}
+
+\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+\cvlistdoubleitem{RC Helicopters/Aircraft}{High Altitude Ballooning}
+\cvlistdoubleitem{Model Rocketry}{DownHill Biking}
+\cvlistdoubleitem{Flight Simulation}{Game Programming}
+
+\section{References}
+
+\cventry{}{Dr. Syd Kreitzman}{\textsc{TRIUMF}}{\newline Research Scientist MuSR}{}{
+syd@triumf.ca
+\newline{}
+604-222-7303 \newline{}
+}
+
+\cventry{}{Dr. Christine Kraus}{\textsc{SNOLAB}}{\newline Canadian Research Chair in Particle Astrophysics}{}{
+tine@snolab.ca
+\newline{}
+705-561-8413 \newline{}  
+}
+
+\cventry{}{Dr. Mark Paetkau}{\textsc{Thompson Rivers University}}{\newline Professor Physical Sciences}{}{
+mpaetkau@tru.ca
+\newline{}
+250-828-5453 \newline{} 
+}
+
+\cventry{}{George Weremczuk}{\textsc{Thompson Rivers University}}{\newline Lecturer, TA Supervisor}{}{
+Gweremczuk@tru.ca 
+\newline{}
+250-828-5448 
+}
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+\clearpage
+
+\recipient{University of British Columbia}{Vancouver, BC\\ } 
+
+ 
+
+
+
+
+% Letter recipient
+\date{\today} % Letter date
+%\opening{Dear Director of Human Resources,} % Opening greeting  
+
+\opening{Dear 
+Director of Human Resources,}
+\closing{Sincerely yours,} % Closing phrase
+%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+\makelettertitle % Print letter title
+ %I am writing to apply for the Teaching Assistant position offered at University of British Columbia. I welcome the opportunity to bring my mechanical and engineering skills to the UBC team. As you can see from my attached resume, I developed my engineering and design skills through several research and co-op positions.
+ 
+I am writing to apply for a position on the UBC Rocket engineering design team. I welcome the opportunity to bring my mechanical and engineering skills to the UBC Rocket team. As you can see from my attached resume, I developed my engineering and design skills through several research and co-op positions.
+
+During summer and fall 2015, I worked on the development of the M9 prototype muon spectrometer currently being designed and built at TRIUMF. Under the supervision of Dr. Syd Kreitzman, I designed and constructed a beamline muon spectrometer used for testing prototype sensors and DAQ electronics. In addition to producing professional 3D models and drawings in Solidworks I also designed a photon propagation simulation and visualizer to determine the resolution of the new spectrometer for different geometrical configurations of scintillation pieces. My work at TRIUMF has enabled me to refine my engineering and programming abilities which will be an asset for my future career goals.% in aerospace. 
+
+In the Summer of 2014 I worked at SNOLAB under the supervision of Dr. Christine Kraus on the SNO+ experiment. During my term I spent a great deal of time engineering solutions to correct the slippage issues plaguing the umbilical retrieval mechanisms, a device responsible for lowering radioactive sources into the multi-million dollar detector. In addition to designing high-traction pulleys, I also designed and fabricated a chain-drive system which successfully met budget, space and radioactivity requirements. My time with SNOLAB has given me great technical experience that I believe combined with my mechanical intuitiveness and knowledge of physics will aid me during my professional career.
+
+For a research position during the summer of 2013, I was involved in the design and production of RFID bird tracking equipment for the Thompson Rivers University Biology Department. The project required the fabrication and delicate assembly of over 20 SMT circuit boards and dispensing platforms. In addition I also designed software in C/C++ using cURL libraries to couple all electrical components to a Raspberry Pi device for wireless data communication to a local server. My time at Thompson Rivers University has given me hands-on experience which coupled with my problem solving capabilities will be invaluable towards my professional career.
+
+
+% For a directed studies project at Thompson Rivers University I designed and constructed operational sensors for a high altitude balloon using a LPKF circuit milling machine and Eagle CAD drafting software. The quality circuits included a transmitter/receiver interface, GPS telemetry APRS transmitter, a cosmic radiation detector, accelerometer and atmospheric sensors all designed as Arduino shields. Thompson Rivers University has given me hands-on experience which coupled with my problem solving capabilities will be invaluable towards my professional career.
+ 
+
+I welcome the opportunity for an interview to demonstrate and discuss how I can become a valued member of your organization.
+%Based on my understanding of the job responsibilities listed my salary expectations would fall in the range of \$30,000 to \$50,000 annually. 
+I look forward to starting my career, as well as pursuing opportunities for professional development and advancement within the UBC Rocket team. Thank you for your kind consideration of my qualifications.
+
+%\makeletterclosing % Print letter signature
+Sincerely yours,
+\newline
+\space \includegraphics[width=0.12\linewidth]{signature}
+\newline
+\textbf{Jerin Roberts}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

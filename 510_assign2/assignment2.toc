@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Overview}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Theory}{3}{subsection.1.1}
+\contentsline {section}{\numberline {2}Implementation}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Program Overview}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}1D Wave Problem}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Boundary Conditions}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Iteration Scheme}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Validation}{9}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Convergence Behavior and Accuracy}{11}{subsection.2.6}
+\contentsline {section}{\numberline {3}Poisson Problem}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Overview}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Results}{13}{subsection.3.2}
+\contentsline {section}{\numberline {4}Conclusion}{14}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{15}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Poisson.cpp}{15}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}numerical.hpp}{17}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}numerical.cpp}{18}{subsection.A.3}

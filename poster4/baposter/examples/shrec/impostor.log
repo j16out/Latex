@@ -1,0 +1,62 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.17)  18 MAR 2015 09:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**impostor.tex
+(./impostor.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 4.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+
+! Package color not loaded in conjunction with terminal option `colourtext'.
+
+See the gnuplot documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117     \gplbacktext
+                      
+Either use 'blacktext' in gnuplot or load the package color.sty in LaTeX.
+
+
+! Package graphicx or graphics not loaded.
+
+See the gnuplot documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118     \put(0,0){\includegraphics{impostor}}
+                                               %
+The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120   \end{picture}
+                     %
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+! Emergency stop.
+<*> impostor.tex
+                
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 87 strings out of 493304
+ 1115 string characters out of 6139870
+ 52880 words of memory out of 5000000
+ 3641 multiletter control sequences out of 15000+600000
+ 4246 words of font info for 15 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 12i,4n,14p,105b,166s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

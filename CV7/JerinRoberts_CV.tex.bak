@@ -1,0 +1,233 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Jerin} % Your first name
+\familyname{Roberts} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{2165 westsyde Rd.}{Kamloops, BC v2b7c3}
+\mobile{(250) 682 6536}
+\phone{(250) 318 0687}
+\email{robertsj@snolab.ca}
+ % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{Expected- April,2015}{Bachelors of Science}{Thompson Rivers University}{Kamloops}{\textit{GPA -- 3.6}}{Major Physics}  % Arguments not required can be left empty
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+
+\cventry{Fall 2014  --Present}{Undergraduate Research Assistant}{\textsc{TRIUMF}}{Vancouver, BC}{}{Aiding in the development of the M9 Prototype Muon Spectrometer
+\newline{}
+Detailed achievements:
+\begin{itemize}
+\item Designing Experimental Apparatus Equipment using Solidworks for SiPM tests
+\item Characterizing and Analyzing SiPMs for final selection
+\item Designed Positron Timing Simulation (C++/ROOT)
+\item Designed scripts for Pulse Detection and Characterization from SiPM's (C++/ROOT) 
+\newline{}
+\end{itemize}}
+
+
+\cventry{Summer 2014}{Undergraduate Research Assistant}{\textsc{SNOLAB}}{Sudbury, Ontario}{}{Fixed the umbilical retrieval mechanism (URM) for SNO+ experiment key for lowering sources into the detector. 
+\newline{}
+Detailed achievements:
+\begin{itemize}
+\item Assisted PMT assembly in class 2000 and 5000 underground clean labs
+\item Designed and implemented chain drive system vastly improving performance
+\item Re-Designed/fabricated Pulley Wheels using FreeCAD/3D printer
+\item FEM analysis using Z88 Aurora to verify pulley integrity 
+\newline{}
+\end{itemize}}
+
+
+
+
+\cventry{2012--Present}{Laboratory Instructor}{\textsc{Thompson Rivers University}}{Kamloops, BC}{}{Taught 1st year Physics Labs
+\newline{}
+Detailed achievements:
+\begin{itemize}
+\item Preparing and Presenting Lectures for Laboratory Course
+\item Instructing students on how to perform experiments
+\item Working quickly to provide valuable solutions for student questions
+\item Marking and grading assignments and exams 
+\end{itemize}}
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{Languages}{\textsc{C/C++}, \LaTeX , Assembly, Java}
+\cvitem{OS/Programs}{Ubuntu 14.04, Scientific Linux, Microsoft Windows, ROOT, \textsc R, FreeCAD, Solidworks, Eagle CAD, Texmaker, Labview, Z88Aurora}
+\cvitem{Devices}{Arduino, Altera FPGA, Raspberry pi, 
+Newport Stepper Motors/Drivers, Tektronix (tekVISA), PICkit 2}
+
+\section{Awards}
+
+\cvitem{2013}{Undergraduate Research Experience Award Program (UREAP)}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+%\section{Mechanical Skills}
+%Small Engine Repair
+%\begin{itemize}
+%\item valve adjustment (shimming + lapping)
+%\item Cylinder honing + ring/piston replacement
+%\item Bearing replacement (Bottom End + Transmission)
+%\item Carburetor tuning/jetting
+%\end{itemize}
+  
+%Suspension Service
+%\begin{itemize}
+%\item All Fox FIT cartridges (service/rebuild)
+%\item Fox DHX rear shocks
+%\item All Fox, RockShox, and Marzocchi Forks (service seals and internals)
+%\end{itemize}
+%Miscellaneous
+%\begin{itemize}
+%\item Surface Mount Soldering (circuit boards)
+%\item Welding (wire feed and stick) and Cutting (oxy-acetylene)
+%\item Drill press, Milling, and grinding buffing
+%\item Tapping + Helicoiling damaged threads
+%\end{itemize}
+
+\section{Volunteer Work}
+
+\cvitem{2010-Present}{Physics Help Center hosted by Phi-6 Club (current member)}
+\cvitem{2012-2014}{Physics Magic Show Presentation}
+\cvitem{2012-2013}{Open House Science Night Presenter}
+
+
+
+\section{Hobbies and Interests}
+
+\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+\cvlistdoubleitem{RC Helicopters/Aircraft}{Model Rocketry}
+\cvlistdoubleitem{DH Biking}{Flight Simulation}
+
+\section{References}
+
+\cventry{}{Dr. Syd Kreitzman}{\textsc{TRIUMF}}{Research Scientist MuSR}{}{
+syd@triumf.ca
+\newline{}
+604-222-7303 
+}
+
+\cventry{}{Dr. Christine Kraus}{\textsc{SNOLAB}}{Canadian Research Chair in Particle Astrophysics}{}{
+tine@snolab.ca
+\newline{}
+705-561-8413   
+}
+
+\cventry{}{Dr. Mark Paetkau}{\textsc{TRU}}{Professor Physical Sciences}{}{
+mpaetkau@tru.ca
+\newline{}
+250-828-5453
+}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+\clearpage
+
+\recipient{Office of Admissions}{University of Victoria\\3800 Finnerty Road\\V8P 5C2 Victoria, B.C.} % Letter recipient
+\date{\today} % Letter date
+\opening{Dear Sir or Madam,} % Opening greeting  
+\closing{Sincerely yours,} % Closing phrase
+\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+\makelettertitle % Print letter title
+My goal is to become a student within the University of Victoria, while learning and gaining experience for my future dreams of pursuing a career in Aerospace Engineering. My educational background and research experience will allow me to become a valued member of your institution.
+
+During Fall 2014, I was involved in the development of the M9 prototype muon spectrometer currently being designed and built at TRIUMF. Under the supervision of Dr. Syd Kreitzman, I designed universal equipment used for testing specific experimental components, which involved generating professional models and drawings using Solidworks. I also designed a sophisticated simulation in C++/ROOT used to help determine the resolution of the new spectrometer given different geometrical configurations for scintillation pieces. In addition I wrote scripts to detect and characterize pulses during SiPM characterization phases in C++/ROOT. My work at TRIUMF has enabled me to refine my engineering and programming abilities which will be an asset for my future career goals. 
+
+In the Summer of 2014 I worked at SNOLAB under the supervision of Dr. Christine Kraus on the
+SNO+ experiment. During my term I spent a great deal of time engineering mechanical systems for the project. Specifically I cleverly fixed the slippage issues plaguing the umbilical retrieval mechanisms, a device responsible for lowering radioactive sources into the multi-million dollar detector. In addition to redesigning high-traction pulleys, I also designed and fabricated a chain-drive system which successfully met budget, space and radioactivity requirements. My time with SNOLAB has given me great technical experience that I believe combined with my mechanical intuitiveness and knowledge of physics will aid me during my professional development and advancement within engineering.
+
+ For a directed studies project at Thompson Rivers University I designed and professionally constructed operational sensors for a high altitude balloon using a LPKF circuit milling machine and Eagle CAD drafting software. The circuits included a transmitter/receiver interface, GPS telemetry APRS transmitter, a cosmic radiation detector, accelerometer and atmospheric sensors all designed as Arduino shields. The Project required a great deal of electronic design and debugging. Thompson Rivers University has given me hands-on experience which coupled with my analytical and strategic nature will be invaluable towards my professional career
+
+I hope to hear from you soon to discuss how I can become a valued member of your institution. I look forward to starting my Engineering career, as well as pursuing opportunities for professional development and advancement within University of Victoria. Thank you for your kind consideration of my qualifications.
+
+\makeletterclosing % Print letter signature
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

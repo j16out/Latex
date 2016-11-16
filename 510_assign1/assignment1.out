@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Theory}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Implementation}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Program Overview}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Laplace Problem}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Boundary Conditions}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Iteration Scheme}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Results}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.6}{Convergence Behavior and Accuracy}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Poisson Problem}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Overview}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Results}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 13
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 14
+\BOOKMARK [2][-]{subsection.A.1}{Poisson.cpp}{appendix.A}% 15
+\BOOKMARK [2][-]{subsection.A.2}{numerical.hpp}{appendix.A}% 16
+\BOOKMARK [2][-]{subsection.A.3}{numerical.cpp}{appendix.A}% 17

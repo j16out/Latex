@@ -1,0 +1,67 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.17)  25 JAN 2015 16:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**cover_letter_1.tex
+(./cover_letter_1.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/letter.cls
+Document Class: letter 1999/04/29 v1.2z Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\longindentation=\dimen102
+\indentedwidth=\dimen103
+\labelcount=\count79
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/newcent.sty
+Package: newcent 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(./cover_letter_1.aux)
+\openout1 = `cover_letter_1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Try loading font information for OT1+pnc on input line 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pnc.fd
+File: ot1pnc.fd 2001/06/04 font definitions for OT1/pnc.
+))
+Runaway argument?
+{Mrs. Jane Smith \\ \par \par \par \begin {center} \large \bf Jerin R\ETC.
+! File ended while scanning use of \letter.
+<inserted text> 
+                \par 
+<*> cover_letter_1.tex
+                      
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Emergency stop.
+<*> cover_letter_1.tex
+                      
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 176 strings out of 493304
+ 2127 string characters out of 6139870
+ 51880 words of memory out of 5000000
+ 3716 multiletter control sequences out of 15000+600000
+ 4411 words of font info for 16 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 21i,0n,19p,752b,79s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

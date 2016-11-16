@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Muon Spectrometry}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Overview}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Present Spectrometers}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{SiPM}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Simulation}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Introduction}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Program Layout}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Creating Geometry and Sensors}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Positron Generation}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Photon Propagation}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.6}{Final Signal}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Oscilloscope Data Acquisition}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Basic Operation}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Binary Conversion}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Laser/Power Supply Automation}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{VME/MIDAS Data Acquisition}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Overview}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Starting VME Acquisition}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.3}{ROOTana Analyzer}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.4}{T2DHistogram Breakdown}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Dectector Tests}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{Apparatus Design}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.2}{Electronics}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.3}{Device Characterization}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.4}{Timing Resolution VME}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.5}{Curve Correction}{section.6}% 27
+\BOOKMARK [1][-]{section.7}{Spectrometer Tests}{}% 28
+\BOOKMARK [2][-]{subsection.7.1}{Setup}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.2}{Results}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.3}{Conclusions}{section.7}% 31
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 32
+\BOOKMARK [2][-]{subsection.A.1}{Laser Control Program}{appendix.A}% 33

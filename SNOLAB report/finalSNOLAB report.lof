@@ -1,0 +1,19 @@
+\select@language {english}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Displays a diagram of the SNO+ detector. The URM is shown sitting on top of the glove box inside the deck clean room (DCR) \cite {picfsk}\relax }}{4}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Displays a cross-section schematic of the umbilical planned for SNO+. \cite {picfsk}\relax }}{5}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Displays the drive assembly component of the URM generated using FreeCAD 3D modeller.\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Displays the drive assembly component of the URM.\relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Displays the new pulleys designs for the URM.\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces FEM analysis of both the original and redesigned drive pulley; The top row simulates axial loads, while the bottom simulates equatorial and radial loads.\relax }}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Displays the drive assembly component of the URM.\relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Displays a graph generated in ROOT showing the relationship between measured and requested length for both Chain and Non Chain Drive systems with LAB.\relax }}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Displays a graph generated in ROOT showing the relationship between measured and requested length for a chain drive system during longer runs with LAB.\relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Displays a graph generated in ROOT showing the consistency of the Chain Drive system with LAB for ChangePos$\pm $(50-1500) \relax }}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Shown above are slippage consistences for both manual and optical methods of length change detection during LAB runs for ChangePos$\pm $(50-400)\relax }}{14}{figure.caption.16}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Displays a graph generated in ROOT showing the consistency of the Non-Chain Drive system with LAB.\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Shown above are slippage consistences for both manual and optical methods of length change detection during LAB runs for ChangePos$\pm $(50-400)\relax }}{15}{figure.caption.17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Shows picture of a flexible drive shaft \cite {p1}\relax }}{17}{figure.caption.18}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Displays a design generated using FreeCAD of the implementation of a flex drive system.\relax }}{17}{figure.caption.19}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Displays a design generated using FreeCAD of the implementation of a flex drive system.\relax }}{18}{figure.caption.20}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Displays a design generated using FreeCAD of the implementation of a gear/chain drive system.\relax }}{19}{figure.caption.21}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Displays a design generated using FreeCAD of the implementation of a gear/chain drive system.\relax }}{20}{figure.caption.22}

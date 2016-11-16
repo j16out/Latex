@@ -1,0 +1,30 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\mu$}]\begingroup Dynamic Viscosity $Pa-s$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$\rho$}]\begingroup Density $kg/m^3$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$A$}]\begingroup Cross-Sectional Projected Area $m^2$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$c$}]\begingroup Airfoil chord $m$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$C_D$}]\begingroup Drag Coefficient\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$C_L$}]\begingroup Lift Coefficient\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$C_P$}]\begingroup Pressure Coefficient\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$L$}]\begingroup Characteristic Linear Dimension $m$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$m$}]\begingroup Mass $kg$\nomeqref {0.0}\nompageref{4}
+  \item [{$q$}]\begingroup Manometer Reading $mm$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$Re$}]\begingroup Reynolds Number\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$s$}]\begingroup Airfoil span $m$\nomeqref {0.0}
+		\nompageref{4}
+  \item [{$v$}]\begingroup Velocity $m/s$\nomeqref {0.0}\nompageref{4}
+
+\end{thenomenclature}

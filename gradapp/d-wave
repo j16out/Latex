@@ -1,0 +1,98 @@
+Dear Sir or Madam,
+
+I am writing to apply for the Research Technician position at D-Wave. I welcome the opportunity to bring my research and engineering skills to the D-Wave team. As you can see from my attached resume, I developed my research and engineering skills through several internships and academic projects.
+
+During summer and fall 2015 , I was involved in the development of the M9 prototype muonspectrometer currently being designed and built at TRIUMF. Under the supervision of Dr.Syd Kreitzman, I designed and constructed a muon spectrometer used for testing prototype sensors and DAQ electronics. This work required producing professional models and drawingsin Solidworks for both the on-site machine shop and 3D printer. I also designed a simulation inC++ using a ROOT analyzer and openGL visualizer to help determine the resolution of the new spectrometer for diﬀerent geometrical conﬁgurations of scintillation pieces. My work at TRIUMF has enabled me to reﬁne my engineering and programming abilities which will be an asset for my future career goals.
+
+In the Summer of 2014 I worked at SNOLAB under the supervision of Dr. Christine Kraus on the SNO+ experiment. During my term I spent a great deal of time engineering solutions to correct the slip issues plaguing the umbilical retrieval mechanisms, a device responsible for lowering radioactive sources into the multi-million dollar detector. In addition to redesigning high-traction pulleys, I also designed and fabricated a chain-drive system which successfully met budget, space and radioactivity requirements. My time with SNOLAB has given me great technical experience that I believe combined with my mechanical intuitiveness and knowledge of physics will aid me during my professional development and advancement within engineering.
+
+For a directed studies project at Thompson Rivers University I designed and constructed operational sensors for a high altitude balloon using a LPKF circuit milling machine and EagleCAD drafting software. The quality circuits included a transmitter/receiver interface, GPStelemetry APRS transmitter, a cosmic radiation detector, accelerometer and atmospheric sensors all designed as Arduino shields. Thompson Rivers University has given me hands-on experience which coupled with my analytical and strategic nature will be invaluable towards my professional career.
+
+I hope to hear from you soon to discuss how I can become a valued member of your organization. I look forward to starting my Engineering career, as well as pursuing opportunities for professional development and advancement within D-Wave. Thank you for your kind consideration of my qualiﬁcations.
+
+Sincerely yours,
+
+Jerin Roberts
+
+
+
+
+
+Jerin Roberts
+
+ 
+
+---Education---
+    April, 2015    Bachelors of Science, Thompson Rivers University, GPA - 3.56/4.33. Major Physics
+
+---Experience---
+
+    Fall 2015           Undergraduate Research Assistant, TRIUMF, Vancouver, BC.
+                         M9 Prototype Muon Spectrometer Project
+
+                         Detailed achievements : 
+                          Designed and constructed Experimental Spectrometer for Silicon Photomultiplier
+                          (SiPM) and DAQ testing on beam-line.
+                          Designed Linux based Simulation (C/C++) to determine theoretical spectrometer resolution with openGL visualization and ROOT analysis.
+                          Setup and Conducted experimental tests of spectrometer DAQ using VME hardware and Midas software.
+
+    Summer 2014        Undergraduate Research Assistant, SNOLAB, Sudbury, Ontario.
+                        SNO+ Experiment : Umbilical Retrieval Mechanism (URM) Project
+
+                        Detailed achievements : 
+                          Designed and implemented chain drive system on URM vastly improving performance
+                          Re-Designed/fabricated Pulley Wheels using FreeCAD/3D printer
+                          FEM analysis to verify pulley integrity
+                          Assisted PMT assembly on SNO+ in class 2000 and 5000 underground clean labs
+
+    Summer 2014        Undergraduate Research Assistant, Thompson Rivers University,Kamloops, BC.
+                        Bluebird tracking using RFID technology.
+
+                        Detailed achievements : 
+                          Designing and 3D printing housings for electronics/feeders
+                          Construction of RFID circuit boards using LPKF milling machine
+                          Interfacing sensors with Raspberry Pi and Arduino platforms.
+                          RFID Antenna tuning and construction.
+
+---Computer skills---
+
+    Languages/Libraries     
+           C/C++, Java, LATEX, Assembly, OpenGL, OpenCV, ROOT
+
+    OS/Programs 
+           Ubuntu 14 , Bash, github, Windows 7/8 , ROOT, R, MIDAS, Solidworks, FreeCAD, Eagle CAD, Labview, Z88Aurora
+
+---Awards---
+
+    2013      Undergraduate Research Experience Award Program ( UREAP ) 
+
+---Volunteer Work---
+
+        2010-Present      Physics Help Center hosted by Phi-6 Club ( current member ) 
+        2012-2014         Physics Magic Show Presentation
+        2012-2013         Open House Science Night Presenter
+
+---Hobbies and Interests---
+    - Raspberry Pi Apps              - High Altitude Ballooning
+    - RC Helicopters/Aircraft        - Model Rocketry
+    - DH Biking                      - Flight Simulation
+
+---References---
+
+    Dr. Syd Kreitzman, TRIUMF, Research Scientist MuSR.
+    syd@triumf.ca
+    604-222-7303
+
+    Dr. Christine Kraus, SNOLAB, Canadian Research Chair in Particle Astrophysics.
+    tine@snolab.ca
+    705-561-8413
+
+    Dr. Mark Paetkau, TRU, Professor Physical Sciences.
+    mpaetkau@tru.ca
+    250-828-5453
+
+
+
+2165 westsyde Rd. - Kamloops, BC, Canada v2b7c3
+H (250) 682 6536  T (250) 318 0687  
+robertsj@snolab.ca   

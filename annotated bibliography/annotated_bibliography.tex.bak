@@ -1,0 +1,32 @@
+\documentclass[10pt]{acmsmall}
+
+\title{Put your title here}
+\author{Yan Chen}
+
+% get rid of footnote on the first page
+\def\firstfoot{}
+
+\newenvironment{annotation}{%
+  ~\vskip 0.05in                    %space before annotation
+  \par\begingroup                   %begin to format the environment
+  \leftskip 0.1in\rightskip 0.1in   %set margin
+  \def\baselinestretch{2}           %double spacing
+  \normalsize                       %font size
+  \hskip 2em                        %indent
+}{%
+  \par\endgroup                     %end of environment
+  ~\vskip 0.05in                    %space after annotation
+}
+
+\begin{document}
+\maketitle
+\pagestyle{plain}
+
+This would be a good place to put some introductory text about the topic of the bibliography.
+Definitions that are required by several of the annotations could go here too.
+
+\nocite{*}
+
+\bibliographystyle{ACM-Reference-Format-Journals-annote}
+\bibliography{ar4gste}
+\end{document} 

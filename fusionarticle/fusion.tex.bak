@@ -1,0 +1,202 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{changepage}
+\usepackage{graphicx}
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Magnetized Target Fusion Reactor {\it General Fusion\/}
+\newline
+\newline
+\centerline{\includegraphics[width=0.10\linewidth]{tru}}} 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{Branden Messmer,$^{1}$ Ian Rankin,$^{1}$ Jerin Roberts$^{1}$\\
+\\
+\normalsize{$^{1}$Department of Physical Sciences, Thompson Rivers University,}\\
+\normalsize{900 McGill Road, Kamloops, BC V2C 6N6}\\
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+\begin{singlespace}
+\begin{sciabstract}
+  Abstract. {\it Nuclear fusion energy holds great potential as a future energy source to supplement or even replace current methods of energy generation.  Despite the fact that fusion has been created in labs, a reactor that can create fusion and yield a net gain in energy has yet to be constructed. The restrictions preventing the creation of such a reactor are purely technological as the theory surrounding fusion energy has been thoroughly investigated and proven.  This review discusses papers relating to the creation of viable fusion and the research that is being done in an effort to overcome the problems encountered by current reactor designs.  Tritium self-sufficiency and breeding along with effective capture of the energy of the reaction remain at the forefront of fusion research.  Current fusion reactors under construction will, once completed, allow for additional research in these areas to provide insight into a method that may yield viable fusion.
+  \/} 
+  
+\end{sciabstract}
+
+% Place your abstract within the special {sciabstract} environment.
+
+
+
+
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section*{Introduction}
+
+
+\indent{ General Fusion is a company founded in Vancouver BC attempting to produce a solution for the worlds vast energy demands by creating a reactor capable of drawing energy from fusion reactions. This reactor plans to mimic conditions present inside stars to attain bountiful energy from common and relatively inert fuel sources. Unconventionally the new reactor type, dubbed magnetized target fusion, involves the combination of both magnetic and inertial confinement methods which proposes to solve the efficiency dilemmas associated with the individual systems. There are still however a number of technical issues that can occur, which raises the question of feasibly producing affordable energy. Deuterium-Tritium isotopes are the reactant of choice for general fusion, which play a pivotal role in reactor viability. The energy thresholds or Lawson criterion for pertaining fuel sources and their relative abundances will be contrasted against other reactants to deduce whether they are indeed the best choice for this reactor. Hot fusion reactors rely on high pressures and temperatures to generate conditions ideal for fusion reactions. The reactor attains these pressures through high intensity, rhythmic pulsations of confined plasma using large pneumatic pistons to replicate suitable conditions. Therefore questions concerning mechanical integrity need to be thoroughly explored. The reactor uses magnetic confinement for target stability by injecting current through the central plasma causing it to become self-contained. The stability of such structures will be explored by looking at similar experiments concerning plasma dynamics. General Fusion has made significant advancements in recent years with the design and fabrication of a scaled prototype reactor. The recent data from these tests and advanced simulations will be evaluated to help gauge the future feasibility of this reactor design. By examining and fully understanding the many aspects of this reactor one can hope to substantiate General Fusions magnetized target fusion method for attaining bountiful, yet affordable energy production.}
+
+
+\section*{Annotated Bibliography}
+\noindent
+Flavio Dobran. (2012).  \textit{Fusion Energy Conversion In Magnetically Confined Plasma Reactors.}  Progress In Nuclear Energy.  8/2012, Vol. 60, p89-116
+
+
+
+\begin{adjustwidth}{2.5em}{0pt}
+This journal focuses on the viability of fusion reactions and fuel for the International Thermonuclear Experimental Reactor (ITER).  Flavio says that the components of ITER are currently being built, with estimated construction time of 10 years and a planned 20 years of testing.  The author states that the best Isotopes for these fusion reactions are Deuterium and Tritium (D,T).  Per reaction this yields an energetic neutron pertaining about 14.07 MeV and a Helium nucleus with an energy of 3.52 MeV.  Dobran explains other reactions such as Deuterium-Deuterium are theoretically possible, but the technologies are not adequate to contain such.  Flavio insists the objectives of ITER is to explore the consistency of confining plasma, net energy production, rebreeding tritium for fuel, and the maintainability of the reactor components.  Even though this reactor is entirely different than the one we will be focusing on, information regarding fuel confinement and nuclear reactions will be of much use.    \newline
+\end{adjustwidth}
+
+
+
+\noindent
+Fukada S, Edao Y. 2011. \textit{Unsolved issues on tritium mass transfer in Li-Pb blankets.} Journal of Nuclear Materials. [accessed 2014 Feb 2] 417:727-730.
+
+
+
+\begin{adjustwidth}{2.5em}{0pt}
+This article addresses the viability of a LiPb alloy blanket for use in a fusion reactor.  LiPb has a high tritium breeding ratio, appropriate melting point, and low reactivity which makes it a suitable candidate for a liquid first wall inside the reactor.  The paper discusses the importance of knowing the diffusivity of hydrogen, deuterium and tritium within the alloy as well as the wettability between the alloy and the outside surface of the reactor.  If the wettability is unsatisfactory the formation of tritium bubbles between the liquid-solid interface decreases the overall tritium content of the blanket.  It also examines how impurities in the alloy make affect solubility of hydrogen isotopes (D and T).  The authors discuss the fact that solubility data indicates reactions with oxygen decrease hydrogen solubility and use this as evidence for the importance of oxygen control when implementing a LiPb blanket.
+\end{adjustwidth}
+\newpage
+\noindent
+Laberge, Michel. (2009).  \textit{An Acoustically Driven Magnetized Target Fusion Reactor.}  AIP Conference Proceedings.  7/26/2009, Vol. 1154 Issue 1, p282-288. 7p. 4
+
+
+
+\begin{adjustwidth}{2.5em}{0pt}
+This article explores a new compression system for a Magnetic Target Fusion (MTF) power plant.  This study is distinct as it utilizes a much more cost efficient route than most other MTF setups.  The apparatus includes many concentric steam powered pistons, enclosing an almost spherical shell consisting of high grade steel.  The shell is filled with a liquid lead-lithium alloy (PbLi).  Then pistons incident on the shell send acoustic shock-waves into the liquid lead.  Michel explains that given the pistons fire uniformly the produced wave will have a maximum intensity at the center.  Injected incident to the two poles of the sphere are two helical plasma sources made up of tritium and deuterium.  As this plasma reaches the center, the acoustic waves effectively collapse the magnetic field created from the rotating ionized lead.  Laberge states this collapse results in a large release of thermal energy allowing for fusion.  Furthermore energetic neutrons heat the surrounding lead alloy which can be cycled near water chambers creating steam. Michel shows that this steam can be used to both produce gratuitous amounts of energy and even recycle some steam to power the pistons.  He also explains that the fuel consists partially of tritium, which is a byproduct when neutrons collide with the lithium in the lead alloy.  Because of this the process is self sufficient, which is excellent considering the very high cost of tritium.  This article will be of great use to our research as it pertains the earlier stages of General Fusions reactor we will be focusing on.   \newline
+\end{adjustwidth}
+
+\noindent
+Sawan M.E., Abdou M.A. 2006. \textit{Physics and technology conditions for attaining tritium self-sufficiency for the DT fuel cycle}. Fusion Engineering and Design, [accessed 2014 Feb 2] 81:1131-1144.
+
+
+
+\begin{adjustwidth}{2.5em}{0pt}
+
+This article discusses the importance of tritium breeding in a fusion generator.  It first discusses the great expense in acquiring an amount of tritium from an outside source that is large enough to sustain a fusion power plant.  It then proceeds to examine the production of tritium within a fusion reactor and discusses required production rates.  This article effectively conveys the importance of self-sufficiency when it comes to tritium production for reactor fuel.  It goes into detail about many different components of a potential reactor vessel and the required characteristics of viable materials.  For given materials, this article discusses how each material effects tritium production.  Lastly, the effects of uncertainties in nuclear data are examined because certainty in the rate of tritium production is crucial.  Since viability of nuclear fusion is the cornerstone of our presentation, this article is highly relevant because without tritium, practical nuclear fusion cannot happen.\newline
+\end{adjustwidth}
+
+
+
+
+\end{singlespace}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {section}{\numberline {2}Background}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Theory}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Measurement}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Methodology}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Overview}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Procedure}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Object Tracking}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Calibration}{7}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Calculations}{8}{subsection.3.5}
+\contentsline {section}{\numberline {4}Results}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Overview}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Sources of Error}{10}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusion}{11}{section.5}
+\contentsline {section}{\numberline {A}Appendix}{11}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}openCV object tracking script}{11}{subsection.A.1}

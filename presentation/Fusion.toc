@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{What is Fusion?}{4}{0}{2}
+\beamer@sectionintoc {3}{Why is Fusion Important?}{5}{0}{3}
+\beamer@sectionintoc {4}{Why Don't We Have it?}{6}{0}{4}
+\beamer@sectionintoc {5}{Progress Towards Fusion}{7}{0}{5}
+\beamer@sectionintoc {6}{Advantages of General Fusions Reactor}{8}{0}{6}
+\beamer@sectionintoc {7}{Final Thoughts}{9}{0}{7}

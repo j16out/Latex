@@ -1,0 +1,15 @@
+\frametitle{Steps Per Unit Length}
+Adjusted the steps per unit length to ensure changePos value resulted in same physical displacement \\
+\begin{example}[MOTOR.DAT]
+\begin{verbatim} MOTOR: urm1umbilicalmotor
+   POSITION: -3669.5588
+   STEPS_PER_UNIT: 305
+   UNITS: CM
+   START_SPEED: 3.0
+   CRUISE_SPEED: 3.0
+   MAX_SPEED: 4.0
+   NORM_ACCEL: 1.5
+   MAX-ACCEL: 3.0
+END;
+\end{verbatim}
+\end{example}
