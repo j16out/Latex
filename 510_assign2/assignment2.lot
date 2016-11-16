@@ -1,6 +1,6 @@
 \select@language {english}
-\contentsline {table}{\numberline {2.1}{\ignorespaces List of Program Functions\relax }}{5}{table.caption.4}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Table of $L^2$ norms for increasing mesh size\relax }}{11}{table.caption.8}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Table of $L^2$ norms in relation to tolerance and over-relaxation parameter $\omega $\relax }}{11}{table.caption.9}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Table of $L^2$ norms for increasing mesh size\relax }}{14}{table.caption.12}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Table of $L^2$ norms for increasing mesh size\relax }}{14}{table.caption.13}
+\contentsline {table}{\numberline {2.1}{\ignorespaces List of Program Functions\relax }}{6}{table.caption.4}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Table of $L^2$ norms for increasing mesh size for $CFL = 0.4$\relax }}{11}{table.caption.6}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Table of $L^2$ norms for increasing mesh size\relax }}{16}{table.caption.14}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Table of $L^2$ norms in relation to tolerance and over-relaxation parameter $\omega $\relax }}{16}{table.caption.15}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Table of $L^2$ norms for increasing mesh size\relax }}{17}{table.caption.16}
