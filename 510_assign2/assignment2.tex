@@ -401,12 +401,12 @@ set_ghostcells(myarray);
 The scheme iterates until the required end time is reached. The time steps are determined by the CFL number and the mesh size. Once the solution has been solved a analytical solution is produced and used for an error comparison.
 
 \subsection{Validation}
-
+While implementing the boundaries as stated above the solution was computed at t=1 using a cfl number of 0.4. This will enable the wave to be propagated twice across the domain. The solution was then plotted in figure \ref{q4} for meshes of refining size in comparison with the analytical solution.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\linewidth]{qq11}
-\caption{The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh}
+\caption{The solution at $t=1$ for mesh sizes of 20, 40, and 80}
 \label{q4}
 \end{figure}
 
@@ -423,7 +423,7 @@ The scheme iterates until the required end time is reached. The time steps are d
                 \caption{}
                 
         \end{subfigure}
-        \caption{The Numerical Solution (a) and Solution Error (b) to Laplace Problem for 10x10 mesh  }
+        \caption{Calculated Order of Accuracy (a) and Solution Error (b) at $t=1$ for mesh sizes of 20, 40, and 80  }
         \label{3d}
 \end{figure}
 
