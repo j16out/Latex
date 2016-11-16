@@ -1,18 +1,17 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Overview}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Theory}{4}{subsection.1.1}
-\contentsline {section}{\numberline {2}Implementation}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Program Overview}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}1D Wave Problem}{7}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Boundary Conditions}{7}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Iteration Scheme}{8}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Validation}{10}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Stability}{13}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Effect of Boundary Conditions}{15}{subsection.2.7}
-\contentsline {section}{\numberline {3}Poisson Problem}{17}{section.3}
-\contentsline {subsection}{\numberline {3.1}Overview}{17}{subsection.3.1}
-\contentsline {section}{\numberline {4}Conclusion}{18}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{18}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Poisson.cpp}{18}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}numerical.hpp}{20}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}numerical.cpp}{22}{subsection.A.3}
+\contentsline {section}{\numberline {1}Overview}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Theory}{3}{subsection.1.1}
+\contentsline {section}{\numberline {2}Implementation}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Program Overview}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}1D Wave Problem}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Boundary Conditions}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Iteration Scheme}{7}{subsection.2.4}
+\contentsline {section}{\numberline {3}Results}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Validation}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Stability}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Effect of Boundary Conditions}{14}{subsection.3.3}
+\contentsline {section}{\numberline {4}Conclusion}{16}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{16}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Poisson.cpp}{16}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}numerical.hpp}{19}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}numerical.cpp}{20}{subsection.A.3}

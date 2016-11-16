@@ -145,6 +145,11 @@ w^{n+1}=w^n+\triangle t\Bigg(\frac{\lambda w^n+\lambda w^{(1)}}{2}\Bigg)
 \end{equation}
 
  The program will implement a 2nd order up wind flux evaluation method and a two-stage Runge-Kutta time advance scheme. For each interior volume cell the net flux will be calculated for a specific time step using the second order up wind method. The flux for the face $i=3/2$ is displayed in equation \ref{fl}. The flux is evaluated at each face and then the faces surrounding a single cell are summed to find the flux through that cell. Integrating this into equation \ref{wave} the wave equation can be evaluated using equation \ref{th}
+ 
+  \begin{equation}
+\label{wave}
+\frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} = 0
+\end{equation}
 
  \begin{equation}
 \label{fl}
@@ -399,7 +404,8 @@ set_ghostcells(myarray);
 }
 \end{lstlisting}
 The scheme iterates until the required end time is reached. The time steps are determined by the CFL number and the mesh size. Once the solution has been solved a analytical solution is produced and used for an error comparison.
-
+\newpage
+\section{Results}
 \subsection{Validation}
 While implementing the boundaries as stated above the solution was computed at $t=1$ using a CFL number of 0.4. This will enable the wave to be propagated twice across the domain. The solution was then plotted in figure \ref{q4} for meshes of refining size in comparison with the analytical solution.
 
@@ -475,13 +481,18 @@ The order of accuracy for the scheme was determined using the log log method as 
 The log-log plot enables us to estimate what mesh size would be required for a particular error. Using the plot it was found in order to obtain an error less than $10^{-3}$ a mesh size of 206.12 or greater is required. Similarly to obtain an error less than $10^{-4}$ a mesh of greater than 685.14 is required using a CFL number of 0.4.
 
 \subsection{Stability}
+Stability is an important factor when considering time advance schemes. Ideally one would like to advance to the required time solution is as few time steps as possible to reduce computation load. However if the time step is too large instabilities can arise causing the solution error to diverge exponentially. These can arise from the time dependent boundary, with a large time step the next solution change is calculate from a large boundary change which results in a large solution overshoot. The problem  compounds with the large overshoot as again the solution and time step boundary are vastly different. The stability limits of the program were experimentally determined by evaluating the L2 norm as a function of increasing CFL number. A small CFL number corresponds to a small time step, therefore the L2 norm was calculated relatively against an ideal stable time step. 
+
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\linewidth]{stabl2}
 \caption{The L2 error for increasing CFL number for a 500x1 mesh with $x_{max} = 20$}
-\label{q4}
+\label{stbl1}
 \end{figure}
+
+The domain was extended to $x_{max} =20$ with the first section ($0\leq x \leq 1 $) is set as $-x$ and 0 everywhere else as initial conditions. The solution was computed at t=8 on a mesh of 500 control volumes. Figure \ref{stbl1} displays the L2 norm error as a function of CFL near the instability regime. The plot identifies when the scheme becomes violently unstable in which case the solution is not a good representation of the exact solution. The maximum stable CFL was determined to be $0.500 \pm 0.005$. Anything above the value is considered slightly unstable or completely unstable.   
 
 \begin{figure}[H]
         \centering
@@ -504,216 +515,43 @@ The log-log plot enables us to estimate what mesh size would be required for a p
                 \caption{}
                 
         \end{subfigure}
-        \caption{Maximum solution difference (a), and the $L^2$ norm of the error in converged solution (b) for $\omega = 1, 1.5$ for a 10x10 mesh }
+        \caption{Comparison between a stable(blue), borderline (black) stable and slightly unstable (red) solution at $t=8$ for 500 control volumes}
         \label{q34}
 \end{figure}
 
+Figure \ref{q34} displays the visible differences between a stable, borderline stable and slightly unstable solution. Figure \ref{q34} part a) displays a zoomed out version of the solution. Only the slightly unstable solution has a visible difference. The instability is seen as the higher frequency oscillations developing about the path of the solution. As we zoom in further we can begin to see the board-line stable solution which appeared stable also contains some oscillatory characteristics in zoomed regions. These features grow exponentially with a further increase in CFL. It should be noted these features begin to appear at the same time the error begins to diverge, providing a simple means of determining the stability boundary of the solution. From theory we see the stability region is dependent on both the stability bounds of the 2nd order upwind method and the RK2 method. The 2nd upwind stability region is a circle with radius of $\frac{2u\triangle t}{\triangle x}$, while the RK2 is denoted as a approx circle of radius 1 (on real axis). Setting these equal and rearranging we find the theoretical CFL to be $0.5$ therefore CFL values between 0 and 0.5 should be stable. Comparing Experimental and theoretical values of max CFL for determining stability we find they are indeed consistent.
 
 \subsection{Effect of Boundary Conditions}
-
+Initial and boundary conditions are the parameters that differentiate a problem from its general form. Failure to setup or apply appropriate boundary conditions means your solving a different problem which is going to give you the wrong solution. In addition to applying the correct boundary there are different methods for implying the same boundary, these methods however are not all created equal. The trade off is usually split between implementation and error mitigation. Complicated schemes usually reduce error, but sometimes can be at the price of performance or maintenance. Boundary condition methods should be tailored to the problem at hand. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{3a1}
 \caption{The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh}
-\label{q4}
+\label{3a1}
 \end{figure}
+For the wave equation three types of boundaries were implemented and compared to highlight their strengths and weaknesses. In addition to the 2nd order upwind boundary implementation used in the previous sections a 1st order upwind and 2nd centered scheme were investigated for mesh of 80x1 for a CFL of 0.4 where $x_{max} = 1.0$. It should be noted the interior scheme remains 2nd order upwind. The solution implementing each boundary condition is plotted in \ref{3a1} and the relative error against the exact solution in \ref{3a2}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{3a2}
 \caption{The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh}
-\label{q4}
+\label{3a2}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{3a33}
 \caption{The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh}
-\label{q4}
+\label{3a3}
 \end{figure}
 
 
 
 
- \begin{table}[H]
-\begin{center}
-    \begin{tabular}{ | p{0.13\linewidth} | p{0.2\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
- \hline  
-     \RaggedRight \textbf{Mesh Size}
-    &\RaggedRight \textbf{$L^2$norm}
-    &\RaggedRight \textbf{$\triangle x$}
-    &\RaggedRight \textbf{Order}
-    &\RaggedRight \textbf{Ratio}
-    \\ \hline  
-           \RaggedRight 10 x 10 
-    &\RaggedRight 2.457$*10^{-3}$
-    &\RaggedRight 0.1
-    &\RaggedRight -
-    &\RaggedRight -
-    \\ \hline 
-           \RaggedRight 20 x 20
-    &\RaggedRight 6.384$*10^{-4}$
-    &\RaggedRight 0.05
-    &\RaggedRight 1.94
-    &\RaggedRight 3.84
-    \\ \hline 
-           \RaggedRight 40 x 40
-    &\RaggedRight 1.603$*10^{-4}$
-    &\RaggedRight 0.025
-    &\RaggedRight 1.96
-    &\RaggedRight 3.98
-    \\ \hline 
-           \RaggedRight 80 x 80
-    &\RaggedRight 3.827$*10^{-5}$
-    &\RaggedRight 0.0125
-    &\RaggedRight 2.00
-    &\RaggedRight 4.18
-    \\ \hline 
- 
-    
-    
-    \end{tabular}
-\end{center} 
-\caption{Table of $L^2$ norms for increasing mesh size}
-\label{norm} 
-\end{table}
-
- \begin{table}[H]
-\begin{center}
-    \begin{tabular}{ | p{0.1\linewidth} |p{0.2\linewidth} |p{0.1\linewidth} |}
- \hline  
-    \RaggedRight \textbf{Tolerance}
-    &\RaggedRight \textbf{$L^2$norm}
-    &\RaggedRight \textbf{$\omega$}
-    \\ \hline  
-           \RaggedRight $10^{-6}$ 
-    &\RaggedRight 1.767$*10^{-4}$
-    &\RaggedRight 1.0
-    \\ \hline 
-           \RaggedRight $10^{-7}$
-    &\RaggedRight 1.605$*10^{-4}$
-    &\RaggedRight 1.0
-    \\ \hline 
-           \RaggedRight $10^{-8}$
-    &\RaggedRight 1.603$*10^{-4}$
-    &\RaggedRight 1.0
-    \\ \hline 
-           \RaggedRight $10^{-9}$
-    &\RaggedRight 1.603$*10^{-4}$
-    &\RaggedRight 1.0
-    \\ \hline 
-              \RaggedRight $10^{-10}$
-    &\RaggedRight 1.603$*10^{-5}$
-    &\RaggedRight 1.0
-    \\ \hline 
-    \RaggedRight $10^{-7}$
-    &\RaggedRight 1.603872$*10^{-5}$
-    &\RaggedRight 1.2
-    \\ \hline 
-    \RaggedRight $10^{-7}$
-    &\RaggedRight 1.603879$*10^{-5}$
-    &\RaggedRight 1.4
-    \\ \hline 
-    \RaggedRight $10^{-7}$
-    &\RaggedRight 1.603896$*10^{-5}$
-    &\RaggedRight 1.6
-    \\ \hline 
- 
-    
-    
-    \end{tabular}
-\end{center} 
-\caption{Table of $L^2$ norms in relation to tolerance and over-relaxation parameter $\omega$}
-\label{tol} 
-\end{table}
-
-The accuracy of the program was estimated by calculating and tabulating the $L^2$ norms of solution error for multiple mesh sizes. Using table \ref{norm} we can estimate the order of error by plotting $log(error)$ vs $log(\triangle x)$ and calculating the slope. The slope and therefore the order of accuracy was estimated to be 2.003 which rounds to 2nd order accuracy. The ratio between the errors is also indicated in table \ref{norm}, which gives us an indication of how the error is reduced relative to mesh refinement. In this case the effect of mesh refinement can be generalized in doubling the resolution we find the $L^2$ error is decrease by a quarter. Additionally as we refine the mesh se find that order converges on the order estimated by the selected estimation of solution fluxes which was 2nd order. The maximum solution change was lowered to $10^{-9}$ in order to ensure the error being measured was discretization error and not a lack of convergence. The error trend was also examined for the algorithm variables $\omega$ and the Convergence Tolerance which is displayed in table \ref{tol}. This table shows reducing the tolerance generally reduces the discretization error. 
-
- 
-
-
-
-
-\section{Poisson Problem}
-\subsection{Overview}
-Calculating pressure for in-compressible flows is done by solving the Poisson problem for pressure. Starting with the momentum equations one can obtain a simplified expression for Poisson problem (equation \ref{d3}). This equation allows us to simply add a source term (equation \ref{d4}) to our existing Laplace code and compute the pressure for the previous square domain as displayed in equation \ref{th}.
-
-
-\begin{equation}
-\label{d3}
-\frac{\partial^2P}{\partial x^2} + \frac{\partial^2P}{\partial y^2} = -\Bigg(\Bigg(\frac{\partial u}{\partial x}\Bigg)^2 +2\frac{\partial v}{\partial x}\frac{\partial u}{\partial y}        +\Bigg(\frac{\partial v}{\partial y}\Bigg)^2\Bigg)
-\end{equation}
-
-\begin{equation}
-\label{d4}
-S_{ij} = (3x^2-3y^2)^2+2(36x^2y^2)+(3y^2-3x^2)
-\end{equation}
-For boundary conditions $\frac{\partial P}{\partial n}=0$ at $x=0$ and $y=0$, and $P=5-\frac{1}{2}(1+y^2)^3$ for $x=1$ and $P=5-\frac{1}{2}(1+x^2)^3$ for $y=1$ were implemented. 
-
-
-
-
-
- \begin{table}[H]
-\begin{center}
-    \begin{tabular}{ | p{0.13\linewidth} | p{0.12\linewidth}| p{0.2\linewidth} |p{0.15\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
- \hline  
-     \RaggedRight \textbf{Mesh Size}
-    &\RaggedRight \textbf{Solution}
-    &\RaggedRight \textbf{Apparent Order}
-    &\RaggedRight \textbf{Rel Error}
-    &\RaggedRight \textbf{Extrap Value}
-    &\RaggedRight \textbf{GCI}
-    \\ \hline  
-           \RaggedRight 10 x 10 
-    &\RaggedRight 4.941434 
-    &\RaggedRight -
-    &\RaggedRight -
-    &\RaggedRight -
-    &\RaggedRight -
-    \\ \hline 
-           \RaggedRight 20 x 20
-    &\RaggedRight 4.938539 
-    &\RaggedRight -
-    &\RaggedRight 0.0058\%
-    &\RaggedRight -
-    &\RaggedRight -
-    \\ \hline 
-           \RaggedRight 40 x 40
-    &\RaggedRight 4.937872 
-    &\RaggedRight 2.468819 
-    &\RaggedRight 0.0037\%
-    &\RaggedRight 4.937703
-    &\RaggedRight 0.0043\%
-    \\ \hline   
-           \RaggedRight 80 x 80
-    &\RaggedRight 4.938059
-    &\RaggedRight 1.895416 
-    &\RaggedRight 0.0037\%
-    &\RaggedRight 4.937605
-    &\RaggedRight 0.0019\% 
-      \\ \hline   
-           \RaggedRight 160 x 160
-    &\RaggedRight 4.938802 
-    &\RaggedRight 1.624394 
-    &\RaggedRight 0.015\%
-    &\RaggedRight 4.936539
-    &\RaggedRight 0.0315\% 
-    \\ \hline 
- 
-    
-    
-    \end{tabular}
-\end{center} 
-\caption{Table of $L^2$ norms for increasing mesh size}
-\label{pnorm} 
-\end{table}
-
-Decreasing the grid size will help the solution converge closer to the exact values. If we image the grid size becoming infinitely small the grid would become continuous and essentially would describe the exact solution. However Decreasing grid size (increasing array size) has a hard hit on computational performance. Therefore before solving such a problem one should consider the exactness required for their problem and apply the appropriate mesh size. In the case where the mesh density can vary through out the problem domain it makes sense to refine the mesh in the areas of interest while providing a course mesh for areas that are understood relatively well. This will ensure the problem is solved the fastest while attaining the best approximate solution.
 
 \section{Conclusion}
-This project provides great inside to the internal algorithms used for calculating numerical solutions for symmetric grids. The Laplace problem provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Applying the program to Poisson problem showed how one could find a solution and still estimate error without a known solution to compare with. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to unsolvable problems. 
+This project provides great inside to the internal algorithms used for calculating numerical solutions for symmetric grids. The Laplace problem provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Applying the program to Poisson problem showed how one could find a solution and still estimate error without a known solution to compare with. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
 
 
 
