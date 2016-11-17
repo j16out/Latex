@@ -1,9 +1,9 @@
 \select@language {english}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces The solution at $t=1$ for mesh sizes of 20, 40, and 80\relax }}{10}{figure.caption.5}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Calculated Order of Accuracy\relax }}{11}{figure.caption.7}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Solution Error at $t=1$ for mesh sizes of 20, 40, and 80\relax }}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The L2 error for increasing CFL number for a 500x1 mesh with $x_{max} = 20$\relax }}{12}{figure.caption.9}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparison between a stable(blue), borderline (black) stable and slightly unstable (red) solution at $t=8$ for 500 control volumes\relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh\relax }}{14}{figure.caption.11}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh\relax }}{15}{figure.caption.12}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces The maximum change in solution for $\omega = 1, 1.3, 1.5$ on a 20 x 20 mesh\relax }}{16}{figure.caption.13}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Solution Error at $t=1$ for mesh sizes of 20, 40, and 80\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The L2 error for increasing CFL number for a 500x1 mesh with $x_{max} = 20$\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparison between a stable(blue), borderline (black) stable and slightly unstable (red) solution at $t=8$ for 500 control volumes\relax }}{14}{figure.caption.10}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Displays Solution for 2nd Upwind, 1st Upwind and 2nd Centered schemes at $t=1$ for 80x1 mesh\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Solution Error for 2nd Upwind, 1st Upwind and 2nd Centered schemes at $t=1$ for 80x1 mesh\relax }}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The $L_1$ and $L_{\infty }$ relative mesh size refinement for 2UW, 1UW and 2CE schemes\relax }}{17}{figure.caption.13}
