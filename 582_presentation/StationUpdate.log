@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  25 NOV 2016 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  28 NOV 2016 12:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Fusion.tex
-(./Fusion.tex
+**StationUpdate.tex
+(./StationUpdate.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -106,8 +106,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen126
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -702,29 +702,29 @@ Package: beamerinnerthemedefault 2014/06/30  (rcs-revision 580088513a67)
 fault.sty
 Package: beamerouterthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeMadrid.
-sty
-Package: beamerthemeMadrid 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeBoadill
+a.sty
+Package: beamerthemeBoadilla 2010/06/17  (rcs-revision d02a7cf4d8ae)
 
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemewh
-ale.sty
-Package: beamercolorthemewhale 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemeor
-chid.sty
-Package: beamercolorthemeorchid 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemero
+se.sty
+Package: beamercolorthemerose 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemero
 unded.sty
 Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemedo
+lphin.sty
+Package: beamercolorthemedolphin 2010/06/17  (rcs-revision d02a7cf4d8ae)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemein
 folines.sty
 Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemebe
-aver.sty
-Package: beamercolorthemebeaver 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemese
+ahorse.sty
+Package: beamercolorthemeseahorse 2010/06/17  (rcs-revision d02a7cf4d8ae)
 ) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen188
@@ -770,23 +770,24 @@ Package: ifdraft 2008/08/11 v1.3 Detect class options draft and final (HO)
 \@MXV@start=\dimen264
 \@MXV@end=\dimen265
 \@MXV@textbox=\box53
-) (./Fusion.aux)
-\openout1 = `Fusion.aux'.
+)
+(./StationUpdate.aux)
+\openout1 = `StationUpdate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -796,23 +797,23 @@ LaTeX Font Info:    ... okay on input line 99.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(10.95003pt, 342.2953pt, 10.95003pt)
+* h-part:(L,W,R)=(10.00002pt, 344.19533pt, 10.00002pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=342.2953pt
+* \textwidth=344.19533pt
 * \textheight=244.6939pt
-* \oddsidemargin=-61.31996pt
-* \evensidemargin=-61.31996pt
+* \oddsidemargin=-62.26997pt
+* \evensidemargin=-62.26997pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=14.22636pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -852,7 +853,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 99.
+Package hyperref Info: Link coloring OFF on input line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -862,66 +863,66 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count169
 )
-LaTeX Info: Redefining \ref on input line 99.
-LaTeX Info: Redefining \pageref on input line 99.
-LaTeX Info: Redefining \nameref on input line 99.
+LaTeX Info: Redefining \ref on input line 100.
+LaTeX Info: Redefining \pageref on input line 100.
+LaTeX Info: Redefining \nameref on input line 100.
 
-(./Fusion.out) (./Fusion.out)
+(./StationUpdate.out) (./StationUpdate.out)
 \@outlinefile=\write5
-\openout5 = `Fusion.out'.
+\openout5 = `StationUpdate.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 99.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 100.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 99.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 100.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 99.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 99.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 99.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 99.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 100.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 99.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 99.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 99.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 100.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 99.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 99.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 99.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 100.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 99.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 99.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 100.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 99.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 100.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 99.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 99.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 99.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 99.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 99.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 100.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 99.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 99.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 100.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 100.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 9
-9.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
+00.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-99.
+100.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 99.
+ut line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -947,183 +948,240 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 99.
- (./Fusion.nav)
-Overfull \hbox (20.99889pt too wide) in paragraph at lines 99--99
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+LaTeX Info: Redefining \includegraphics on input line 100.
 
-<gf.jpg, id=48, 1204.5pt x 327.2225pt>
-File: gf.jpg Graphic file (type jpg)
- <use gf.jpg>
-Package pdftex.def Info: gf.jpg used on input line 106.
-(pdftex.def)             Requested size: 342.2953pt x 92.98975pt.
+(./StationUpdate.nav) <back1.jpg, id=56, 40.37447pt x 30.50136pt>
+File: back1.jpg Graphic file (type jpg)
+
+<use back1.jpg>
+Package pdftex.def Info: back1.jpg used on input line 108.
+(pdftex.def)             Requested size: 359.92719pt x 272.11731pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 106.
-
-
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+(Font)              size <5> substituted on input line 108.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./gf.jpg>] (./Fusion.toc)
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./back1.jpg>]
+(./StationUpdate.toc) <back2.jpg, id=79, 41.00043pt x 29.67622pt>
+File: back2.jpg Graphic file (type jpg)
 
-[2
+<use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 113.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [2
 
-]
-Missing character: There is no â in font cmss10!
-Missing character: There is no € in font cmss10!
-Missing character: There is no ™ in font cmss10!
- <fus7.jpg, id=84, 351.3125pt x 239.89626pt>
-File: fus7.jpg Graphic file (type jpg)
- <use fus7.jpg>
-Package pdftex.def Info: fus7.jpg used on input line 131.
-(pdftex.def)             Requested size: 166.67146pt x 113.81102pt.
+ <./back2.jpg>] <noz.jpg, id=97, 1284.8pt x 722.7pt>
+File: noz.jpg Graphic file (type jpg)
 
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[3
-
- <./fus7.jpg>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 150.
+<use noz.jpg>
+Package pdftex.def Info: noz.jpg used on input line 154.
+(pdftex.def)             Requested size: 154.88683pt x 87.11723pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 154.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 150.
+LaTeX Font Info:    Try loading font information for U+msb on input line 154.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 150.
+line 154.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<fus5.png, id=90, 220.825pt x 245.91875pt>
-File: fus5.png Graphic file (type png)
- <use fus5.png>
-Package pdftex.def Info: fus5.png used on input line 150.
-(pdftex.def)             Requested size: 76.64632pt x 85.35826pt.
+<hyd.png, id=98, 803.0pt x 451.6875pt>
+File: hyd.png Graphic file (type png)
+ <use hyd.png>
+Package pdftex.def Info: hyd.png used on input line 154.
+(pdftex.def)             Requested size: 154.88683pt x 87.12413pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 154.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [3
 
-<fus4.png, id=92, 482.80376pt x 190.7125pt>
-File: fus4.png Graphic file (type png)
- <use fus4.png>
-Package pdftex.def Info: fus4.png used on input line 150.
-(pdftex.def)             Requested size: 216.08833pt x 85.35826pt.
+ <./noz.jpg> <./hyd.png>] <htank.jpg, id=104, 1204.5pt x 803.0pt>
+File: htank.jpg Graphic file (type jpg)
+ <use htank.jpg>
+Package pdftex.def Info: htank.jpg used on input line 175.
+(pdftex.def)             Requested size: 113.58324pt x 75.72339pt.
 
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
+<liq.jpg, id=105, 642.4pt x 481.8pt>
+File: liq.jpg Graphic file (type jpg)
+ <use liq.jpg>
+Package pdftex.def Info: liq.jpg used on input line 175.
+(pdftex.def)             Requested size: 100.96288pt x 75.72339pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 175.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [4
+
+ <./htank.jpg> <./liq.jpg>] <mod1.png, id=111, 522.95375pt x 256.96pt>
+File: mod1.png Graphic file (type png)
+ <use mod1.png>
+Package pdftex.def Info: mod1.png used on input line 183.
+(pdftex.def)             Requested size: 280.19641pt x 137.67603pt.
+File: back2.jpg Graphic file (type jpg)
+
+<use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 183.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [5
+
+ <./mod1.png>]
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 203.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [6
+
+]
+<schem2.png, id=124, 1225.57875pt x 602.25pt>
+File: schem2.png Graphic file (type png)
+ <use schem2.png>
+Package pdftex.def Info: schem2.png used on input line 216.
+(pdftex.def)             Requested size: 347.4048pt x 170.71652pt.
+
+Overfull \hbox (3.20947pt too wide) in paragraph at lines 216--216
+ [] 
  []
 
-[4
+File: back2.jpg Graphic file (type jpg)
+<use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 216.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [7
 
- <./fus5.png> <./fus4.png>] <fus6.png, id=99, 534.99875pt x 394.47375pt>
-File: fus6.png Graphic file (type png)
+ <./schem2.png>] <sch.png, id=133, 865.2325pt x 543.02875pt>
+File: sch.png Graphic file (type png)
 
-<use fus6.png>
-Package pdftex.def Info: fus6.png used on input line 162.
-(pdftex.def)             Requested size: 192.94226pt x 142.26378pt.
+<use sch.png>
+Package pdftex.def Info: sch.png used on input line 223.
+(pdftex.def)             Requested size: 272.00838pt x 170.71652pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 223.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [8
 
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+ <./sch.png>]
+<Therm.png, id=141, 233.87375pt x 146.5475pt>
+File: Therm.png Graphic file (type png)
+ <use Therm.png>
+Package pdftex.def Info: Therm.png used on input line 261.
+(pdftex.def)             Requested size: 103.25964pt x 64.7047pt.
 
-[5
+<adc.jpg, id=142, 200.75pt x 146.5475pt>
+File: adc.jpg Graphic file (type jpg)
+ <use adc.jpg>
+Package pdftex.def Info: adc.jpg used on input line 261.
+(pdftex.def)             Requested size: 86.04883pt x 62.8174pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 261.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [9
 
- <./fus6.png>] <fus8.jpg, id=105, 1003.75pt x 818.05624pt>
-File: fus8.jpg Graphic file (type jpg)
- <use fus8.jpg>
-Package pdftex.def Info: fus8.jpg used on input line 175.
-(pdftex.def)             Requested size: 139.63571pt x 113.81102pt.
+ <./Therm.png> <./adc.jpg>] <film.png, id=151, 260.975pt x 176.66pt>
+File: film.png Graphic file (type png)
+ <use film.png>
+Package pdftex.def Info: film.png used on input line 298.
+(pdftex.def)             Requested size: 103.25964pt x 69.89989pt.
+File: adc.jpg Graphic file (type jpg)
 
-<fus9.jpg, id=106, 1422.31375pt x 1034.86626pt>
-File: fus9.jpg Graphic file (type jpg)
- <use fus9.jpg>
-Package pdftex.def Info: fus9.jpg used on input line 175.
-(pdftex.def)             Requested size: 156.41159pt x 113.81102pt.
+<use adc.jpg>
+Package pdftex.def Info: adc.jpg used on input line 298.
+(pdftex.def)             Requested size: 86.04883pt x 62.8174pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 298.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [10
 
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+ <./film.png>]
+<press.png, id=158, 554.07pt x 486.81876pt>
+File: press.png Graphic file (type png)
+ <use press.png>
+Package pdftex.def Info: press.png used on input line 335.
+(pdftex.def)             Requested size: 86.04883pt x 75.60469pt.
+File: adc.jpg Graphic file (type jpg)
+ <use adc.jpg>
+Package pdftex.def Info: adc.jpg used on input line 335.
+(pdftex.def)             Requested size: 111.86241pt x 81.66129pt.
+File: back2.jpg Graphic file (type jpg)
 
-[6
+<use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 335.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [11
 
- <./fus8.jpg> <./fus9.jpg>] <fus1.jpg, id=117, 350.5095pt x 229.8186pt>
-File: fus1.jpg Graphic file (type jpg)
+ <./press.png>] <load.png, id=166, 397.485pt x 322.20375pt>
+File: load.png Graphic file (type png)
 
-<use fus1.jpg>
-Package pdftex.def Info: fus1.jpg used on input line 194.
-(pdftex.def)             Requested size: 130.18388pt x 85.35826pt.
+<use load.png>
+Package pdftex.def Info: load.png used on input line 371.
+(pdftex.def)             Requested size: 68.838pt x 55.80144pt.
+File: adc.jpg Graphic file (type jpg)
+ <use adc.jpg>
+Package pdftex.def Info: adc.jpg used on input line 371.
+(pdftex.def)             Requested size: 86.04883pt x 62.8174pt.
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 371.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [12
 
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+ <./load.png>]
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 387.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
 
-[7
+[13
 
- <./fus1.jpg>] <fus2.png, id=124, 2007.5pt x 1334.9875pt>
-File: fus2.png Graphic file (type png)
- <use fus2.png>
-Package pdftex.def Info: fus2.png used on input line 206.
-(pdftex.def)             Requested size: 256.6957pt x 170.71652pt.
+] <fin.png, id=181, 1054.94125pt x 308.15125pt>
+File: fin.png Graphic file (type png)
+ <use fin.png>
+Package pdftex.def Info: fin.png used on input line 406.
+(pdftex.def)             Requested size: 294.57669pt x 86.04883pt.
+File: back2.jpg Graphic file (type jpg)
 
-Overfull \vbox (1.67513pt too high) detected at line 206
- []
+<use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 406.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [14
 
-
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[8
-
- <./fus2.png>] <fus3.jpeg, id=131, 237.88875pt x 213.79875pt>
-File: fus3.jpeg Graphic file (type jpg)
-
-<use fus3.jpeg>
-Package pdftex.def Info: fus3.jpeg used on input line 219.
-(pdftex.def)             Requested size: 94.97594pt x 85.35826pt.
-
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[9
-
- <./fus3.jpeg>]
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[10
+ <./fin.png>]
+Missing character: There is no Ã in font cmss8!
+Missing character: There is no © in font cmss8!
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 431.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [15
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
-Overfull \hbox (20.99889pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[11
+File: back2.jpg Graphic file (type jpg)
+ <use back2.jpg>
+Package pdftex.def Info: back2.jpg used on input line 440.
+(pdftex.def)             Requested size: 364.19536pt x 263.60751pt.
+ [16
 
 ]
 \tf@nav=\write6
-\openout6 = `Fusion.nav'.
+\openout6 = `StationUpdate.nav'.
 
 \tf@toc=\write7
-\openout7 = `Fusion.toc'.
+\openout7 = `StationUpdate.toc'.
 
 \tf@snm=\write8
-\openout8 = `Fusion.snm'.
+\openout8 = `StationUpdate.snm'.
 
 
 
@@ -1132,40 +1190,38 @@ Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ superseded by `media9'.           @@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
-(./Fusion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
-Package rerunfilecheck Info: File `Fusion.out' has not changed.
-(rerunfilecheck)             Checksum: C832FF0FA649BD6C2A472250B2CC435C;391.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+(./StationUpdate.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package rerunfilecheck Info: File `StationUpdate.out' has not changed.
+(rerunfilecheck)             Checksum: 46362757FC39EB03DDE6BE85741D26FF;412.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
  ) 
 Here is how much of TeX's memory you used:
- 17450 strings out of 493029
- 334941 string characters out of 6136234
- 436976 words of memory out of 5000000
- 20525 multiletter control sequences out of 15000+600000
- 11307 words of font info for 41 fonts, out of 8000000 for 9000
+ 17469 strings out of 493029
+ 334660 string characters out of 6136234
+ 437888 words of memory out of 5000000
+ 20531 multiletter control sequences out of 15000+600000
+ 8654 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,16n,60p,386b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,60p,393b,707s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmssi8.pfb>
-Output written on Fusion.pdf (11 pages, 1029784 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on StationUpdate.pdf (16 pages, 1618284 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
