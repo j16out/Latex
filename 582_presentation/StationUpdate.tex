@@ -86,7 +86,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 \setbeamertemplate{navigation symbols}{} %turn off navigation symbols
-\title[Hydrogen Refueling Techniques]{Thermodynamic Modelling: Hydrogen Refuelling Station} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Hydrogen Refueling Techniques]{Thermodynamic Analysis: Hydrogen Fuel Tank} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author[Jerin Roberts]{Jerin Roberts, Dr. Walter M\'{e}rida, Dr. Omar Herrera} % Your name
 
@@ -154,7 +154,7 @@
 \end{frame}
 
 %------------------------------------------------
-\section{Storage Types}
+
 \begin{frame}{ubc}
 \frametitle{Hydrogen Storage}
 Can be stored in Liquid or Gaseous States
@@ -174,15 +174,34 @@ Can be stored in Liquid or Gaseous States
 
 \end{frame}
 
-\section{Modeling}
+
+%------------------------------------------------
+\section{Metrics}
+
+
+\begin{frame}
+\frametitle{Problem and Constraints}
+\begin{itemize}
+
+\item Hydrogen Heats during throttling
+
+\item  Hydrogen Heats during compression
+
+\item  Fills times need to match current standards
+
+\item  Needs to be compressed $\geq350$ Bar
+
+
+\end{itemize}
+\end{frame}
+
 \begin{frame}
 \frametitle{Modelling Temperature Distribution}
 \includegraphics[height=0.4\textwidth]{mod1}
 
 Temperature Distribution for 35MPa Tank during fast filling \cite{p2}
 \end{frame}
-%------------------------------------------------
-\section{Metrics}
+
 \begin{frame}
 \frametitle{Problem and Constraints}
 \begin{itemize}
@@ -239,7 +258,7 @@ Thermocouple:
      \end{center}
 \begin{itemize}
 \item Type T Special Grade
-\item 0.012mm Diameter $\tau = 0.4$ s
+\item 0.008mm Diameter $\tau = 0.15$ s
 \item $\pm 0.5^{\circ}$C accuracy
 
 \end{itemize}
@@ -262,8 +281,6 @@ Thermocouple:
 
 %------------------------------------------------
 
-
-\section{Sensors}
 \begin{frame}
 
 
@@ -379,8 +396,8 @@ Honeywell 3397 Load cell:
 \item Allow Temperature/Pressure to Stabilize 
 \item Record Initial Conditions
 \item Apply Required Ramp Rate
-\item Measure P, T @ 20S/s HF, m @ 1S/s during Fast fill
-\item Measure P, T @ 20S/s HF, m @ 1S/s during cool down
+\item Measure P, T @ 10S/s HF, m @ 1S/s during Fast fill
+\item Measure P, T @ 10S/s HF, m @ 1S/s during cool down
 \item Record Final Conditions
 \item Repeat for different array configurations
 \end{itemize}
