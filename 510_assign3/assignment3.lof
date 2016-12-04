@@ -1,8 +1,9 @@
 \select@language {english}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Calculated Order of Accuracy without source\relax }}{6}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Calculated Order of Accuracy of only source term\relax }}{7}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Calculated Order of Accuracy with of flux integral with source\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Calculated Order of Accuracy using explicit method for varying mesh sizes\relax }}{9}{figure.caption.10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Calculated Order of Accuracy using implicit method for varying mesh sizes\relax }}{10}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Displays temperature gradient at bottom wall as a function of the channel length for varying channel lengths\relax }}{12}{figure.caption.16}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Displays the effect of mesh refinement on gradient solution\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Calculated Order of Accuracy without source\relax }}{5}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Calculated Order of Accuracy with of flux integral with source\relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Calculated Order of Accuracy using explicit method for varying mesh sizes\relax }}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Calculated Order of Accuracy using implicit method for varying mesh sizes\relax }}{11}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Displays the efficiency trends for both Implicit and explicit Euler for varying mesh sizes\relax }}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Displays the solution for temperature in channel\relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Displays temperature gradient at bottom wall as a function of the channel length for varying channel lengths\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Displays the effect of mesh refinement on gradient solution\relax }}{15}{figure.caption.17}

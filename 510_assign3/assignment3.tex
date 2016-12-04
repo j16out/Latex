@@ -128,76 +128,14 @@ Locations: & University of British Columbia
 
  The are many physical phenomenons in physics and engineering that require linear and non-linear partial differential equations to described the true nature of the system. Solving these systems analytically and finding exact solutions for these equations can be difficult and often require simplifications that ultimately don't fully represent the problem being investigated. Numerical methods for solving PDE's provides a means for finding approximations to the exact solutions without having to make sacrificial simplifications. With recent advancements in computational technology numerical methods can now be easily applied to large and difficult problems that would otherwise be impossible to solve. 
 \subsection{Problem Overview}
-Numerical problems are essentially solved by breaking the entire solution domain into small discrete points (mesh) and finding the solution at or around these areas. Each point requires the solving the differential equations that represent physical phenomenon being investigated. Since the exact solution cannot be computed, it is instead approximated using various techniques and methods. In this assignment the 2D incompressible laminar energy equation is applied to a rectangular channel for a given velocity field. The problem will employ an second ordered centered flux calculation with both implicit and explicit euler timer advance methods. The implicit method will be solved using approximate factorization and Gauss-Jordan elimination via the Thomas algorithm. Boundary conditions will be implement using ghost cells allowing the interior scheme to remain the same during calculation of bordering cells. The ghost cells are calculated such the boundary condition is enforced at $i=1/2$.
+Numerical problems are essentially solved by breaking the entire solution domain into small discrete points (mesh) and finding the solution at or around these areas. Each point requires the solving the differential equations that represent physical phenomenon being investigated. Since the exact solution cannot be computed, it is instead approximated using various techniques and methods. In this assignment the 2D in-compressible laminar energy equation is applied to a rectangular channel for a given velocity field. The problem will employ an second ordered centered flux calculation with both implicit and explicit euler timer advance methods. The implicit method will be solved using approximate factorization and Gauss-Jordan elimination via the Thomas algorithm. Boundary conditions will be implement using ghost cells allowing the interior scheme to remain the same during calculation of bordering cells. The ghost cells are calculated such the boundary condition is enforced at $i=1/2$.
 
 
 
 \section{Implementation}
 \subsection{Program Overview}
 The C/C++language was selected for this programming assignment. The scripts were compiled using g++/gcc version 5.4.0 on Ubuntu 16.04.02 and are available in the attached zip or for clone via the link provided: \url{https://github.com/j16out/cfd510} . The program itself is broken into 3 pieces and two levels to produce a modular set that makes it easier to apply to different problems. The highest level contains the "macro" or the main function which can be modified for different problems. 
-
-\begin{table}[H]
-\begin{center}
-    \begin{tabular}{ | p{0.23\linewidth} | p{0.6\linewidth} |}
- \hline  
-     \RaggedRight \textbf{Function}
-    &\RaggedRight \textbf{Purpose}
-    \\ \hline  
-           \RaggedRight set\_ array\_ size() 
-    &\RaggedRight Set size of array if not default(160x160)
-    \\ \hline 
-           \RaggedRight set\_ ghostcells()
-    &\RaggedRight Set Ghost cells and update boundary conditions
-    \\ \hline 
-    \RaggedRight set\_ zero()
-    &\RaggedRight Zero entire array including ghost cells
-    \\ \hline 
-           \RaggedRight set\_ intial\_ cond()
-    &\RaggedRight Set initial condition
-    \\ \hline 
-           \RaggedRight print\_ array()
-    &\RaggedRight Prints array in terminal style output
-    \\ \hline 
-           \RaggedRight get\_ FIarray()
-    &\RaggedRight Evaluates Flux for array interior cells
-    \\ \hline 
-           \RaggedRight get\_ RK2()
-    &\RaggedRight performs RK2 iteration 1 or 2 stage
-    \\ \hline 
-      \RaggedRight get\_ FIarray\_ 1stcell()
-    &\RaggedRight Calculates flux at 1st interior cell
-    \\ \hline 
-    \RaggedRight  get\_ surcells()
-    &\RaggedRight Gets current solution of neighboring cells
-    \\ \hline 
-    \RaggedRight  mv\_ SOL2\_ to\_ SOL1()
-    &\RaggedRight moves updated solution to first stage array
-    \\ \hline 
-    \RaggedRight  solve\_ arrayRK2()
-    &\RaggedRight Performs are steps to solve problem
-    \\ \hline 
-    \RaggedRight get\_ l1norm()
-    &\RaggedRight Returns $L^1$ norm error
-      \\ \hline 
-    \RaggedRight get\_ l2norm()
-    &\RaggedRight Returns $L^2$ norm error between two arrays of equal size
-    \\ \hline 
-    \RaggedRight get\_ linf\_ norm() 
-    &\RaggedRight Returns $L^{\infty}$ norm error between two arrays of equal size
-    \\ \hline 
-    \RaggedRight set\_ analytic() 
-    &\RaggedRight Set array values to predefined exact solution
-    \\ \hline 
-   
-   
-    
-    \end{tabular}
-\end{center} 
-\caption{List of Program Functions}
-\label{func} 
-\end{table}
-
-The numerical directory contains numerical.cpp script and its header file numerical.hpp. This set contains all the functions necessary for solving the problem numerically. Table \ref{func} displays all functions with a short description of each. The vroot directory contains the scripts necessary for drawing data. These scripts make use of the ROOT-v6 libraries. ROOT is a popular data analysis framework primarily written in C++ and Phython. For more information on ROOT libraries visit the link provided: \url{https://root.cern.ch/} .
+The numerical directory contains numerical.cpp script and its header file numerical.hpp. This set contains all the functions necessary for solving the problem numerically. The appendix contains the .hpp file which lists all functions with a short description of each. The vroot directory contains the scripts necessary for drawing data. These scripts make use of the ROOT-v6 libraries. ROOT is a popular data analysis framework primarily written in C++ and Phython. For more information on ROOT libraries visit the link provided: \url{https://root.cern.ch/} .
 The functions act on a structure called $carray$ which contains the solution domain array and its various parameters. The struct contains the main array, its defined working area (mesh size), data storage vectors, iteration count, and the represented dimension between points. Having these organized in a struct provides a compact way of passing and modifying the array and all its pertinent parameters. The outline of the struct used for the energy equation problem is shown below.
 
  
@@ -299,13 +237,13 @@ for(int j = 1; j < myarray.sizey-1; ++j)
 \label{norm1} 
 \end{table}
 
-The correctness of the flux integral was validated using the exact computer flux. The $L_2$ norms for the flux calculation are displayed in table \ref{norm1}. The order of accuracy for the scheme was determined using the log log method as displayed in figure \ref{order}. The order of accuracy for this scheme was estimated to be 2nd order accurate based on the $L_2$ data from 8 different meshes.     
+The correctness of the flux integral was validated using the exact computer flux. The $L_2$ norms for the flux calculation are displayed in table \ref{norm1}. The order of accuracy for the scheme was determined using the log log method as displayed in figure \ref{ord}. The order of accuracy for this scheme was estimated to be 2nd order accurate based on the $L_2$ data from 8 different meshes.     
     
   
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\linewidth]{order}
+\includegraphics[width=0.75\linewidth]{order}
 \caption{Calculated Order of Accuracy without source}
 \label{ord}
 \end{figure}
@@ -319,23 +257,26 @@ This matches what was expect by implementing a 2nd order interior flux evaluatio
 
 
 \subsection{Source Term Validation}
+An exact solution for the source term exists and was used to validate the correctness of the computed source term. The same procedure as described above was used to find the $L_2$ norms for the source term and the complete flux integral (figure \ref{fs} and table \ref{tfs}). The entire calculation is done in the subroutine $calc\_ newcell()$ which is displayed below.
+\begin{lstlisting}
+double calc_newcell(carray & myarray, surr & s1){
+double chx = myarray.DIMx;
+double chy = myarray.DIMy;
+//flux integral
+double a = (s1.uip1_j * s1.Tip1_j  -  s1.uim1_j * s1.Tim1_j)/(2.0);
+double b = (s1.Tip1_j  - 2.0*s1.Ti_j + s1.Tim1_j)/(chx*(RE*PR));
+double c = (s1.vi_jp1 * s1.Ti_jp1  -  s1.vi_jm1 * s1.Ti_jm1)/(2.0);
+double d = (s1.Ti_jp1  - 2.0*s1.Ti_j + s1.Ti_jm1)/(chy*(RE*PR));
+//source term
+double e = (2.0*pow((s1.uip1_j-s1.uim1_j)/(2.0*chx),2)+2.0*pow((s1.vi_jp1-s1.vi_jm1)/(2.0*chy),2));
+double f = pow(((s1.vip1_j-s1.vim1_j)/(2.0*chx))+((s1.ui_jp1-s1.ui_jm1)/(2.0*chy)), 2);
+double source = (EC/RE)*(e+f);
+//add altogether
+double newcell = 1.0*((-1.0/chx)*(a-b)   +   (-1.0/chy)*(c-d))   +   source;
+return newcell;
+}
+\end{lstlisting}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{source}
-\caption{Calculated Order of Accuracy of only source term}
-\label{ord}
-\end{figure}
-
-
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{orderws}
-\caption{Calculated Order of Accuracy with of flux integral with source}
-\label{ord}
-\end{figure}
 
 
 
@@ -368,78 +309,193 @@ This matches what was expect by implementing a 2nd order interior flux evaluatio
     &\RaggedRight 0.0125
     &\RaggedRight 1.991
     \\ \hline 
-      
- 
-    
-    
+
     \end{tabular}
 \end{center} 
 \caption{Table of $L^2$ norms for increasing mesh size of flux integral with source}
-\label{norm} 
+\label{tfs} 
 \end{table}
 
 
-\subsection{Explicit Time scheme}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\linewidth]{orderexplicit}
-\caption{Calculated Order of Accuracy using explicit method for varying mesh sizes}
-\label{ord}
+\includegraphics[width=0.7\linewidth]{orderws}
+\caption{Calculated Order of Accuracy with of flux integral with source}
+\label{fs}
 \end{figure}
 
 
+
+Once the flux integral had been validated and its correctness confirmed two methods were coded for time advance.
+
+\subsection{Explicit Time scheme}
+
+
+
+ \begin{equation}
+\label{EE}
+w^{n+1}=w^n+\triangle t(\lambda w^n)
+\end{equation} 
+
+An explicit Euler (EE) time advance scheme was selected and implemented using the $solve\_ arrayEE()$. The method uses current data to advance the solution to the next time level. The expression for Explicit Euler is displayed in equation \ref{EE}. A loop using a given cfl and final time iterates through acquiring the flux and time step calculates the solution of the next time level. The loop is displayed below which also checks for the maximum change in solution to signal when convergence is reached.
+
+
+
+\begin{lstlisting}
+void time_advance_EE(carray & myarray, double tstep, double & mdiff)
+{
+mdiff = -1.0;
+for(int j = 1; j < myarray.sizey-1; ++j)
+{
+    for(int i = 1; i < myarray.sizex-1; ++i)
+    {  
+    double temp = tstep*(myarray.f1[i][j]); 
+    if(abs(temp)> mdiff)
+    mdiff = abs(temp);      
+    myarray.T1[i][j] = myarray.T1[i][j] + temp;
+    }
+}
+}
+\end{lstlisting}
+
+
+The explicit scheme is setup to run find a solution for a 5x1 channel with an intial temperature distribution of $T(x,y,0) = y$. A fully developed fixed temperature distribution is used as the inflow boundary (equation \ref{exEE}) while the outflow boundary is considered fully developed.  The upper wall is held at $T=1$ while the lower at $T=0$. The steady velocity profile $u$ in x direction is given by equation \ref{init} while $v$ is set as zero for all y components.
+
+ 
+  \begin{equation}
+\label{exEE}
+T(0,y,t)=y+\frac{3}{4} Pr Ec \bar{u}^2 \bigg(1-(1-2y)^4\bigg)
+\end{equation} 
+ 
+ \begin{equation}
+\label{init}
+u(x,y) = 6\bar{u} y(1-y)
+\end{equation} 
+
+The boundary conditions for both the implicit and explicit methods are enforced using the subroutine $set\_ ghostcells()$ as displayed below.
+\begin{lstlisting}
+void set_ghostcells(carray & myarray)
+{
+double DIMx = myarray.DIMx;
+double DIMy = myarray.DIMy;
+double dx = 0.0;
+double dy = 0.0;
+    //set ghost cells top/bottom
+	for(int i = 0; i < myarray.sizex; ++i)
+	{
+	dx = (i-0.5)*DIMx;
+	myarray.T1[i][0] = 3.0*(0.0) - (5.0/2.0)*myarray.T1[i][1] 
+	+ (1.0/2.0)*myarray.T1[i][2];	
+
+	myarray.T1[i][myarray.sizey-1] = 3.0*(1.0)- (5.0/2.0)
+    *myarray.T1[i][myarray.sizey-2] + (1.0/2.0)*myarray.T1[i][myarray.sizey-3];
+	}		
+    //set ghost cells inflow/outflow	
+	for(int j = 0; j < myarray.sizey; ++j)
+	{ 
+    dy = (j-0.5)*DIMy;    
+	myarray.T1[0][j] = 2.0*( dy+((3.0/4.0)*PR*EC*(pow(U0,2))
+	*(1.0-pow((1.0-2.0*dy),4))) ) - myarray.T1[1][j];	
+	myarray.T1[myarray.sizex-1][j] = myarray.T1[myarray.sizex-2][j];
+	}
+}
+\end{lstlisting}
+
+
+
+
+The steady state solution will essentially be a linear projection of the inflow boundary, therefore the exact solution can be used to find the error and order of the explicit method. Table \ref{expt} displays the $L2$ norm and the order for varying mesh sizes. Figure \ref{expord} displays the order calculated for explicit euler time advance using the boundaries and initial conditions presented above.
+
  \begin{table}[H]
 \begin{center}
-    \begin{tabular}{ | p{0.13\linewidth} | p{0.2\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
+    \begin{tabular}{ | p{0.13\linewidth} | p{0.2\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} | p{0.1\linewidth} |}
  \hline  
      \RaggedRight \textbf{Mesh Size}
     &\RaggedRight \textbf{$L^2$norm}
     &\RaggedRight \textbf{$\triangle x$}
-    &\RaggedRight \textbf{Order}
+    &\RaggedRight \textbf{$\triangle t$}
+    &\RaggedRight \textbf{Order}    
     \\ \hline  
            \RaggedRight 25 x 10
     &\RaggedRight 5.11$*10^{-3}$
     &\RaggedRight 0.2
-    &\RaggedRight -
+    &\RaggedRight 0.01
+    &\RaggedRight -  
     \\ \hline 
     		\RaggedRight 50 x 20
     &\RaggedRight 1.19 $*10^{-3}$
     &\RaggedRight 0.1
-    &\RaggedRight 1.855
+     &\RaggedRight 0.005
+    &\RaggedRight 1.855  
     \\ \hline 
            \RaggedRight 100 x 40
     &\RaggedRight  3.46  $*10^{-4}$
     &\RaggedRight 0.05
-    &\RaggedRight 1.845
+    &\RaggedRight 0.0025
+    &\RaggedRight 1.845   
     \\ \hline 
            \RaggedRight 200 x 80
     &\RaggedRight 9.97$*10^{-5}$
     &\RaggedRight 0.025
-    &\RaggedRight 1.844
+    &\RaggedRight 0.00125
+    &\RaggedRight 1.844  
     \\ \hline 
-      
  
-    
-    
     \end{tabular}
 \end{center} 
 \caption{Table of $L^2$ norms for increasing mesh size of explicit method}
-\label{norm} 
+\label{expt} 
 \end{table}
-
-
-\subsection{implicit method}
-
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\linewidth]{orderimp}
-\caption{Calculated Order of Accuracy using implicit method for varying mesh sizes}
-\label{ord}
+\includegraphics[width=0.85\linewidth]{orderexplicit}
+\caption{Calculated Order of Accuracy using explicit method for varying mesh sizes}
+\label{expord}
 \end{figure}
 
+\subsection{Implicit method}
+An implicit euler (IE) time advance scheme was implemented using approximate factorization and a thomas algorithm. One can solve using IE by calling the subroutine $solve\_ array\_ IE()$. The subroutine uses a function called $solve\_ Linsys()$ which moves first row by row then column by column employing approximate factorization to create a system of linear equations in which the cells values within the row are coupled to their neighbors. These tri-diagonal matrix representations of the row/col can be solved using Gauss-Jordan elimination. Using the Thomas algorithm, which is Gauss elimination and back substitution specialized for a tri-diagonal matrix, the subroutine $solve\_ thomas()$ solves a system of the form Ax = b. On the left hand side (LHS) The matrix A can be rewritten into a 2D array with three columns from the three non-zero diagonals. When Vector b is provided as a 1D array (RHS) the subroutine can solve for vectors x. The program uses these tools to calculate the change in solution as shown below.
 
+\begin{lstlisting}
+void solve_LinSys(carray & myarray, double tstep, double & mdiff)
+{
+mdiff = -1.0;
+//--linear system num 1---//
+crow myrow;
+for(int j = 0; j < myarray.sizey; ++j)
+{
+load_row(myarray, myrow, j, tstep);
+solve_thomas(myrow, myarray.sizex);
+
+    for(int i = 0; i < myarray.sizex; ++i)
+    {
+    myarray.f1[i][j] = myrow.RHS[i];
+    }
+}
+//--linear system num 2---//
+ccol mycol;
+for(int i = 0; i < myarray.sizex; ++i)
+{
+load_col(myarray, mycol, i, tstep);
+solve_thomas(mycol, myarray.sizey);
+
+    for(int j = 0; j < myarray.sizey; ++j)
+    {
+    double temp = mycol.RHS[j];
+    if(abs(temp) > mdiff)
+    mdiff = abs(temp);
+    myarray.f1[i][j] = temp;
+    myarray.T1[i][j] = temp + myarray.T1[i][j];
+    }
+}
+}
+\end{lstlisting}
+
+
+The structures $crow$ and $ccol$ are the framework for containing the information from the tri-diagonal matrices generated during approximate factorization. The are passed to a function ($load\_ row()$ and $load\_ col()$) which loads them with the correct data to be handed off the the Thomas algorithm for solving. The data for the first step of the algorithm is provided in the Appendix. The implicit scheme was applied to the same problem described for explicit scheme. The implicit was compared to the exact solution for varying meshes. Its order and $L_2$ error are displayed in table \ref{imnorm} and figure \ref{imord}.
 
 
 
@@ -473,21 +529,47 @@ This matches what was expect by implementing a 2nd order interior flux evaluatio
     &\RaggedRight 0.025
     &\RaggedRight 1.787
     \\ \hline 
-      
- 
-    
-    
+
     \end{tabular}
 \end{center} 
 \caption{Table of $L^2$ norms for increasing mesh size of implicit method}
-\label{norm} 
+\label{imnorm} 
 \end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{orderimp}
+\caption{Calculated Order of Accuracy using implicit method for varying mesh sizes}
+\label{imord}
+\end{figure}
+
 \subsection{Efficiency}
+The implicit and explicit schemes were timed to compare their relative computing times. Figure \ref{eff} displays the time required for convergence vs the array size. The explicit scheme was run with a $cfl=0.12$ with its maximum stable time step occurring for $cfl=0.145$. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{eff}
+\caption{Displays the efficiency trends for both Implicit and explicit Euler for varying mesh sizes}
+\label{eff}
+\end{figure}
+
+The time step for the implicit scheme was set at $\triangle t = 0.1$. The implicit scheme has high stability for all time steps. However it was found for large time steps that were bigger than the average convergence time, the scheme would need an extra step to converge on steady state properly.
+
+\section{Final Problem}
 
 
+For the main problem the energy equation was applied to a channel with the conditions from the implicit and explicit tests. For this case two changes are made; The Eckert value is set at a more realistic value of 0.001, and the top wall is now given by $T(x,1,t) = 2-cos(\pi(x-1))$ for $1\leq x \leq 3$ and for everywhere else is $T=1$. The goal was to determine the temperature gradient at the bottom wall. Figure \ref{chan3} displays the steady solution for this channel. A subroutine was used to evaluate the gradient at the wall as a function of x by linearly fitting test points near the boundary. Figure \ref{chan2} displays T gradient as a function of wall length x. The channel was extended beyond 5.0 to  find the maximum gradient along the wall.
 
-\subsection{Final Problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{chan3}
+\caption{Displays the solution for temperature in channel}
+\label{chan3}
+\end{figure}
 
+\subsection{Results}
+
+The solution to the energy problem was computed using implicit euler with$\triangle t=0.1$ and is displayed in figure \ref{chan1}. This data was used to estimate the value for ${dT}/{dy}$ at all points along x. The value of ${dT}/{dy}$ was estimated using a linear fit of for 4 control volumes off the boundary. The solutions for ${dT}/{dy}$ are tabulated in table \ref{chan1} and in \ref{chan2} for increasing grid size. 
 \begin{table}[H]
 \begin{center}
     \begin{tabular}{ | p{0.2\linewidth} | p{0.2\linewidth} |}
@@ -503,30 +585,30 @@ This matches what was expect by implementing a 2nd order interior flux evaluatio
     \\ \hline 
            \RaggedRight $r_{32}$
     &\RaggedRight 2.0 
-    \\ \hline 
+    \\ \hline  
            \RaggedRight ${dT_1}/{dy}$
-    &\RaggedRight 1.123628 
+    &\RaggedRight 1.114209 
     \\ \hline 
            \RaggedRight ${dT_2}/{dy}$
-    &\RaggedRight 1.118769 
+    &\RaggedRight 1.112606 
     \\ \hline
        \RaggedRight ${dT_3}/{dy}$
-    &\RaggedRight 1.110733
+    &\RaggedRight 1.111794
     \\ \hline 
            \RaggedRight $p$
-    &\RaggedRight 0.725830 
+    &\RaggedRight 0.981223 
     \\ \hline 
        \RaggedRight $P_{ext}^{21}$
-    &\RaggedRight 1.131059 
+    &\RaggedRight 1.115855  
     \\ \hline  
     \RaggedRight $e_a^{21}$
-    &\RaggedRight $\%$0.4324
+    &\RaggedRight $\%$0.001439 
     \\ \hline 
        \RaggedRight $e_{ext}^{21}$
-    &\RaggedRight $\%$0.6570  
+    &\RaggedRight $\%$0.001475   
     \\ \hline 
        \RaggedRight $GCI_{fine}^{21}$
-    &\RaggedRight $\%$0.8267
+    &\RaggedRight $\%$0.001846 
     \\ \hline 
 
     
@@ -534,72 +616,76 @@ This matches what was expect by implementing a 2nd order interior flux evaluatio
     \end{tabular}
 
 \end{center} 
-\caption{Table of $L^2$ norms for increasing mesh size}
+\caption{Table of calculation of uncertainty in the fine-grid solution}
 \label{norm1} 
 \end{table}
 
+The solution was found to be 1.114 with a $GCI_{fine}$ uncertainty of $\%$0.00184 in the fine-grid solution. The uncertainty was calculated using the procedure described in the ASME solution accuracy handout.\cite{p0} The local order of accuracy for was found on average to be 0.98 which sets the accuracy of this solution at 1st order. 
 
-max slope: 1.123628 at 12.450000
-max slope: 1.118769 at 12.500000
-max slope: 1.110733 at 12.200000
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{chan}
+\caption{Displays temperature gradient at bottom wall as a function of the channel length for varying channel lengths}
+\label{chan1}
+\end{figure}
 
 \begin{table}[H]
 \begin{center}
-    \begin{tabular}{ | p{0.13\linewidth} | p{0.2\linewidth} |p{0.2\linewidth}|}
+    \begin{tabular}{ | p{0.13\linewidth} | p{0.15\linewidth} |p{0.125\linewidth}|p{0.15\linewidth}|p{0.1\linewidth}|}
  \hline  
      \RaggedRight \textbf{Mesh Size}
     &\RaggedRight \textbf{${dT}/{dy}$}
     &\RaggedRight \textbf{Channel x}
+    &\RaggedRight \textbf{Rel Error}
+    &\RaggedRight \textbf{$GCI_{fine}$}
     \\ \hline  
            \RaggedRight 50 x 20
-    &\RaggedRight 1.110733
-      &\RaggedRight 12.20
+    &\RaggedRight 1.111794
+      &\RaggedRight 12.25
+       &\RaggedRight -
+        &\RaggedRight -
     \\ \hline 
     		\RaggedRight 100 x 40
-    &\RaggedRight 1.118769
-    &\RaggedRight 12.5
+    &\RaggedRight 1.112606
+    &\RaggedRight 12.30
+     &\RaggedRight 8.121$*10^{-3}$
+      &\RaggedRight -
     \\ \hline 
            \RaggedRight 200 x 80
-    &\RaggedRight  1.123628
-    &\RaggedRight 12.45
+    &\RaggedRight  1.114209 
+    &\RaggedRight 12.20
+    &\RaggedRight 1.603$*10^{-3}$
+     &\RaggedRight 0.00184$\%$
     \\ \hline 
    
     \end{tabular}
 \end{center} 
-\caption{Table of $L^2$ norms for increasing mesh size of implicit method}
+\caption{Gradient Solution for increasing mesh size using implicit method $\triangle t$ = 0.1}
 \label{norm} 
 \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\linewidth]{chan}
-\caption{Displays temperature gradient at bottom wall as a function of the channel length for varying channel lengths}
-\label{ord}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{chan2}
+\includegraphics[width=0.75\linewidth]{chan2}
 \caption{Displays the effect of mesh refinement on gradient solution}
-\label{ord}
+\label{chan2}
 \end{figure}
 
 \section{Conclusion}
-This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Wave Equation problem provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
+This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Energy Equation applied to a steady state channel provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
 
 
 
 
 
-
+\newpage
 \appendix
 \section{Appendix} \label{App:Appendix}
-\subsection{wave.cpp}
+\subsection{FinalProb.cpp}
 \begin{lstlisting}
 /*-------------------------------------------------------------------------------//
-Main Program for finding solutions for wave equation. Employs a RK2 time advance 
-with 2nd order upwind flux scheme.
+Main Program for finding solutions for energy equation. Employs a implicit euler
+time advance with 2nd order centered flux scheme.
 
 
 Jerin Roberts 2016
@@ -628,128 +714,43 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+cdata mydata;
 
-
-carray wave1;//my main array
-carray analytic1;
-carray wave2;//my main array
-carray analytic2;
-carray wave3;//my main array
-carray analytic3;
-carray wave4;//my main array
-carray analytic4;
-carray wave5;//my main array
-carray analytic5;
-carray wave6;//my main array
-carray analytic6;
-
-
-//set size
+carray flow1;//my main array
+carray flow2;
+carray flow3;
 
 
 //set array size or default used 162x162
-set_array_size(wave1, 20, 1, 1.0, 0);//array, xsize, ysize, dimension
-set_array_size(wave2, 40, 1, 1.0, 0);
-set_array_size(wave3, 80, 1, 1.0, 0);
-set_array_size(wave4, 160, 1, 1.0, 0);//array, xsize, ysize, dimension
-set_array_size(wave5, 320, 1, 1.0, 0);
-set_array_size(wave6, 686, 1, 1.0, 0);
-
-set_array_size(analytic1, 20, 1, 1.0, 0);
-set_array_size(analytic2, 40, 1, 1.0, 0);
-set_array_size(analytic3, 80, 1, 1.0, 0);
-set_array_size(analytic4, 160, 1, 1.0, 0);
-set_array_size(analytic5, 320, 1, 1.0, 0);
-set_array_size(analytic6, 686, 1, 1.0, 0);
+set_array_size(flow1, 200, 80, 40.0, 1.0, 0);//array, xsize, ysize, dimension
+set_array_size(flow2, 100, 40, 40.0, 1.0, 0);
+set_array_size(flow3, 50, 20, 40.0, 1.0, 0);
 
 
+set_zero(flow1);
+set_zero(flow2);
+set_zero(flow3);
 
 
-//print_array(analytic);
+//---------------------solve IE----------------------//
+solve_array_IE(flow1, 14.5, 0.1);
+solve_array_IE(flow2, 14.5, 0.1);
+solve_array_IE(flow3, 14.5, 0.1);
 
+//print_array(flow1);
+double dx = 0.0;
 
-
-//set intial conditions
-
-
-set_zero(wave1);
-set_intial_cond(wave1);
-//print_array(wave1);//print array in terminal
-set_zero(wave2);
-set_intial_cond(wave2);
-
-set_zero(wave3);
-set_intial_cond(wave3);
-
-set_zero(wave4);
-set_intial_cond(wave4);
-//print_array(wave1);//print array in terminal
-set_zero(wave5);
-set_intial_cond(wave5);
-
-set_zero(wave6);
-set_intial_cond(wave6);
-
-
-
-float l2 = 0;
-
-//---------------------solve array1----------------------//
-solve_arrayRK2(wave1, 1.0, 0.4);//array,time,cfl
-set_analytic(analytic1, wave1);
-l2 = get_l2norm(wave1, analytic1);
-wave1.l2norm.push_back(l2);
-//cout << "Solution: " << get_solution(poisson1) << "\n";
-
-
-
-//---------------------solve array2----------------------//
-solve_arrayRK2(wave2, 1.0, 0.4);
-set_analytic(analytic2, wave2);
-l2 = get_l2norm(wave2, analytic2);
-wave1.l2norm.push_back(l2);
-
-
-//---------------------solve array2----------------------//
-solve_arrayRK2(wave3, 1.0, 0.4);
-set_analytic(analytic3, wave3);
-l2 = get_l2norm(wave3, analytic3);
-wave1.l2norm.push_back(l2);
-
-//---------------------solve array1----------------------//
-solve_arrayRK2(wave4, 1.0, 0.4);//array,time,cfl
-set_analytic(analytic4, wave4);
-l2 = get_l2norm(wave4, analytic4);
-wave1.l2norm.push_back(l2);
-//cout << "Solution: " << get_solution(poisson1) << "\n";
-
-
-
-//---------------------solve array2----------------------//
-solve_arrayRK2(wave5, 1.0, 0.4);
-set_analytic(analytic5, wave5);
-l2 = get_l2norm(wave5, analytic5);
-wave1.l2norm.push_back(l2);
-
-
-//---------------------solve array2----------------------//
-solve_arrayRK2(wave6, 1.0, 0.4);
-set_analytic(analytic6, wave6);
-l2 = get_l2norm(wave6, analytic6);
-wave1.l2norm.push_back(l2);
-
-
-
+find_max(flow1, dx);
+get_discrete_Error(flow1, flow2, flow3);
 //----------------------Draw Data---------------------//
-
 if(1)//start root application
 {
-	TApplication theApp("App", &argc, argv);//no more than two subs 
-	draw_graph_q1(wave1, wave2, wave3, analytic1, analytic2, analytic3);   
+	TApplication theApp("App", &argc, argv);//no more than two subs  
+	//draw_3Dgraph(flow1, flow2);
+	find_maxvalues(flow1, flow2, flow3);
 	theApp.Run();
 }
 
- //draw_graph_wave1(wave1, wave2, wave3);
 
 
 //end
@@ -776,53 +777,88 @@ if(1)//start root application
 using namespace std;
 
 #define BIG 10000
-#define maxx 8000
-#define maxy 3
+#define maxx 202
+#define maxy 82
 #define PI 3.141592654
+
+#define U0 3
+#define T0 1
+#define V0 1
+
+#define RE 50
+#define PR 0.7
+#define EC 0.001
 
 
 
 struct carray{
 //arrays
-float mcellSOL [maxx][maxy];//first stage and solution mesh
-float mcellSOL2 [maxx][maxy];//second stage solution mesh
-float mcellFI [maxx][maxy];//first stage flux
-float mcellFI2 [maxx][maxy];//second stage flux
 
+double f1 [maxx][maxy];//second stage solution mesh
+double T1 [maxx][maxy];//first stage and solution mesh
+double v1 [maxx][maxy];//first stage and solution mesh
+double u1 [maxx][maxy];
 //array attributes
 int sizex = maxx;
 int sizey = maxy;
-float DIM1 = 0;
-
-//current time 
-float tstep = 0;
-float ctime = 0;
-
-//data storage specific to array
-vector<float> l2norm;
-vector<float> l1norm;
-vector<float> linfnorm;
-vector<float> diff;
-
-//temporary cells to store
-float Tim2_j=0.0;
-float Tim1_j=0.0;
-float Ti_j=0.0;
-float Tip1_j=0.0;
-
+double DIMx = 0.0;
+double DIMy = 0.0;
 //scheme
 int scheme = 0;
-
+double ctime = 0;
 };
+
+
+
+struct cdata{
+//data storage specific to array
+vector<double> l2norm;
+vector<double> l1norm;
+vector<double> linfnorm;
+vector<double> time1;
+vector<double> time2;
+};
+
+struct crow{
+//data for loaded row
+double LHS [maxx][3];
+double RHS [maxx];
+};
+
+struct ccol{
+//data for loaded col
+double LHS [maxy][3];
+double RHS [maxy];
+};
+
+struct surr{
+//surrounding cells
+double Tim1_j = 0;
+double Tip1_j = 0;
+double Ti_j = 0; 
+double Ti_jm1 = 0;
+double Ti_jp1 = 0;
+
+double uim1_j = 0;
+double uip1_j = 0;
+double ui_j = 0;
+double ui_jm1 = 0;
+double ui_jp1 = 0; 
+
+
+double vim1_j = 0;
+double vip1_j = 0;
+double vi_j = 0; 
+double vi_jm1 = 0;
+double vi_jp1 = 0;
+};
+
 
 //--------------------Init Arrays-----------------------------------------//
 
-void set_array_size(carray & myarray, int x, int y, float DIM, int scheme);//set array size
-
 void set_zero(carray & myarray);//zero entire array
 
-void print_array(carray & myarray);//print array in terminal
-
+void set_array_size(carray & myarray, int x, int y, double DIMx, double DIMy, int scheme);//set array size
 
 
 //-------------------Boundary and Intial Conditions------------------------//
@@ -831,37 +867,60 @@ void set_ghostcells(carray & myarray);//set ghost cells
 
 void set_intial_cond(carray & myarray);
 
-void set_intial_cond2(carray & myarray);
 
-//--------------------RK2 solver functions----------------------------------//
+//--------------------Solve Implicit Euler------------------------------------//
 
-void get_FIarray(carray & myarray, int stage);//get all FI for array for specific stage
+void solve_array_IE(carray & myarray, double tmax, double cfl);
 
-void get_FIarray_1stcell(carray & myarray, int stage);
+void solve_LinSys(carray & myarray, double tstep, double & mdiff);
 
-void get_surcells(carray & myarray, int i, int j, int stage);//obtain values of surrounding cells stage defines were result stored
+void load_row(carray & myarray, crow & myrow, int j, double tstep);
 
-void get_RK2(carray & myarray, int stage);
+void load_col(carray & myarray, ccol & mycol, int i, double tstep);
 
-void mv_SOL2_to_SOL1(carray & myarray);
+void solve_thomas(crow & r, int iSize);
 
-void solve_arrayRK2(carray & myarray, float tmax, float cfl);//solve the array
+void solve_thomas(ccol & r, int iSize);
 
-//flux schemes
-float calc_2nd_UW(carray & myarray);//calculate new cell value based on 2nd order scheme
-float calc_1st_UW(carray & myarray);
-float calc_2nd_CE(carray & myarray);
+
+//--------------------Solve Explicit Euler------------------------------------//
+
+void solve_array_EE(carray & myarray, double tmax, double cfl);
+
+void time_advance_EE(carray & myarray, double tstep, double & mdiff);
+
+
+//--------------------Flux calculation------------------------------------//
+
+void compute_Flux(carray & myarray);
+
+void get_nsurcells(carray & myarray, int i, int j, surr & mysurr);
+
+double calc_newcell(carray & myarray, surr & s1);
+
 
 
 //-----------------------Error calc related functions---------------------------//
 
-float get_l2norm(carray & myarray, carray myarray2);//get estimated vale for l2 norm between arrays
-float get_linf_norm(carray & myarray, carray myarray2);
-float get_l1norm(carray & myarray, carray myarray2);
+double get_l2norm(carray & myarray, carray myarray2);//get estimated vale for l2 norm between arrays
+
+double get_l1normD(carray & myarray, carray myarray2);
 
 void set_analytic(carray & myarray, carray & numarray);//set analytic solution to a mesh
 
+void get_discrete_Error(carray ray1, carray ray2, carray ray3);
 
+//-----------------------Print related functions-------------------------------//
+
+void print_array(carray & myarray);//print array in terminal
+
+void print_arrayu(carray & myarray);
+
+void print_row(crow & myrow, carray & myarray);
+
+void print_col(ccol & mycol, carray & myarray);
+
+void find_max(carray & myarray, double & dx);
 
 #endif
 
@@ -881,40 +940,22 @@ void set_analytic(carray & myarray, carray & numarray);//set analytic solution t
 
 //----------set array size (working area excluding ghost)---------------//
 
-void set_array_size(carray & myarray, int x, int y, float DIM, int scheme)
+void set_array_size(carray & myarray, int x, int y, double DIMx, double DIMy, int scheme)
 {
-	if(x <= 8000 && y <= 3)
+	if(x <= maxx && y <= maxy)
 	{
 	myarray.sizex = x+2;
 	myarray.sizey = y+2;
-	myarray.DIM1 = DIM/(x);
+	myarray.DIMx = DIMx/(x);
+	myarray.DIMy = DIMy/(y);
 	myarray.scheme = scheme;
 	}
 	else
-	cout << "Array size to big, setting to default 160" << "\n";
+	cout << "Array size to big, setting to default 100" << "\n";
 
 }
 
-//--------------------------Print array in terminal----------------------------//
 
-void print_array(carray & myarray)
-{
-cout << "\n";
-
-	for(int j = 0; j < myarray.sizey; ++j)
-	{
-	cout << "\n|";	
-		for(int i = 0; i < myarray.sizex; ++i)
-		{
-		if(myarray.mcellSOL[i][j] >= 0)
-		cout << setprecision(3) << fixed << myarray.mcellSOL[i][j] <<"|";
-		if(myarray.mcellSOL[i][j] < 0)
-		cout << setprecision(2) << fixed << myarray.mcellSOL[i][j] <<"|";
-		}
-	
-	}
-cout << "\n";
-}
 
 
 //--------------------------zero array----------------------------//
@@ -925,325 +966,426 @@ void set_zero(carray & myarray)
 	{
 		for(int i = 0; i < myarray.sizex; ++i)
 		{
-		myarray.mcellSOL[i][j] = 0;//set everything to zero
-        myarray.mcellSOL2[i][j] = 0;
-        myarray.mcellFI2[i][j] = 0;
-        myarray.mcellFI[i][j] = 0;
+		myarray.T1[i][j] = 0;//set everything to zero
+        myarray.f1[i][j] = 0;
+        myarray.v1[i][j] = 0;
+        myarray.u1[i][j] = 0;
+
 		}
 	}
 }
 
 
-//--------------------------set ghost cells for Wave----------------------------//
+//--------------------------set ghost cells for Energy----------------------------//
 
 
 void set_ghostcells(carray & myarray)
 {
-float DIM1 = myarray.DIM1;
-
-//set boundary conditions in ghost cells
-if(myarray.scheme == 0)//2nd order upwind
-{
-myarray.mcellSOL2[0][1] = -2.0*(sin(4.0*PI*myarray.ctime)) + 3.0*myarray.mcellSOL[1][1];
-myarray.mcellSOL2[1][1] = 2.0*(sin(4.0*PI*myarray.ctime)) - myarray.mcellSOL[2][1];
-}
-
-if(myarray.scheme == 1)//1st order upwind
-{
-myarray.mcellSOL2[1][1] = 2.0*(sin(4.0*PI*myarray.ctime)) - myarray.mcellSOL[2][1];
-}
-
-if(myarray.scheme == 2)//2nd order centered
-{
-myarray.mcellSOL2[1][1] = 2.0*(sin(4.0*PI*myarray.ctime)) - myarray.mcellSOL[2][1];
-}
-
-
+double DIMx = myarray.DIMx;
+double DIMy = myarray.DIMy;
+double dx = 0.0;
+double dy = 0.0;
+    //set ghost cells top/bottom
+	for(int i = 0; i < myarray.sizex; ++i)
+	{
+	dx = (i-0.5)*DIMx;
+	myarray.T1[i][0] = 3.0*(0.0) - (5.0/2.0)*myarray.T1[i][1] + (1.0/2.0)*myarray.T1[i][2];
 	
+	    if( dx <= 3.0 && dx >= 1.0) 
+	    {
+	    myarray.T1[i][myarray.sizey-1] =3.0*(2-cos(PI*(dx-1)))- (5.0/2.0)*myarray.T1[i][myarray.sizey-2] + (1.0/2.0)*myarray.T1[i][myarray.sizey-3];
+	    }
+	    else
+	    {
+	    myarray.T1[i][myarray.sizey-1] =3.0*(1.0)- (5.0/2.0)*myarray.T1[i][myarray.sizey-2] + (1.0/2.0)*myarray.T1[i][myarray.sizey-3];
+	    }
+	}	
+	
+    //set ghost cells inflow/outflow	
+	for(int j = 0; j < myarray.sizey; ++j)
+	{ 
+    dy = (j-0.5)*DIMy;
+    
+	myarray.T1[0][j] = 2.0*( dy+((3.0/4.0)*PR*EC*(pow(U0,2))*(1.0-pow((1.0-2.0*dy),4))) ) - myarray.T1[1][j];
+	
+	
+	myarray.T1[myarray.sizex-1][j] = myarray.T1[myarray.sizex-2][j];
+
+	}
 }
 
 //--------------------------set intial condition---------------------------------//
 
 void set_intial_cond(carray & myarray)
 {
-float DIM1 = myarray.DIM1;
-float dx =0.0;
-float f;
-
-for(int j = 1; j < myarray.sizey-1; ++j)
-{
-
-    for(int i = 2; i < myarray.sizex; ++i)
-    {
-    dx = (i-1.5)*DIM1;
-    f = -sin(2.0*PI*dx);
-    myarray.mcellSOL[i][j] = f;
-    //printf("f: %f  dx: %f\n", f, dx);
-    }
-
-}
-}
-
-void set_intial_cond2(carray & myarray)
-{
-float DIM1 = myarray.DIM1;
-float dx =0.0;
-float f;
-
-for(int j = 1; j < myarray.sizey-1; ++j)
-{
-
-    for(int i = 2; i < myarray.sizex; ++i)
-    {
-    dx = (i-1.5)*DIM1;
-    if(dx <= 1.0)
-    {
-    f = -dx;
-    myarray.mcellSOL[i][j] = f;
-    }
-    else
-    {
-    f = 0.0;
-    myarray.mcellSOL[i][j] = f;
-    }
-    //printf("f: %f  dx: %f\n", f, dx);
-    }
-
-}
-}
-
-
-//**************************************************************************//
-//---------------------------RK2 Array Solving------------------------------//
-//**************************************************************************//
-
-//--------------------------Set FI values for array mcellFI Face----------------------------//
-
-void get_FIarray_1stcell(carray & myarray, int stage)
-{
-
-int j = 1;
-int i = 2;
-float newcell;
-
-//----get surrounding cells and compute new cell-------//
-get_surcells(myarray, i, j, stage);
-if(myarray.scheme == 0)
-newcell = calc_2nd_UW(myarray); 
-
-if(myarray.scheme == 1)
-newcell = calc_1st_UW(myarray); 
-
-if(myarray.scheme == 2)
-newcell = calc_2nd_CE(myarray); 
-
-//-----update current cell----//
-if(stage == 1)
-myarray.mcellFI[i][j] = newcell;
-
-if(stage == 2)
-myarray.mcellFI2[i][j] = newcell;
-
-	
-
-}
-
-//--------------------------Set FI values for array mcellFI Interior----------------------------//
-
-void get_FIarray(carray & myarray, int stage)
-{
-
-
-for(int j = 1; j < myarray.sizey-1; ++j)
-{
-
-    for(int i = 3; i < myarray.sizex; ++i)
-    {
-
-    //----get surrounding cells and compute new cell-------//
-    get_surcells(myarray, i, j, stage);
-    float newcell = calc_2nd_UW(myarray); 
-
-    //-----update current cell----//
-    if(stage == 1)
-    myarray.mcellFI[i][j] = newcell;
-
-    if(stage == 2)
-    myarray.mcellFI2[i][j] = newcell;
-    }
-
-}
-	
-
-}
-
-
-//--------------------Calculate new cell value from neighbors ---------------------//
-
-
-float calc_2nd_UW(carray & myarray)
-{
-float DIM1 = myarray.DIM1;
-float chx = DIM1;
-//float chy = DIM1;
-float temp = 1.0;
-float newcell = (2.0)*(3.0*myarray.Ti_j-4.0*myarray.Tim1_j+myarray.Tim2_j)/(2.0*chx);
-
-return newcell;
-}
-
-
-float calc_1st_UW(carray & myarray)
-{
-float DIM1 = myarray.DIM1;
-float chx = DIM1;
-//float chy = DIM1;
-float temp = 1.0;
-float newcell = (2.0)*(myarray.Ti_j-myarray.Tim1_j)/(2.0*chx);
-
-return newcell;
-}
-
-
-float calc_2nd_CE(carray & myarray)
-{
-float DIM1 = myarray.DIM1;
-float chx = DIM1;
-//float chy = DIM1;
-float temp = 1.0;
-float newcell = (2.0)*(myarray.Tip1_j-myarray.Tim1_j)/(2.0*chx);
-
-return newcell;
-}
-
-
-
-
-//--------------------------Get current cell values----------------------------//
-
-void get_surcells(carray & myarray, int i, int j, int stage)
-{
-float fcon = false;
-float sizex = myarray.sizex;
-float sizey = myarray.sizey;
-
-if(stage == 1)//get surrounding cell values
-{
-myarray.Tim1_j = myarray.mcellSOL[i-1][j];
-myarray.Tim2_j = myarray.mcellSOL[i-2][j];
-myarray.Ti_j = myarray.mcellSOL[i][j]; 
-myarray.Tip1_j = myarray.mcellSOL[i+1][j];
-
-} 
-
-if(stage == 2)
-{
-myarray.Tim1_j = myarray.mcellSOL2[i-1][j];
-myarray.Tim2_j = myarray.mcellSOL2[i-2][j];
-myarray.Ti_j = myarray.mcellSOL2[i][j];
-myarray.Tip1_j = myarray.mcellSOL[i+1][j];
- 
-} 
-        
-
-}
-
-//-----------------------------cp array2 to 1---------------------------//
-
-void mv_SOL2_to_SOL1(carray & myarray)
-{
+double DIMx = myarray.DIMx;
+double DIMy = myarray.DIMy;
+double dx = 0.0;
+double dy = 0.0;
 
 for(int j = 0; j < myarray.sizey; ++j)
 {
 
     for(int i = 0; i < myarray.sizex; ++i)
     {
-    myarray.mcellSOL[i][j] = myarray.mcellSOL2[i][j];//move update solution to array 1 
+    dy = (j-0.5)*DIMy;
+    
+    myarray.T1[i][j] = dy;
+    myarray.u1[i][j] = 6.0*U0*dy*(1.0-dy);
+    myarray.v1[i][j] = 0;
+    //printf("f: %f  dx: %f\n", f, dx);
     }
-}
 
 }
+}
 
-//--------------------------Solve array using RK2 and 2ndUW----------------------------//
+//**************************************************************************//
+//-----------------------------IE Array Solving-----------------------------//
+//**************************************************************************//
 
-void solve_arrayRK2(carray & myarray, float tmax, float cfl)
+void solve_array_IE(carray & myarray, double tmax, double cfl)
 {
-int tomp;
-float tstep = (cfl*(myarray.DIM1))/2.0;
-myarray.tstep = tstep;
-float ctime = myarray.ctime;
+
+//double tstep = (cfl*(myarray.DIMx))/2.0;
+double tstep = cfl;
+double ctime = 0.0;
+
 set_intial_cond(myarray);
 set_ghostcells(myarray);
 
-printf("\n\nRunning size: %d time step: %f\n",myarray.sizex,myarray.tstep);
+printf("\n\nRunning size: %d time step: %f\n",myarray.sizex,tstep);
+
 
 int n = 0;
-int nt = 1000;
+int nt = 10;
+double mdiff = 0;
+
 while(ctime < tmax-tstep)
 {
 
-if(n >= nt)//status
-{
-printf("Run: %d time: %f\n",n,myarray.ctime);
-nt = 1000+n;
-}
-
-//FI and RK2 for stage 1 and 2
-    for(int h = 1; h <= 2; ++h)
-    { 
-    get_FIarray_1stcell(myarray, h);//(array, stage)
-    get_FIarray(myarray, h);
-    get_RK2(myarray, h);
-    }
-//flux at boundary
+//implicit time advance
+ctime = ctime+tstep;
+compute_Flux(myarray);
+solve_LinSys(myarray, tstep, mdiff);
 set_ghostcells(myarray);
 
-//mv sol2 back to array sol1
-mv_SOL2_to_SOL1(myarray);
+//print_array(myarray);
 
-//advance and record time steps
-myarray.ctime = myarray.ctime+myarray.tstep;
-ctime = myarray.ctime;
+
+if(n >= nt)//status
+{
+printf("Run: %d time: %f diff %f\n",n,ctime, mdiff);
+nt = 10+n;
+} 
+if(mdiff<0.000001)
+break; 
+
 ++n;
 }
 
-printf("Solved numeric at %f time\n",ctime);
+myarray.ctime = ctime;
+
+printf("Solved numeric at %f time with tstep %f\n",ctime, tstep);
+
 }
 
-//--------------------------Solve RK2 interation----------------------------//
+//-------------------------------LHS approx factor----------------------//
 
+void solve_LinSys(carray & myarray, double tstep, double & mdiff)
+{
+mdiff = -1.0;
+//--linear system num 1---//
+crow myrow;
+//print_array(myarray);
+//print_arrayu(myarray);
 
-void get_RK2(carray & myarray, int stage)
+for(int j = 0; j < myarray.sizey; ++j)
 {
 
-if(stage == 1)//first stage RK2
+load_row(myarray, myrow, j, tstep);
+solve_thomas(myrow, myarray.sizex);
+
+    for(int i = 0; i < myarray.sizex; ++i)
+    {
+    myarray.f1[i][j] = myrow.RHS[i];
+    }
+}
+
+//print_array(myarray);
+//print_arrayu(myarray);
+
+//--linear system num 2---//
+ccol mycol;
+for(int i = 0; i < myarray.sizex; ++i)
 {
+load_col(myarray, mycol, i, tstep);
+solve_thomas(mycol, myarray.sizey);
+
+    for(int j = 0; j < myarray.sizey; ++j)
+    {
+    double temp = mycol.RHS[j];
+    if(abs(temp) > mdiff)
+    mdiff = abs(temp);
+    myarray.f1[i][j] = temp;
+    myarray.T1[i][j] = temp + myarray.T1[i][j];
+    }
+}
+//print_arrayu(myarray);
+}
+
+
+
+//--------------------------Load row for Thomson---------------------------//
+
+void load_row(carray & myarray, crow & myrow, int j, double tstep)
+{
+double chx = myarray.DIMx;
+for(int i = 0; i < myarray.sizex; ++i)
+{
+
+double alpha = tstep/(RE*PR*pow(chx,2.0));
+double beta = (myarray.u1[i][j]*tstep)/(2.0*chx);
+if(i == 0)
+{
+myrow.LHS[i][0] = 0.0;
+myrow.LHS[i][1] = 1.0;
+myrow.LHS[i][2] = 1.0;
+}
+else if(i == myarray.sizex-1)
+{
+myrow.LHS[i][0] =  -1.0;
+myrow.LHS[i][1] =  1.0;
+myrow.LHS[i][2] =  0.0;
+}
+else
+{
+myrow.LHS[i][0] = (-alpha - beta);
+myrow.LHS[i][1] = (1.0 + 2.0*alpha);
+myrow.LHS[i][2] = (-alpha + beta);
+}
+//load the flux
+
+myrow.RHS[i] = tstep * myarray.f1[i][j];
+}
+
+}
+
+
+
+//--------------------------Load column for Thomson---------------------------//
+
+void load_col(carray & myarray, ccol & mycol, int i, double tstep)
+{
+double chy = myarray.DIMy;
+for(int j = 0; j < myarray.sizey; ++j)
+{
+double alpha = tstep/(RE*PR*pow(chy,2));
+double beta = (myarray.v1[i][j]*tstep)/(2.0*chy);
+
+
+if(j == 0)
+{
+mycol.LHS[j][0] =  0.0;
+mycol.LHS[j][1] =  1.0;
+mycol.LHS[j][2] =  1.0;
+}
+else if(j == myarray.sizey-1)
+{
+mycol.LHS[j][0] =  1.0;
+mycol.LHS[j][1] =  1.0;
+mycol.LHS[j][2] =  0.0;
+}
+else
+{
+mycol.LHS[j][0] = (-alpha - beta);
+mycol.LHS[j][1] = (1.0 + 2.0*alpha);
+mycol.LHS[j][2] = (-alpha + beta);
+}
+//load the solution from first linsys solve
+mycol.RHS[j] = myarray.f1[i][j]; 
+}
+mycol.RHS[0] = 0.0; 
+mycol.RHS[myarray.sizey] = 0.0; 
+
+}
+
+
+//------------------------------Thomas solving----------------------------------//
+
+
+void solve_thomas(crow & r, int iSize)
+{
+  int i;
+  /* This next line actually has no effect, but it -does- make clear that
+     the values in those locations have no impact. */
+  r.LHS[0][0] = r.LHS[iSize-1][2] = 0;
+  /* Forward elimination */
+  for (i = 0; i < iSize-1; i++) {
+    r.LHS[i][2] /= r.LHS[i][1];
+    r.RHS[i] /= r.LHS[i][1];
+    r.LHS[i+1][1] -= r.LHS[i][2]*r.LHS[i+1][0];
+    r.RHS[i+1] -= r.LHS[i+1][0]*r.RHS[i];
+  }
+  /* Last line of elimination */
+  r.RHS[iSize-1] /= r.LHS[iSize-1][1];
+
+  /* Back-substitution */
+  for (i = iSize-2; i >= 0; i--) {
+    r.RHS[i] -= r.RHS[i+1]*r.LHS[i][2];
+  }
+  
+}
+
+void solve_thomas(ccol & r, int iSize)
+{
+  int i;
+  /* This next line actually has no effect, but it -does- make clear that
+     the values in those locations have no impact. */
+  r.LHS[0][0] = r.LHS[iSize-1][2] = 0;
+  /* Forward elimination */
+  for (i = 0; i < iSize-1; i++) {
+    r.LHS[i][2] /= r.LHS[i][1];
+    r.RHS[i] /= r.LHS[i][1];
+    r.LHS[i+1][1] -= r.LHS[i][2]*r.LHS[i+1][0];
+    r.RHS[i+1] -= r.LHS[i+1][0]*r.RHS[i];
+  }
+  /* Last line of elimination */
+  r.RHS[iSize-1] /= r.LHS[iSize-1][1];
+
+  /* Back-substitution */
+  for (i = iSize-2; i >= 0; i--) {
+    r.RHS[i] -= r.RHS[i+1]*r.LHS[i][2];
+  }
+  
+}
+
+//**************************************************************************//
+//-----------------------------EE Array Solving-----------------------------//
+//**************************************************************************//
+
+void solve_array_EE(carray & myarray, double tmax, double cfl)
+{
+double tstep = (cfl*(myarray.DIMx))/2.0;
+double ctime = 0.0;
+double mdiff = 0.0;
+set_intial_cond(myarray);
+set_ghostcells(myarray);
+
+printf("\n\nRunning size: %d time step: %f\n",myarray.sizex,tstep);
+
+int n = 0;
+int nt = 10;
+
+while(ctime < tmax-tstep)
+{
+  
+ctime = ctime+tstep;
+compute_Flux(myarray);
+time_advance_EE(myarray, tstep, mdiff);
+
+set_ghostcells(myarray);
+
+
+if(n >= nt)//status
+{
+printf("Run: %d time: %f diff %f\n",n,ctime, mdiff);
+nt = 10+n;
+}
+if(mdiff<0.000001)
+break; 
+
+++n;
+}
+
+myarray.ctime = ctime;
+printf("Solved numeric at %f time with tstep %f\n",ctime, tstep);
+}
+
+//------------------------------EE time advance----------------------------//
+
+void time_advance_EE(carray & myarray, double tstep, double & mdiff)
+{
+mdiff = -1.0;
 for(int j = 1; j < myarray.sizey-1; ++j)
 {
+    for(int i = 1; i < myarray.sizex-1; ++i)
+    {  
+    double temp = tstep*(myarray.f1[i][j]); 
+    if(abs(temp)> mdiff)
+    mdiff = abs(temp);
+       
+    myarray.T1[i][j] = myarray.T1[i][j] + temp;
+    }
+}
+}
 
-    for(int i = 2; i < myarray.sizex; ++i)
+
+//**************************************************************************//
+//---------------------------Compute Flux-----------------------------------//
+//**************************************************************************//
+
+
+void compute_Flux(carray & myarray)
+{
+surr mysurr;
+
+for(int j = 1; j < myarray.sizey-1; ++j)
+{
+    for(int i = 1; i < myarray.sizex-1; ++i)
     {
-      myarray.mcellSOL2[i][j] = myarray.mcellSOL[i][j]-myarray.tstep*(myarray.mcellFI[i][j]);
+    //----get surrounding cells and compute new cell----//
+    get_nsurcells(myarray, i, j, mysurr);
+    //-----update current cell----//
+    double newcell = calc_newcell(myarray, mysurr);    
+    myarray.f1[i][j] = newcell;   
     }
 
 }
 }
 
-if(stage == 2)//second stage RK2
+//--------------------------get surrounding cells-----------------------//
+
+void get_nsurcells(carray & myarray, int i, int j, surr & mysurr)
 {
-for(int j = 1; j < myarray.sizey-1; ++j)
+
+mysurr.Tim1_j = myarray.T1[i-1][j];
+mysurr.Tip1_j = myarray.T1[i+1][j];
+mysurr.Ti_j = myarray.T1[i][j]; 
+mysurr.Ti_jm1 = myarray.T1[i][j-1];
+mysurr.Ti_jp1 = myarray.T1[i][j+1];
+
+mysurr.uim1_j = myarray.u1[i-1][j];
+mysurr.uip1_j = myarray.u1[i+1][j];
+mysurr.ui_jm1 = myarray.u1[i][j-1];
+mysurr.ui_jp1 = myarray.u1[i][j+1];
+ 
+
+mysurr.vi_jm1 = myarray.v1[i][j-1];
+mysurr.vi_jp1 = myarray.v1[i][j+1];
+mysurr.vim1_j = myarray.v1[i-1][j];
+mysurr.vip1_j = myarray.v1[i+1][j];
+}
+
+
+//-----------------------calculate flux for new cell--------------------//
+
+double calc_newcell(carray & myarray, surr & s1)
 {
+double chx = myarray.DIMx;
+double chy = myarray.DIMy;
+//double chy = DIM1;
 
-    for(int i = 2; i < myarray.sizex; ++i)
-    {
-     myarray.mcellSOL2[i][j] = myarray.mcellSOL[i][j]-myarray.tstep*((myarray.mcellFI2[i][j]+myarray.mcellFI[i][j])/2.0);
-    }
+double a = (s1.uip1_j * s1.Tip1_j  -  s1.uim1_j * s1.Tim1_j)/(2.0);
+double b = (s1.Tip1_j  - 2.0*s1.Ti_j + s1.Tim1_j)/(chx*(RE*PR));
+double c = (s1.vi_jp1 * s1.Ti_jp1  -  s1.vi_jm1 * s1.Ti_jm1)/(2.0);
+double d = (s1.Ti_jp1  - 2.0*s1.Ti_j + s1.Ti_jm1)/(chy*(RE*PR));
 
-}
-}
+double e = (2.0*pow((s1.uip1_j-s1.uim1_j)/(2.0*chx),2)+2.0*pow((s1.vi_jp1-s1.vi_jm1)/(2.0*chy),2));
+double f = pow(((s1.vip1_j-s1.vim1_j)/(2.0*chx))+((s1.ui_jp1-s1.ui_jm1)/(2.0*chy)), 2);
+double source = (EC/RE)*(e+f);
 
-
-
+double newcell = 1.0*((-1.0/chx)*(a-b)   +   (-1.0/chy)*(c-d))   +   source;
+return newcell;
 }
 
 
@@ -1251,117 +1393,311 @@ for(int j = 1; j < myarray.sizey-1; ++j)
 //**************************************************************************//
 //---------------------------Error Checking---------------------------------//
 //**************************************************************************//
+//--------------------------Get descrete error----------------------------//
 
-
-
-
-
-//-------------------------Get L1 norm for unknown analytical----------------------//
-
-float get_l1norm(carray & myarray, carray myarray2)
+void get_discrete_Error(carray ray1, carray ray2, carray ray3)
 {
-float l1sum =0;
-float sx = myarray.sizex-2;
-float sy = myarray.sizey-2;
+//Calculating error as described in paper "procedure for estimation and reporting of uncertainty due to discretization in CFD applications"//
 
-for(int j = 1; j < myarray.sizey-1; ++j)
-{	
-	for(int i = 2; i < myarray.sizex; ++i)
+printf("\nCalculating Error...\n");
+
+double h1 = ray1.DIMx;
+double h2 = ray2.DIMx;
+double h3 = ray3.DIMx;
+
+/*
+double sol1 = ray1.T1[40][20];
+double sol2 = ray2.T1[20][10];
+double sol3 = ray3.T1[10][5];
+*/
+double sol1 = 1.114209;
+double sol2 = 1.112606;
+double sol3 = 1.111794;
+
+
+
+
+printf("h1: %f \nh2: %f \nh3: %f, \nsol1: %f \nsol2: %f \nsol3: %f\n",h1, h2, h3, sol1, sol2, sol3);
+
+double r21 = h2/h1;
+double r32 = h3/h2;
+
+printf("\nr32: %f \nr21: %f\n",r32, r21);
+
+double e32 = sol3-sol2;
+double e21 = sol2-sol1;
+
+double s = (e32/e21);
+if(s >= 0)
+s = 1;
+else
+s = -1;
+
+double p_n = 0;
+double p = (1/log(r21))*(abs(log(abs(e32/e21))+0));
+
+printf("intial guess: %f \n", p);
+
+double diff = 1;
+
+	while(diff > 0.0000001)
 	{
 
-	float P = myarray.mcellSOL[i][j];
-	float T = myarray2.mcellSOL[i][j];
-	l1sum =  l1sum + abs(P-T);
+	double p_n = (1/log(r21))*(abs(log(abs(e32/e21))+log((pow(r21,p)-s)/(pow(r32,p)-s)) ));
+	diff = abs(p_n -p);
+	//printf("p_n: %f p: %f diff: %f\n",p_n, p, diff);
 
+	p = p_n;
 	}
+ 
+//
+double sol_ext21 = (pow(r21, p)*sol1-sol2)/(pow(r21,p)-1.0);
+double sol_ext32 = (pow(r32, p)*sol2-sol3)/(pow(r32,p)-1.0);
+
+printf("order: %f \nphi_ext21: %f \nphi_ext32 %f\n",p, sol_ext21, sol_ext32);
+
+double ea21 = abs((sol1-sol2)/sol1);
+
+double e_ext21 = abs((sol_ext21-sol1)/sol_ext21);
+
+double GCI_21 = (1.25*ea21)/(pow(r21,p)-1.0);
+
+
+printf("ea21: %f  \ne_ext21: %f  \nGC121 %f \n", ea21, e_ext21, GCI_21);
 
 }
+//-------------------------------------l2norm--------------------------//
 
-float l1 = l1sum/(sx);
-cout << setprecision(8) << fixed << "L1 norm: " << l1 << "\n";
-return l1;
-}
-
-
-//-------------------------Get L infinty norm for unknown analytical----------------------//
-
-float get_linf_norm(carray & myarray, carray myarray2)
+double get_l2norm(carray & myarray, carray myarray2)
 {
-float error =0;
-float maxerror = -1;
-float sx = myarray.sizex-2;
-float sy = myarray.sizey-2;
+double l2sum =0;
+
+double sx = myarray.sizex-2;
+double sy = myarray.sizey-2;
 
 for(int j = 1; j < myarray.sizey-1; ++j)
 {	
-	for(int i = 2; i < myarray.sizex; ++i)
+	for(int i = 1; i < myarray.sizex-1; ++i)
 	{
-
-	float P = myarray.mcellSOL[i][j];
-	float T = myarray2.mcellSOL[i][j];
-	error =  abs(P-T);
-    if(error > maxerror)
-    maxerror = error;
-
-	}
-
-}
-
-
-cout << setprecision(8) << fixed << "L infinity norm: " << maxerror << "\n";
-return maxerror;
-}
-
-
-
-//-------------------------Get L2 nrom for unknown analytical----------------------//
-
-float get_l2norm(carray & myarray, carray myarray2)
-{
-float l2sum =0;
-float sx = myarray.sizex-2;
-float sy = myarray.sizey-2;
-
-for(int j = 1; j < myarray.sizey-1; ++j)
-{	
-	for(int i = 2; i < myarray.sizex; ++i)
-	{
-
-	float P = myarray.mcellSOL[i][j];
-	float T = myarray2.mcellSOL[i][j];
+	double P = myarray.f1[i][j];
+	double T = myarray2.f1[i][j];
 	l2sum =  l2sum + pow((P-T),2);
 
 	}
 
+
 }
 
-float l2 = sqrt(l2sum/(sx));
+double l2 = sqrt(l2sum/(sx*sy));
 cout << setprecision(8) << fixed << "L2 norm: " << l2 << "\n";
 return l2;
 }
 
+//-------------------------------------l2norm between diff--------------------------//
 
+double get_l1normD(carray & myarray, carray myarray2)
+{
+double l2sum =0;
+
+double sx = myarray.sizex-2;
+double sy = myarray.sizey-2;
+
+for(int j = 1; j < myarray.sizey-1; ++j)
+{	
+	for(int i = 1; i < myarray.sizex-1; ++i)
+	{
+	double P = myarray.f1[i][j];
+	double T = myarray2.f1[i*2][j*2];
+	l2sum =  l2sum + abs(P-T);
+
+	}
+
+
+}
+
+double l2 = l2sum/(sx*sy);
+cout << setprecision(9) << fixed << "L1 norm: " << l2 << "\n";
+return l2;
+}
 
 //----------------------------Set a Analytical Solution------------------------------//
 void set_analytic(carray & myarray, carray & numarray)
 {
-float DIM1 = myarray.DIM1;
-float ctime = numarray.ctime;
+double DIMx = myarray.DIMx;
+double DIMy = myarray.DIMy;
+double ctime = numarray.ctime;
 for(int j = 1; j < myarray.sizey-1; ++j)
 {
 
-	for(int i = 2; i < myarray.sizex; ++i)
+	for(int i = 1; i < myarray.sizex-1; ++i)
 	{
-	float dx = (i-1.5)*DIM1;
-	float dy = (j-1.5)*DIM1;
-	float T = sin(2*PI*(2*(ctime)-dx));
-	myarray.mcellSOL[i][j] = T;
+	double dx = (i-0.5)*DIMx;
+	double dy = (j-0.5)*DIMy;
+	
+	double a = U0*T0*PI*cos(2.0*PI*dx)*dy*sin(PI*dy);
+	double b = V0*T0*PI*dx*cos(PI*dx)*cos(2.0*PI*dy);
+	double c = (2.0*T0*pow(PI,2)*cos(PI*dx)*sin(PI*dy))/(RE*PR);
+	
+	double d = pow((U0*sin(PI*dx)+V0*cos(PI*dy)), 2);
+	double source = (EC/RE)*((2.0*pow((U0*PI*cos(PI*dx)*dy),2)+(2.0*pow((V0*PI*sin(PI*dy)*dx),2)))+d);
+	myarray.f1[i][j] =  a + b + c + source;
+	
 	}
 
 }
 
 printf("setting analytic at %f time\n",ctime);
 }
+
+//**************************************************************************//
+//---------------------------Print Functions--------------------------------//
+//**************************************************************************//
+
+
+
+
+
+//--------------------------zero array----------------------------//
+
+void find_max(carray & myarray, double & dx)
+{double temp;
+ double mdif = -1000.0;
+ double DIMx = myarray.DIMx;
+	for(int j = 1; j < 10; ++j)
+	{
+		for(int i = 0; i < myarray.sizex; ++i)
+		{
+		temp = myarray.T1[i][j];//set everything to zero
+            if(temp > mdif)
+            {
+            mdif = temp;
+            dx = (i-0.5)*DIMx;
+            
+            }
+
+		}
+		printf("dx: %f\n", dx);
+	}
+	
+}
+//--------------------------Print array in terminal----------------------------//
+
+void print_array(carray & myarray)
+{
+cout << "Solution:\n       |";
+for(int i = 0; i < myarray.sizex; ++i)
+		{
+		if(i < 10)
+		cout << "   i: " << i <<"|";
+		if(i > 9)
+		cout << "   i:" << i <<"|";
+        }
+cout << "\n";
+	for(int j = 0; j < myarray.sizey; ++j)
+	{
+	if(j > 9)
+	cout << "\nj:" << j << "|  |";
+	if(j < 10)	
+	cout << "\nj: " << j << "|  |";
+		for(int i = 0; i < myarray.sizex; ++i)
+		{
+		if(myarray.T1[i][j] >= 0)
+		cout << setprecision(5) << fixed << myarray.T1[i][j] <<"|";
+		if(myarray.T1[i][j] < 0)
+		cout << setprecision(4) << fixed << myarray.T1[i][j] <<"|";
+		}
+	
+	}
+cout << "\n\n";
+}
+
+//--------------------------Print u array in terminal----------------------------//
+
+void print_arrayu(carray & myarray)
+{
+
+cout << "Flux:\n       |";
+for(int i = 0; i < myarray.sizex; ++i)
+		{
+		if(i < 10)
+		cout << "   i: " << i <<"|";
+		if(i > 9)
+		cout << "   i:" << i <<"|";
+        }
+cout << "\n";
+	for(int j = 0; j < myarray.sizey; ++j)
+	{
+	if(j > 9)
+	cout << "\nj:" << j << "|  |";
+	if(j < 10)	
+	cout << "\nj: " << j << "|  |";
+		for(int i = 0; i < myarray.sizex; ++i)
+		{
+		if(myarray.f1[i][j] >= 0)
+		cout << setprecision(5) << fixed << myarray.f1[i][j] <<"|";
+		if(myarray.f1[i][j] < 0)
+		cout << setprecision(4) << fixed << myarray.f1[i][j] <<"|";
+		}
+	
+	}
+cout << "\n\n";
+}
+
+
+//-------------------------------print row------------------------------------//
+
+void print_row(crow & myrow, carray & myarray)
+{
+cout << "\nprint rows\n";
+for(int i = 0; i < myarray.sizex; ++i)
+{
+cout << "|" << myrow.LHS[i][0] << "|" << myrow.LHS[i][1] << "|" << myrow.LHS[i][2] << "|   |" << myrow.RHS[i] << "|\n";
+
+}
+
+}
+
+
+
+void print_col(ccol & mycol, carray & myarray)
+{
+cout << "\nprint rows\n";
+for(int i = 0; i < myarray.sizey; ++i)
+{
+cout << "|" << mycol.LHS[i][0] << "|" << mycol.LHS[i][1] << "|" << mycol.LHS[i][2] << "|   |" << mycol.RHS[i] << "|\n";
+
+}
+
+}
+
+/*
+void set_ghostcells(carray & myarray)
+{
+double DIMx = myarray.DIMx;
+double DIMy = myarray.DIMy;
+double dx = 0.0;
+double dy = 0.0;
+    //set ghost cells top/bottom
+	for(int i = 0; i < myarray.sizex; ++i)
+	{
+	myarray.T1[i][0] = 2.0*(0.0) - myarray.T1[i][1];
+	myarray.T1[i][myarray.sizey-1] =2.0*(1.0)-myarray.T1[i][myarray.sizey-2];
+	}	
+	
+    //set ghost cells inflow/outflow	
+	for(int j = 0; j < myarray.sizey; ++j)
+	{ 
+    dy = (j-0.5)*DIMy;
+    
+	myarray.T1[0][j] = 2.0*( dy+((3.0/4.0)*PR*EC*(pow(U0,2))*(1.0-pow((1.0-2.0*dy),4))) ) - myarray.T1[1][j];
+	
+	
+	myarray.T1[myarray.sizex-1][j] = myarray.T1[myarray.sizex-2][j];
+
+	}
+}
+*/
+
 
 
 \end{lstlisting}
