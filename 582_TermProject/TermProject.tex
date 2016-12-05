@@ -212,19 +212,19 @@ Generally the tanks design for fuel storage will not contain any pumps or system
 
 \section{Theory}
 
-During the fill process is a significant increase in gas temperature can be seen. The temperature rise during filling is the result of the combination of two dominating phenomena; Joule-Thompson effect and standard gas compression. In thermodynamics the Joule-Thomson effect is a process in which a gas or liquid is forced through a valve or porous plug and as a result experience a temperature change. Generally most gases at room temperature cool upon expansion by the Joule-Thomson process. However a couple gases like hydrogen, helium and neon will heat when throttled. This is because their Joule-Thomson coefficient is negative corresponding to a heating effect during a free expansion. Similarly gas and liquids with positive coefficients will be cooled. It should be noted this coefficient is dependent on the state of the gas and therefore exists a point were the sign can flip which is known as the inversion temperature. 
 
-Hydrogen has a negative Joule-Thomson coefficient at the temperatures and pressures of filling. Therefore when the gas experiences an isenthalpic expansion from the high-pressure tank through the dispenser throttling device into the low-pressure cylinder its temperature will increase. It is important to note that the isenthalpic expansion occurs within the dispenser which results in a higher gas temperature entering the cylinder.
-The second phenomenon that causes a temperature rise during filling is the actual compression of the gas inside the cylinder. At the start of filling the gas is compressed by the introduction of the higher-pressure gas from the fueling station. This is repeated throughout the fill as the new gas moving into the cylinder compresses the gas currently in the cylinder. When a gas is compressed it will experience a temperature increase as is seen in equation \ref{ideal} for an ideal gas. The increase in temperature is often referred to as the heat of compression \cite{dick}. 
 
+
+
+
+\subsection{Gas Heating}
+During the fill process is a significant increase in gas temperature can be seen. The temperature rise during filling is the result of the combination of two dominating phenomena; Joule-Thompson effect and standard gas compression. In thermodynamics the Joule-Thomson effect is a process in which a gas or liquid is forced through a valve or porous plug and as a result experience a temperature change. Generally most gases at room temperature cool upon expansion by the Joule-Thomson process. However a couple gases like hydrogen, helium and neon will heat when throttled. This is because their Joule-Thomson coefficient is negative corresponding to a heating effect during a free expansion. Similarly gas and liquids with positive coefficients will be cooled. It should be noted this coefficient is dependent on the state of the gas and therefore exists a point were the sign can flip which is known as the inversion temperature. Hydrogen has a negative Joule-Thomson coefficient at the temperatures and pressures of filling. Therefore when the gas experiences an isenthalpic expansion from the high-pressure tank through the dispenser throttling device into the low-pressure cylinder its temperature will increase. It is important to note that the isenthalpic expansion occurs within the dispenser which results in a higher gas temperature entering the cylinder.
 
 \begin{equation}
 \label{ideal}
 PV= nRT
 \end{equation}
-
-\subsection{Gas Heating}
-
+The second phenomenon that causes a temperature rise during filling is the actual compression of the gas inside the cylinder. At the start of filling the gas is compressed by the introduction of the higher-pressure gas from the fueling station. This is repeated throughout the fill as the new gas moving into the cylinder compresses the gas currently in the cylinder. When a gas is compressed it will experience a temperature increase as is seen in equation \ref{ideal} for an ideal gas. The increase in temperature is often referred to as the heat of compression \cite{dick}. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{hyd}
@@ -250,69 +250,74 @@ F_L= \frac{1}{2}\rho v^2C_LA
 
 \section{Methodology}
 
-\subsection{Overview}
-Airfoils generally consist of a leading edge, a trailing edge, and a defined by a thickness, camber and cord length. A cross-section of an example airfoil is displayed in figure \ref{fig1}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{hyd}
-\caption{A simple diagram of an airfoil cross-section perpendicular to span}
-\label{fig1}
-\end{figure}
-The Joukowski airfoil shape for this experiment is characterized by its chord, span, and thickness. The dimensions for this airfoil are displayed in table \ref{cal}
+For this project the requirements are to map out the temperature distribution inside a hydrogen tank during a fast fill to provide a solid measure of average temperature and to find a suitable temperature location that best represents such. A combination of both modeling and experimental studies will be used to determine such point. Modeling given its valid should show the ideal location for temperature measurement. Therefore an experimental apparatus is created to help validate the thermodynamic model produced. In order to validate the model measurements of temperature at keys locations, pressure, and mass flow rate need to be recorded accurately during the entire fast fill cycle. The constraints for the experimental validation are displayed in table \ref{con}
 
 \begin{table}[H]
 \begin{center}
-    \begin{tabular}{ | p{0.25\linewidth} | p{0.25\linewidth} |}
+    \begin{tabular}{ | p{0.15\linewidth} | p{0.45\linewidth} | p{0.35\linewidth} |}
  \hline  
-     \RaggedRight \textbf{Airfoil Dimension}
-    &\RaggedRight \textbf{Specification}
+     \RaggedRight \textbf{Constraint}
+    &\RaggedRight \textbf{Description}
+    &\RaggedRight \textbf{Solution}
     \\ \hline  
-           \RaggedRight chord $c$
-    &\RaggedRight 0.3075 m
+           \RaggedRight 2D $\triangle T$
+    &\RaggedRight Map out 2D temperature distribution within tank during transient fill
+    &\RaggedRight Array of sensors with exact locations known inside tank
     \\ \hline 
-           \RaggedRight span $s$
-    &\RaggedRight 0.6858
+           \RaggedRight $\triangle m$
+    &\RaggedRight Measure accurately mass before fill, end of fill, and after cool down
+    &\RaggedRight Use high accuracy scale
     \\ \hline 
-           \RaggedRight thickness $h$
-    &\RaggedRight 11.1\% $(h/c)$  
+           \RaggedRight $\triangle P$
+    &\RaggedRight Measure Transient pressure during fast fill and cool down
+    &\RaggedRight Pressure Sensor at inlet and far end of tank
     \\ \hline 
-    \RaggedRight camber $k$
-    &\RaggedRight 2.4\% $k/c)$  
+    \RaggedRight Semi-Portable
+    &\RaggedRight System needs to be semi portable as system will need to be transported to hydrogen dispenser 
+    &\RaggedRight Design experimental apparatus and DAQ to fit on transportable push trolley 
     \\ \hline 
-    
-    
+    \RaggedRight Standard Tank
+    &\RaggedRight No modifications to tank are permitted 
+    &\RaggedRight Collapsible sensor array to be inserted and expanded inside tank
+    \\ \hline 
+    \RaggedRight Adhere to SAEJ2601
+    &\RaggedRight Adhere to standards and procedures for the fast filling of hydrogen type 4 tanks 
+    &\RaggedRight Have 1-2 sensors report data to dispenser
+    \\ \hline 
+    \RaggedRight Non-Invasive
+    &\RaggedRight Reduce the effects of the measurement on the internal process
+    &\RaggedRight Use insulating materials for sensor support, minimize size and fluid obstruction of array.
+    \\ \hline 
     \end{tabular}
 \end{center} 
-\caption{Specifications for Joukowski airfoil}
-\label{cal} 
+\caption{Constraints for experimental validation}
+\label{con} 
 \end{table}
 
-The airfoil is mounted in a wind tunnel to simulate fluid flow over the surface for varying angles of attack. In order to measure the drag and lift forces the airfoil was attached to two load cells, both operate perpendicular to each other for the purpose of measuring lift and drag axis separately. The airfoil is attached to the load cells via a adjustable shaft which allows the angle of attack to be set and measured accurately. Figure \ref{sch} displays a simplified diagram of the experimental setup.
+
+\subsection{Experimental Setup}
+The overview of the proposed experimental setup is displayed in figure \ref{exp}
+A tank will be mount to a trolley with a load cell buffer in between, which wll allow for mass change measurements. The tank will be a type 4 700 bar rated capacity tank specialized for hydrogen storage. The cylinder is manufactured by Luxfer Industries (part\# M030H) which has an internal volume that translates into 1.12 kg of stored hydrogen at a pressure of 700 bar (69.95MPa) with a temperature of 15 °C (288 K). The entire tank including fuel will weigh approximately 60 pounds. The diagram of the tank to be used in the experiment is displayed in figure \ref{tschem}. The tank contains two openings each with a 2" threaded insert. One side will be used for attaching the filling equipment while the other for the array matrix. The filling side of the cylinder will be equipped with either an off the shelf or custom internal tank valve block assembly. The assembly will house a solenoid or pneumatic valve, a manual shutoff valve, a pressure relief device, and a Bourbon reference gauge. Likely an off the shelve block will also include a thermistor mounted internally for dispenser communication. The opposite end of the cylinder will have a custom built block with support bracket for the array as well as a sealed conduit for the thermocouple wire management.
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\linewidth]{hyd}
-\caption{A simple diagram of the experimental setup to measure drag and lift on an airfoil}
-\label{sch}
+\includegraphics[width=0.95\linewidth]{schem2}
+\caption{Examples of Drag coefficient as a function of Reynolds number for common objects}
+\label{exp}
 \end{figure}
 
- Two pressure taps are mounted inside the tunnel, one before and one inside the reduction and are used as references to measure the free flow pressure and the surface pressure on the airfoil. A Betz Manometer is used to calculate the flow velocity. The airfoil has built-in multi-tube manometer which enables discrete pressure measurements on the objects surface. The arrangement of the pressure taps for the airfoil are found in the appendix.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{tschem}
+\caption{Examples of Drag coefficient as a function of Reynolds number for common objects}
+\label{tschem}
+\end{figure}
 
- 
+\subsection{DAQ} 
 
 \subsection{Calibration}
-Calibration was needed to know the relation between measured voltage on load cells vs the forces applied. Subsequent weights in increasing mass were added to a pulley which exerted a force normal to the load cells operating axis. A calibration curve was created for both the drag and lift load cells and is displayed in figure \ref{cal}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{hyd}
-\caption{The calibration curve generated to accurately calculate drag and lift forces}
-\label{fig1}
-\end{figure}
-
-The equations for calculating drag and lift forces are displayed in figure \ref{cal} as 1st order polynomials with the uncertainties for each fitted parameter.
 
 \subsection{Procedure}
 
