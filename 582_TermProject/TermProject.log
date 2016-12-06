@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  5 DEC 2016 00:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  5 DEC 2016 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1115,7 +1115,11 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 \f@ncyO@olf=\skip84
 \f@ncyO@orf=\skip85
 )
-(./TermProject.aux)
+(./TermProject.aux
+
+LaTeX Warning: Label `results' multiply defined.
+
+)
 \openout1 = `TermProject.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
@@ -1140,7 +1144,8 @@ LaTeX Font Info:    ... okay on input line 104.
 LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 104.
 LaTeX Font Info:    Try loading font information for FMS+futm on input line 104
 .
- (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
 LaTeX Font Info:    ... okay on input line 104.
@@ -1257,7 +1262,7 @@ File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-<ubc.png, id=88, 99.4917pt x 135.6267pt>
+<ubc.png, id=100, 99.4917pt x 135.6267pt>
 File: ubc.png Graphic file (type png)
  <use ubc.png>
 Package pdftex.def Info: ubc.png used on input line 106.
@@ -1337,7 +1342,13 @@ ne 124.
 
 Package tocbasic Info: character protrusion at lof deactivated on input line 12
 4.
-(./TermProject.lof)
+(./TermProject.lof [3]
+Overfull \hbox (3.41542pt too wide) in paragraph at lines 12--12
+ [][] [][]\T1/futs/m/n/10.95 (-20) Example of a col-lapsi-ble ther-mo-cou-pler 
+ar-ray to be in-serted into tank [[]][] [][]  
+ []
+
+)
 \tf@lof=\write6
 \openout6 = `TermProject.lof'.
 
@@ -1356,7 +1367,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 12
 \tf@lot=\write7
 \openout7 = `TermProject.lot'.
 
- [3] (./TermProject.nls
+ [4] (./TermProject.nls
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
@@ -1365,103 +1376,179 @@ Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              This could result in several error messages on input li
 ne 1.
 
-) [4] <tank1.jpg, id=156, 351.3125pt x 334.24875pt>
+) [5] <tank1.jpg, id=196, 351.3125pt x 334.24875pt>
 File: tank1.jpg Graphic file (type jpg)
  <use tank1.jpg>
-Package pdftex.def Info: tank1.jpg used on input line 166.
+Package pdftex.def Info: tank1.jpg used on input line 165.
 (pdftex.def)             Requested size: 134.5776pt x 128.0374pt.
 
-<cry.jpg, id=157, 301.125pt x 225.84375pt>
+<cry.jpg, id=197, 301.125pt x 225.84375pt>
 File: cry.jpg Graphic file (type jpg)
  <use cry.jpg>
-Package pdftex.def Info: cry.jpg used on input line 172.
+Package pdftex.def Info: cry.jpg used on input line 171.
 (pdftex.def)             Requested size: 170.72406pt x 128.0374pt.
- [5 <./tank1.jpg> <./cry.jpg>] <tank2.png, id=163, 754.82pt x 290.08376pt>
+ [6]
+<tank2.png, id=203, 754.82pt x 290.08376pt>
 File: tank2.png Graphic file (type png)
  <use tank2.png>
-Package pdftex.def Info: tank2.png used on input line 189.
+Package pdftex.def Info: tank2.png used on input line 188.
 (pdftex.def)             Requested size: 334.60571pt x 128.5889pt.
- [6 <./tank2.png>] <station.png, id=170, 853.1875pt x 376.40625pt>
+ [7 <./tank1.jpg> <./cry.jpg>] <station.png, id=210, 853.1875pt x 376.40625pt>
 File: station.png Graphic file (type png)
  <use station.png>
-Package pdftex.def Info: station.png used on input line 203.
+Package pdftex.def Info: station.png used on input line 202.
 (pdftex.def)             Requested size: 334.60571pt x 147.6249pt.
 
-[7 <./station.png>] <hyd.png, id=178, 803.0pt x 451.6875pt>
-File: hyd.png Graphic file (type png)
- <use hyd.png>
-Package pdftex.def Info: hyd.png used on input line 230.
-(pdftex.def)             Requested size: 334.60571pt x 188.21873pt.
-
-[8]
+[8 <./tank2.png>] <jt.png, id=216, 501.875pt x 321.2pt>
+File: jt.png Graphic file (type png)
+ <use jt.png>
+Package pdftex.def Info: jt.png used on input line 220.
+(pdftex.def)             Requested size: 209.12778pt x 133.84444pt.
+ [9 <./station.png>] <mod1.png, id=225, 522.95375pt x 256.96pt>
+File: mod1.png Graphic file (type png)
+ <use mod1.png>
+Package pdftex.def Info: mod1.png used on input line 245.
+(pdftex.def)             Requested size: 334.60571pt x 164.41463pt.
+ [10 <./jt.png>]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 259.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 249.
 
-Overfull \hbox (16.6859pt too wide) in paragraph at lines 257--292
+
+LaTeX Warning: Reference `mod' on page 11 undefined on input line 249.
+
+<thermom.png, id=237, 388.45125pt x 227.85126pt>
+File: thermom.png Graphic file (type png)
+ <use thermom.png>
+Package pdftex.def Info: thermom.png used on input line 256.
+(pdftex.def)             Requested size: 209.12778pt x 122.6693pt.
+ [11 <./mod1.png>] <loads.png, id=243, 169.63374pt x 196.735pt>
+File: loads.png Graphic file (type png)
+ <use loads.png>
+Package pdftex.def Info: loads.png used on input line 266.
+(pdftex.def)             Requested size: 125.47794pt x 145.52457pt.
+ [12 <./thermom.png> <./loads.png>]
+Overfull \hbox (16.6859pt too wide) in paragraph at lines 282--317
  [] 
  []
 
-[9 <./hyd.png>]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 300
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 325
 .
- (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `futs' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-<schem2.png, id=194, 1225.57875pt x 602.25pt>
+ [13]
+<schem2.png, id=258, 1225.57875pt x 602.25pt>
 File: schem2.png Graphic file (type png)
  <use schem2.png>
-Package pdftex.def Info: schem2.png used on input line 305.
+Package pdftex.def Info: schem2.png used on input line 330.
 (pdftex.def)             Requested size: 397.34149pt x 195.25107pt.
- [10]
-<tschem.png, id=200, 818.05624pt x 518.93875pt>
+
+<tschem.png, id=259, 818.05624pt x 518.93875pt>
 File: tschem.png Graphic file (type png)
  <use tschem.png>
-Package pdftex.def Info: tschem.png used on input line 312.
-(pdftex.def)             Requested size: 397.34149pt x 252.05716pt.
- [11 <./schem2.png> <./tschem.png>] [12] [13]
+Package pdftex.def Info: tschem.png used on input line 343.
+(pdftex.def)             Requested size: 250.95587pt x 159.19066pt.
+ [14 <./schem2.png> <./tschem.png>] <sch.png, id=266, 865.2325pt x 543.02875pt>
+File: sch.png Graphic file (type png)
+ <use sch.png>
+Package pdftex.def Info: sch.png used on input line 358.
+(pdftex.def)             Requested size: 334.60571pt x 209.99887pt.
+
+[15 <./sch.png>] <array.png, id=273, 920.43875pt x 404.51125pt>
+File: array.png Graphic file (type png)
+
+<use array.png>
+Package pdftex.def Info: array.png used on input line 405.
+(pdftex.def)             Requested size: 418.25555pt x 183.81834pt.
+
+Underfull \hbox (badness 4608) in paragraph at lines 406--406
+[][][]|\T1/futs/m/n/10.95 (+20) Ex-am-ple of a col-lapsi-ble ther-mo-cou-pler a
+r-ray to be in-serted into tank
+ []
+
+[16 <./array.png>]
+Overfull \hbox (3.28558pt too wide) in paragraph at lines 423--424
+[]\T1/futs/m/n/10.95 (-20) Thermocouple|  
+ []
+
+
+Overfull \hbox (8.17184pt too wide) in paragraph at lines 416--439
+ [] 
+ []
+
+[17] <Therm.png, id=288, 233.87375pt x 146.5475pt>
+File: Therm.png Graphic file (type png)
+ <use Therm.png>
+Package pdftex.def Info: Therm.png used on input line 453.
+(pdftex.def)             Requested size: 113.51784pt x 71.13188pt.
+
+<press.png, id=289, 554.07pt x 486.81876pt>
+File: press.png Graphic file (type png)
+ <use press.png>
+Package pdftex.def Info: press.png used on input line 459.
+(pdftex.def)             Requested size: 80.95103pt x 71.13188pt.
+
+<load.png, id=290, 397.485pt x 322.20375pt>
+File: load.png Graphic file (type png)
+ <use load.png>
+Package pdftex.def Info: load.png used on input line 466.
+(pdftex.def)             Requested size: 87.75021pt x 71.13188pt.
+ [18 <./Therm.png> <./press.png> <./load.png>]
+Overfull \hbox (12.79999pt too wide) in paragraph at lines 487--503
+ [] 
+ []
+
+[19] [20] [21]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 359.
+ne 540.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
-[14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 561.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 561.
  (./TermProject.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 380.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 561.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 561.
 Package rerunfilecheck Info: File `TermProject.out' has not changed.
-(rerunfilecheck)             Checksum: 70990C4C216561247F06E6765C341C47;1200.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
+(rerunfilecheck)             Checksum: 955F7183B35ABF146A54110CE5E01673;1370.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 561.
  ) 
 Here is how much of TeX's memory you used:
- 14650 strings out of 493029
- 226475 string characters out of 6136234
- 403563 words of memory out of 5000000
- 17632 multiletter control sequences out of 15000+600000
- 109107 words of font info for 246 fonts, out of 8000000 for 9000
+ 14734 strings out of 493029
+ 227449 string characters out of 6136234
+ 405297 words of memory out of 5000000
+ 17676 multiletter control sequences out of 15000+600000
+ 110334 words of font info for 257 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,67p,1502b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,67p,2287b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe
-/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfsx1095.pfb>
-Output written on TermProject.pdf (14 pages, 916032 bytes).
+ype1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utop
+ia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfsx1095.pfb>
+Output written on TermProject.pdf (22 pages, 1682199 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 40657 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 40721 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -2,29 +2,20 @@
 
  \nomgroup{A}
 
-  \item [{$\mu$}]\begingroup Dynamic Viscosity $Pa-s$\nomeqref {0.0}
-		\nompageref{4}
+  \item [{$\mu_{JT}$}]\begingroup Joule-Thompson Coefficient\nomeqref {0.0}
+		\nompageref{5}
   \item [{$\rho$}]\begingroup Density $kg/m^3$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$A$}]\begingroup Cross-Sectional Projected Area $m^2$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$c$}]\begingroup Airfoil chord $m$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$C_D$}]\begingroup Drag Coefficient\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$C_L$}]\begingroup Lift Coefficient\nomeqref {0.0}
-		\nompageref{4}
+		\nompageref{5}
   \item [{$C_P$}]\begingroup Pressure Coefficient\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$L$}]\begingroup Characteristic Linear Dimension $m$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$m$}]\begingroup Mass $kg$\nomeqref {0.0}\nompageref{4}
-  \item [{$q$}]\begingroup Manometer Reading $mm$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$Re$}]\begingroup Reynolds Number\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$s$}]\begingroup Airfoil span $m$\nomeqref {0.0}
-		\nompageref{4}
-  \item [{$v$}]\begingroup Velocity $m/s$\nomeqref {0.0}\nompageref{4}
+		\nompageref{5}
+  \item [{$m$}]\begingroup Mass $kg$\nomeqref {0.0}\nompageref{5}
+  \item [{$P$}]\begingroup Specific Pressure\nomeqref {0.0}
+		\nompageref{5}
+  \item [{$p$}]\begingroup Pressure $MPa$\nomeqref {0.0}\nompageref{5}
+  \item [{$R$}]\begingroup Ideal gas constant\nomeqref {0.0}
+		\nompageref{5}
+  \item [{$T$}]\begingroup Temperature $K$\nomeqref {0.0}\nompageref{5}
+  \item [{$V$}]\begingroup Volume $m^3$\nomeqref {0.0}\nompageref{5}
+  \item [{$v$}]\begingroup Velocity $m/s$\nomeqref {0.0}\nompageref{5}
 
 \end{thenomenclature}
