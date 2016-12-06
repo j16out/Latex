@@ -1,13 +1,14 @@
 \select@language {english}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Compressed Gaseous system (a) vs Liquid hydrogen system (b)\relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a hydrogen type 4 storage system\relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Simple Diagram of a hydrogen refueling station\relax }}{9}{figure.caption.7}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Joule-Thompson Coefficients for different gases\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a hydrogen type 4 storage system\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Simple Diagram of a hydrogen refueling station\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Joule-Thompson Coefficients for different gases\relax }}{9}{figure.caption.8}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Displays model of temperature distribution inside 350bar tank \cite {dick}\relax }}{11}{figure.caption.9}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Different thermocoupler ends\relax }}{12}{figure.caption.10}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Cross section of pancake style load cell displaying locations of strain gauges\relax }}{12}{figure.caption.11}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram of the proposed experimental setup\relax }}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Examples of Drag coefficient as a function of Reynolds number for common objects\relax }}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Examples of Drag coefficient as a function of Reynolds number for common objects\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Layer diagram of Tank selected for fast fill characterization\relax }}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram of the data acquisition system\relax }}{15}{figure.caption.15}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Example of a collapsible thermocoupler array to be inserted into tank \cite {dick}\relax }}{16}{figure.caption.17}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Displays the sensors selected for experiment: Type T thermocouple (a) GEFRAN pressure Transducer (b) and a Honeywell load cell (c)\relax }}{18}{figure.caption.19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of Temperature Distribution for both CFD model and Experimental values \cite {dick}\relax }}{21}{figure.caption.22}
