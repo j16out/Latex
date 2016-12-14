@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  13 DEC 2016 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  14 DEC 2016 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -39,11 +39,11 @@ Package tocbasic Info: omitting babel extension for `lof'
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 125.
-Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
+Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
 ine 2033.
 
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2015/10/03 v3.19a KOMA-Script font size class option (11p
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+File: scrsize12pt.clo 2015/10/03 v3.19a KOMA-Script font size class option (12p
 t)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
@@ -60,21 +60,21 @@ Package typearea, 2015/10/03 v3.19a KOMA-Script package (type area)
 \ta@temp=\skip44
 \footheight=\skip45
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 10
+(typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 418.25555pt
+(typearea)              \textwidth      = 448.13095pt
 (typearea)              DIV departure   = -6%
-(typearea)              \evensidemargin = 17.3562pt
-(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 595.80026pt
-(typearea)              \topmargin      = -25.16531pt
-(typearea)              \headheight     = 17.0pt
-(typearea)              \headsep        = 20.40001pt
-(typearea)              \topskip        = 11.0pt
-(typearea)              \footskip       = 47.6pt
-(typearea)              \baselineskip   = 13.6pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
 (typearea)              on input line 1509.
 )
 \c@part=\count80
@@ -1117,6 +1117,18 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 )
 (./miniproject.aux
 
+LaTeX Warning: Label `gov' multiply defined.
+
+
+LaTeX Warning: Label `gov' multiply defined.
+
+
+LaTeX Warning: Label `51' multiply defined.
+
+
+LaTeX Warning: Label `ord' multiply defined.
+
+
 LaTeX Warning: Label `ord' multiply defined.
 
 )
@@ -1262,11 +1274,11 @@ File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-<ubc.png, id=48, 99.4917pt x 135.6267pt>
+<ubc.png, id=32, 99.4917pt x 135.6267pt>
 File: ubc.png Graphic file (type png)
  <use ubc.png>
 Package pdftex.def Info: ubc.png used on input line 106.
-(pdftex.def)             Requested size: 125.47794pt x 171.0623pt.
+(pdftex.def)             Requested size: 134.44064pt x 183.2806pt.
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 10
 6.
 
@@ -1274,17 +1286,17 @@ LaTeX Font Info:    Try loading font information for FML+futmi on input line 10
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 106.
+(Font)              scaled to size 15.89755pt on input line 106.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 106.
+(Font)              scaled to size 11.03998pt on input line 106.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 106.
+(Font)              scaled to size 8.27998pt on input line 106.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 106.
+(Font)              scaled to size 15.89755pt on input line 106.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 106.
+(Font)              scaled to size 11.03998pt on input line 106.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 106.
+(Font)              scaled to size 8.27998pt on input line 106.
 LaTeX Font Info:    Try loading font information for U+msa on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1302,17 +1314,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 107.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 107.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 107.
+(Font)              scaled to size 6.43999pt on input line 107.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 107.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 107.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 107.
+(Font)              scaled to size 6.43999pt on input line 107.
  [1
 
 
@@ -1362,116 +1366,62 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 12
 \openout7 = `miniproject.lot'.
 
  [2]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 132.
 
 
 LaTeX Warning: Reference `osc' on page 3 undefined on input line 132.
 
-<di.png, id=87, 562.1pt x 279.0425pt>
+<di.png, id=64, 562.1pt x 279.0425pt>
 File: di.png Graphic file (type png)
  <use di.png>
 Package pdftex.def Info: di.png used on input line 136.
-(pdftex.def)             Requested size: 355.51976pt x 176.48746pt.
+(pdftex.def)             Requested size: 380.91403pt x 189.09492pt.
+ [3 <./di.png>]
 
-
-LaTeX Warning: Reference `nav' on page 3 undefined on input line 143.
-
-[3 <./di.png>]
-
-LaTeX Warning: Reference `w4' on page 4 undefined on input line 199.
-
-
-LaTeX Warning: Reference `result' on page 4 undefined on input line 206.
-
-
-LaTeX Warning: Citation `g' on page 4 undefined on input line 214.
+LaTeX Warning: Reference `f' on page 4 undefined on input line 183.
 
 [4]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 237.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [5]
-<jjj.jpg, id=127, 2007.5pt x 1254.6875pt>
-File: jjj.jpg Graphic file (type jpg)
- <use jjj.jpg>
-Package pdftex.def Info: jjj.jpg used on input line 296.
-(pdftex.def)             Requested size: 355.51976pt x 222.19646pt.
-File: jjj.jpg Graphic file (type jpg)
- <use jjj.jpg>
-Package pdftex.def Info: jjj.jpg used on input line 306.
-(pdftex.def)             Requested size: 425.3686pt x 265.84698pt.
+LaTeX Warning: Reference `w4' on page 5 undefined on input line 220.
 
-Overfull \hbox (7.11305pt too wide) in paragraph at lines 306--307
-[][] 
- []
+<q1.png, id=100, 793.96625pt x 626.34pt>
+File: q1.png Graphic file (type png)
+ <use q1.png>
+Package pdftex.def Info: q1.png used on input line 234.
+(pdftex.def)             Requested size: 313.69029pt x 247.4637pt.
+ [5 <./q1.png>]
 
+LaTeX Warning: Citation `g' on page 6 undefined on input line 249.
 
-Overfull \hbox (8.59566pt too wide) in paragraph at lines 305--311
- []$[]$      
- []
+<q2.png, id=109, 861.2175pt x 657.45625pt>
+File: q2.png Graphic file (type png)
+ <use q2.png>
+Package pdftex.def Info: q2.png used on input line 259.
+(pdftex.def)             Requested size: 313.69029pt x 239.47295pt.
 
-File: jjj.jpg Graphic file (type jpg)
-<use jjj.jpg>
-Package pdftex.def Info: jjj.jpg used on input line 313.
-(pdftex.def)             Requested size: 431.05907pt x 269.40794pt.
-
-Overfull \hbox (12.80351pt too wide) in paragraph at lines 313--314
-[][] 
- []
-
-File: jjj.jpg Graphic file (type jpg)
-<use jjj.jpg>
-Package pdftex.def Info: jjj.jpg used on input line 320.
-(pdftex.def)             Requested size: 436.74997pt x 272.9689pt.
-
-Overfull \hbox (18.49442pt too wide) in paragraph at lines 320--321
-[][] 
- []
-
-[6 <./jjj.jpg>]
-Overfull \vbox (305.62357pt too high) has occurred while \output is active []
-
-
-[7]
-Overfull \hbox (16.33832pt too wide) in paragraph at lines 341--342
-[][][][][][][][][]  
- []
-
-
-Overfull \hbox (16.33832pt too wide) in paragraph at lines 349--352
-[][][][][][][][][]  
- []
-
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (96.17348pt too wide) in paragraph at lines 980--981
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
- []
-
-[21] [22] [23]
+<q3.png, id=110, 886.31125pt x 626.34pt>
+File: q3.png Graphic file (type png)
+ <use q3.png>
+Package pdftex.def Info: q3.png used on input line 266.
+(pdftex.def)             Requested size: 313.69029pt x 221.67847pt.
+ [6 <./q2.png>]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 1110.
+ne 294.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1118.
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1118.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
+[7 <./q3.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
  (./miniproject.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1118.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1118.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
 Package rerunfilecheck Info: File `miniproject.out' has not changed.
-(rerunfilecheck)             Checksum: 43A32382A13ECD5B1A3E6C00A9A21ADE;610.
+(rerunfilecheck)             Checksum: 90F591264887B59D5F88C32AB9BECBD5;421.
 
 
 LaTeX Warning: There were undefined references.
@@ -1479,29 +1429,28 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1118.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 302.
  ) 
 Here is how much of TeX's memory you used:
- 15941 strings out of 493029
- 243346 string characters out of 6136234
- 438389 words of memory out of 5000000
- 18217 multiletter control sequences out of 15000+600000
- 105845 words of font info for 212 fonts, out of 8000000 for 9000
+ 14471 strings out of 493029
+ 223771 string characters out of 6136234
+ 401240 words of memory out of 5000000
+ 17535 multiletter control sequences out of 15000+600000
+ 89861 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,67p,861b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
+ 41i,12n,67p,661b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utop
 ia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sftt1000.pfb>
-Output written on miniproject.pdf (24 pages, 407995 bytes).
+re/texmf/fonts/type1/public/cm-super/sfsx1200.pfb>
+Output written on miniproject.pdf (7 pages, 177118 bytes).
 PDF statistics:
- 1175 PDF objects out of 1200 (max. 8388607)
- 1124 compressed objects within 12 object streams
- 816 named destinations out of 1000 (max. 500000)
- 37992 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 163 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 30802 words of extra memory for PDF output out of 35830 (max. 10000000)
 
