@@ -6,10 +6,14 @@
 \contentsline {subsection}{\numberline {2.2}Solution Method}{4}{subsection.2.2}
 \contentsline {section}{\numberline {3}Validation}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Flux Computation}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Pressure Oscillations}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Flux Jacobian}{7}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Block Thomas}{8}{subsection.3.4}
-\contentsline {section}{\numberline {4}Conclusion}{9}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{10}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Thomas Block Data Last Pass}{10}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}FinalProb.cpp}{10}{subsection.A.2}
+\contentsline {subsection}{\numberline {3.2}Flux Jacobian}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Block Thomas}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Boundary Conditions}{8}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Pressure Oscillations}{8}{subsection.3.5}
+\contentsline {section}{\numberline {4}Program Testing}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Stability}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Solution $U_{top} = 1$}{11}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}
+\contentsline {section}{\numberline {A}Appendix}{13}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Thomas Block Data Last Pass}{13}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}FinalProb.cpp}{13}{subsection.A.2}

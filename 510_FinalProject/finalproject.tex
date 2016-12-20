@@ -136,26 +136,7 @@ Numerical problems are essentially solved by breaking the entire solution domain
 \subsection{Program Overview}
 The C/C++language was selected for this programming assignment. The scripts were compiled using g++/gcc version 5.4.0 on Ubuntu 16.04.02 and are available in the attached zip or for clone via the link provided: \url{https://github.com/j16out/cfd510} . The program itself is broken into 3 pieces and two levels to produce a modular set that makes it easier to apply to different problems. The highest level contains the "macro" or the main function which can be modified for different problems. 
 The numerical directory contains numerical.cpp script and its header file numerical.hpp. This set contains all the functions necessary for solving the problem numerically. The appendix contains the .hpp file which lists all functions with a short description of each. The vroot directory contains the scripts necessary for drawing data. These scripts make use of the ROOT-v6 libraries. ROOT is a popular data analysis framework primarily written in C++ and Phython. For more information on ROOT libraries visit the link provided: \url{https://root.cern.ch/} .
-The functions act on a structure called $carray$ which contains the solution domain array and its various parameters. The struct contains the main array, its defined working area (mesh size), data storage vectors, iteration count, and the represented dimension between points. Having these organized in a struct provides a compact way of passing and modifying the array and all its pertinent parameters. The outline of the struct used for the energy equation problem is shown below.
 
- 
-
-\begin{lstlisting}
-struct carray{
-//arrays
-double f1 [maxx][maxy];//flux or temp space
-double T1 [maxx][maxy];//Temperature
-double v1 [maxx][maxy];//x velocity
-double u1 [maxx][maxy];//y velocity
-//array attributes
-int sizex = maxx;
-int sizey = maxy;
-double DIMx = 0.0;
-double DIMy = 0.0;
-//time
-double ctime = 0;
-};
-\end{lstlisting}
  
 \subsection{Solution Method}
 There are three general routes that can be taken to solve the Navier-Stokes equations each of which is characterized by the way it satisfies the continuity equation; Stream function-vorticity methods take and express the velocity field in terms of derivatives of the stream function. Because of this the momentum equations are replaced by a single vorticity transport equation, while a Poisson equation relates the stream function and vorticity.  This method works fine for 2D flows, but can be difficult to use in three dimensions as stream function is a 2D entity. The 2nd type is Pressure Poisson methods, which take the divergence of the momentum equations and manipulate this to get a Poisson equation for the pressure. This equation can be simplified by using the continuity equation to eliminate terms. These methods are well-known in the field, but have a reputation for being difficult to program. The method selected for this project is the artificial compressibility method. This method adds a physical time derivative of pressure to the continuity equation. This derivative is scaled by a parameter $\beta$ that effectively sets the pseudo-compressibility of the fluid.The addition of a
@@ -256,7 +237,7 @@ for(int j = 1; j < myarray.sizey-1; ++j)
 
 
 
-The correctness of the flux integral was validated using the exact computed flux. The $L_2$ norms for the flux calculation are displayed in table \ref{norm1}. The order of accuracy for the scheme was determined using the log log method as displayed in figure \ref{ord}. The order of accuracy for this scheme was estimated to be 2nd order accurate based on the $L_2$ data from 8 different meshes.     
+The correctness of the flux integral was validated using the exact computed flux. The $L_2$ norms for the flux calculation are displayed in table \ref{norm1}. The order of accuracy for the scheme was determined using the log log method as displayed in figure \ref{fluxo}. The order of accuracy for this scheme was estimated to be 2nd order accurate based on the $L_2$ data from 8 different meshes.     
     
   
 
@@ -305,24 +286,15 @@ The correctness of the flux integral was validated using the exact computed flux
     \\ \hline       
    \end{tabular}
 \end{center} 
-\caption{Table of $L^2$ norms for increasing mesh size of flux integral}
+\caption{Table of $L^2$ norms for increasing mesh size of flux integral for RHS}
 \label{norm1} 
 \end{table}
 
-This matches what was expect by implementing a 2nd order interior flux evaluation and boundary schemes. It should be noted as seen in figure \ref{qq22} the relative error decreases when refining the mesh. This is expect as the numerical solution is a discrete representation of the continuous exact solution. 
-\subsection{Pressure Oscillations}
-It was found that steady-state pressure distributions have
-some oscillations. These were present because of decoupling between pressure in alternate lines of the mesh. To fix this problem a term was added to the
-right-hand side of the pressure equation which is displayed as \ref{osc}. This essentially introduces a artificial viscosity component which for a properly selected $A$ can smooth out the pressure fluctuations while maintaining 2nd order accuracy.
-
- \begin{equation}
-\label{osc}
-A\Bigg(\frac{\overline{P}_{i+1,j}-2\overline{P}_{i,j}+\overline{P}_{i-1,j} }{\triangle x^2} +\frac{\overline{P}_{i,j+1}-2\overline{P}_{i,j}+\overline{P}_{i,j-1} }{\triangle y^2}\Bigg)\triangle x \triangle y
-\end{equation} 
+This matches what was expect by implementing a 2nd order interior flux evaluation and boundary schemes. It should be noted as seen in figure \ref{fluxo} the error decreases when refining the mesh. This is expect as the numerical solution is a discrete representation of the continuous exact solution. 
 
  
 \subsection{Flux Jacobian}
-For the time discetization of the navier stokes equations a implicit euler method was selected. The fully implicit time discretization of NS equations can be written as 
+For the time discetization of the Navier-Stokes equations a implicit euler method was selected. The fully implicit time discretization of NS equations can be written as 
 
 
  \begin{equation}
@@ -386,10 +358,12 @@ Since we've only selected one cell to change only 5 cells in total will see a ca
    \end{tabular}
 \end{center} 
 \caption{Table of $L^2$ norms for increasing mesh size of flux integral}
-\label{norm1} 
+\label{tLHS} 
 \end{table}
 
 \subsection{Block Thomas}
+
+
 
 \begin{lstlisting}
 void solve_LinSys(carray & myarray, double tstep, double & mdiff)
@@ -411,6 +385,118 @@ solve_block_thomas(myarray, mycol, myarray.sizey, i);
 
 \end{lstlisting}
 
+\subsection{Boundary Conditions}
+The boundary condition are divided into twotypes; explicit and implicit. The explicit ones are used to enforce the boundary conditions during the flux calculation for the RHS. They are set using the $set\_ghost\_cell()$ function which is displayed below. For this problem only wall boundaries are used
+\subsection{Pressure Oscillations}
+It was found that steady-state pressure distributions have
+some oscillations. These were present because of decoupling between pressure in alternate lines of the mesh. To fix this problem a term was added to the
+right-hand side of the pressure equation which is displayed as \ref{osc}. 
+
+ \begin{equation}
+\label{osc}
+A\Bigg(\frac{\overline{P}_{i+1,j}-2\overline{P}_{i,j}+\overline{P}_{i-1,j} }{\triangle x^2} +\frac{\overline{P}_{i,j+1}-2\overline{P}_{i,j}+\overline{P}_{i,j-1} }{\triangle y^2}\Bigg)\triangle x \triangle y
+\end{equation} 
+This essentially introduces an artificial component which for a properly selected $A$ can smooth out the pressure fluctuations while maintaining 2nd order accuracy.
+A value of 0.01 was selected for A. The effect of the correction is displayed in figure \ref{osc2} 
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 7.5cm]{o1}
+                \caption{}
+				
+        \end{subfigure}%
+       ~~~~~
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 7.7cm]{o2}
+                \caption{}
+                
+        \end{subfigure}
+        \caption{Correcting pressure oscillations for 40x40 mesh (a) corrected A = 0.01 (b) uncorrected A = 0  }
+        \label{osc2}
+\end{figure}
+
+\section{Program Testing}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\linewidth]{box}
+\caption{diagram of box modeled in problem}
+\label{fluxo}
+\end{figure}
+
+To test the program a problem concerning the flow in an enclosed box with a
+moving top was evaluated. A diagram of the problem is displayed in figure \ref{prob} The walls and the lid of the box also has a no-slip boundary condition, where the lid is at constant velocity U top. As the top of the box moves to the right, the fluid in the box circulates clockwise (for a square box). For all cases in this section a Reynolds number of 100 and $\beta = 1$ was used. The initial conditions for the problem are displayed in equation \ref{init}
+
+\begin{equation}
+\label{init}
+\begin{bmatrix}
+   P    \\
+   u  \\
+    v
+\end{bmatrix} =
+\begin{bmatrix}
+   P_0\cos(\pi x)\cos(\pi y)   \\
+   u_0\sin(\pi x)\sin(2\pi y)  \\
+    v_0\sin(2\pi x)\sin(\pi y)
+\end{bmatrix}
+\end{equation} 
+
+\subsection{Stability}
+For stability test the top plate was set to zero and the problem was solve to steady state. The convergence was logged for each iteration, its history is displayed in figure \ref{con}. A 20x20 mesh was used with a 0.05 second time step. The convergence exhibits some oscillatory behavior which seems to be mediated through the use of larger time steps. The solution for pressure and velocity components converged toward zero gauge pressure and velocity which confirms the stability of the code. This is demonstrated in figures \ref{zero} where solutions are shown approaching zero and equalizing. 
+
+
+
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 7.5cm]{z1}
+                \caption{}
+				
+        \end{subfigure}%
+       ~~~~~
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 7.5cm]{z2}
+                \caption{}
+                
+        \end{subfigure}
+        \caption{Solutions approaching zero for Pressure (a) and Velocity u (b). Note the z scale is order $\approx 10^{-3}$ }
+        \label{zero}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{stabord}
+\caption{convergence history for flow inside enclosed box. }
+\label{con}
+\end{figure}
+
+\subsection{Solution $U_{top} = 1$}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{con1}
+\caption{Velocity u profile at x = 0.5 for $U_{top}=1$ }
+\label{con}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{con2}
+\caption{Pressure Distribution inside box for Solution $U_{top}=1$ and A = 0.5}
+\label{con}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{con3}
+\caption{convergence history of flow inside enclosed box for $U_{top} = 1$ }
+\label{con}
+\end{figure}
 
 
 \section{Conclusion}
