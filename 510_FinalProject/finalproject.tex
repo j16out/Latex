@@ -172,7 +172,7 @@ We can take this and write it in our standard form (eq \ref{stand} which enables
 where
 
 \begin{equation}
-\label{nav}
+\label{nav2}
 U= \begin{bmatrix}
    P    \\
    u  \\
@@ -181,7 +181,7 @@ U= \begin{bmatrix}
 \end{equation} 
 
 \begin{equation}
-\label{nav}
+\label{nav3}
 F= \begin{bmatrix}
     \frac{u}{\beta}    \\
    u^2+P-\frac{1}{Re}\frac{\partial u}{\partial x}  \\
@@ -191,7 +191,7 @@ F= \begin{bmatrix}
 
 
 \begin{equation}
-\label{nav}
+\label{nav4}
 G= \begin{bmatrix}
     \frac{v}{\beta}    \\
    uv-\frac{1}{Re}\frac{\partial u}{\partial y} \\
@@ -422,7 +422,7 @@ A value of 0.01 was selected for A. The effect of the correction is displayed in
 \centering
 \includegraphics[width=0.65\linewidth]{box}
 \caption{diagram of box modeled in problem}
-\label{fluxo}
+\label{prob}
 \end{figure}
 
 To test the program a problem concerning the flow in an enclosed box with a
@@ -441,9 +441,9 @@ moving top was evaluated. A diagram of the problem is displayed in figure \ref{p
     v_0\sin(2\pi x)\sin(\pi y)
 \end{bmatrix}
 \end{equation} 
-
+The origin for the computational domain is set at top left corner of box. Therefore the lid is found along the y=0 plane which will be the convention for the remainder of report.
 \subsection{Stability}
-For stability test the top plate was set to zero and the problem was solve to steady state. The convergence was logged for each iteration, its history is displayed in figure \ref{con}. A 20x20 mesh was used with a 0.05 second time step. The convergence exhibits some oscillatory behavior which seems to be mediated through the use of larger time steps. The solution for pressure and velocity components converged toward zero gauge pressure and velocity which confirms the stability of the code. This is demonstrated in figures \ref{zero} where solutions are shown approaching zero and equalizing. 
+For stability test the top plate velocity was set to zero and the problem was solve to steady state. The convergence was logged for each iteration, its history is displayed in figure \ref{con}. A 20x20 mesh was used with a 0.05 second time step. The convergence exhibits some oscillatory behavior which seems to be mediated through the use of larger time steps. The oscillations seen in the convergence history can physically be thought of as pressure waves bouncing around inside the domain which will inherently induce velocity changes that are out of phase with the pressure changes. The solution for pressure and velocity components converged toward zero gauge pressure and velocity which confirms the stability of the code. This is demonstrated in figures \ref{zero1} where solutions are shown approaching zero and equalizing. 
 
 
 
@@ -462,7 +462,7 @@ For stability test the top plate was set to zero and the problem was solve to st
                 
         \end{subfigure}
         \caption{Solutions approaching zero for Pressure (a) and Velocity u (b). Note the z scale is order $\approx 10^{-3}$ }
-        \label{zero}
+        \label{zero1}
 \end{figure}
 
 
@@ -474,30 +474,58 @@ For stability test the top plate was set to zero and the problem was solve to st
 \label{con}
 \end{figure}
 
+ 
+
 \subsection{Solution $U_{top} = 1$}
+The solution for the flow inside the box was calculated when the speed of the lid was set to $U_{top} = 1$. The height was set to $h=1$ and time step set to $\triangle t = 0.1$. No over relaxation was used during this evaluation. Figure \ref{conh} displays the convergence history during the solving of the solution. Again we see oscillatory behavior which begins to smooth out as the solution refines. The velocity profile for the x-velocity u was plotted at $x=0.5$ for different values of height inside the box which displays the u-velocity along the line of vertical symmetry. Since the mesh is even value points at x = 0.5 had to be calculated using surrounding cell data.  For each y cell (row) 2 cells on each side of x = 0.5 were used (total = 4) to fit a 2nd degree polynomial function which was then used to calculate the value at $x= 0.5$. The u-velocity along the vertical line of symmetry for $U_{top} = 1$ is displayed in figure \ref{usym1}. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.80\linewidth]{con1}
-\caption{Velocity u profile at x = 0.5 for $U_{top}=1$ }
-\label{con}
+\caption{Velocity u profile at x = 0.5 for $U_{top}=1$. Lid found at y = 0. }
+\label{usym1}
 \end{figure}
 
+
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.80\linewidth]{con2}
-\caption{Pressure Distribution inside box for Solution $U_{top}=1$ and A = 0.5}
-\label{con}
+        \centering
+        \begin{subfigure}[h]{1.0\textwidth}
+        \centering
+                \includegraphics[width = 12.5cm]{con2}
+                \caption{}
+				
+        \end{subfigure}%
+        \newline
+       \centering
+        \begin{subfigure}[h]{0.9\textwidth}
+        \centering
+                \includegraphics[width = 12.5cm]{con4}
+                \caption{}
+                
+        \end{subfigure}
+        \caption{Pressure Distribution (a) and u-Velocity (b) inside box for Solution $U_{top}=1$ and A = 0.5}
+        \label{zero}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.80\linewidth]{con3}
-\caption{convergence history of flow inside enclosed box for $U_{top} = 1$ }
-\label{con}
+\caption{convergence history of flow inside enclosed box for  }
+\label{conh}
 \end{figure}
 
+\subsection{Solution $U_{top} = -1$}
+Additionally the solution for the flow inside the box was calculated when the speed of the lid was set to $U_{top} = -1$. The height was set to $h=1$ and time step set to $\triangle t = 0.1$. No over relaxation was used during this evaluation. This was then contrasted with the previous solution at $U_{top} = 1$ by flipping $U_{top} = -1$ over the vertical axis of symmetry and adding it to 
+$U_{top} = 1$. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{sanity}
+\caption{A contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ displaying the program symmetry}
+\label{san1}
+\end{figure}
+
+More specifically a contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ was found and displayed in figure \ref{san1}. This shows the continuity of the program by comparing the error for opposite symmetry problems. Because the error seen is really small its attributed to a lack of iterative convergence.
 
 \section{Conclusion}
 This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Energy Equation applied to a steady state channel provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
