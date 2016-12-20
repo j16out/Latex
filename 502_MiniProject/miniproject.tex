@@ -126,16 +126,15 @@ Locations: & University of British Columbia
 
 
 
- The problem of an oscillating plate bounding a fluid has lots of applications in a broad range of engineering and medical fields. The are several examples of problems inclduing oscillating plates which will be discussed in this report.
-\section{Flow Due to an oscillating plate}
-\subsection{Problem Overview}
+ The problem of an oscillating plate flows has lots of applications in a variety of engineering and biological fields and hence such flows have been investigated researchers. Stokes has discussed the motion of a fluid in contact with a harmonically vibrating plate and has since been known as stokes 2nd problem. Since then many authors have studied the flow of a fluid on oscillating flat plates and through oscillating channels of various geometries.  In this paper the flow of an incompressible viscous fluid on an infinite harmonically oscillating plate is considered The technique adopted is of that used in the classical Stokes' second problem.
+\section{Problem}
 First lets consider an infinite flat plate containing an infinite dept of fluid relative to the affect range. The plate executes sinusoidal oscillations parallel to the itself as shown in the diagram \ref{osc}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\linewidth]{di}
-\caption{Calculated Order of Accuracy}
-\label{ord}
+\caption{Diagram of infinite plate and fluid for problem}
+\label{osc}
 \end{figure}
 
 
@@ -179,7 +178,7 @@ u(0,t) = U\cos \omega t
 u(0,\infty) = 0
 \end{equation}
 
-\subsection{Separation}
+\section{Solving}
 Based on the governing equations we expect the solution to take on the form of equation \ref{f} which suggests this can be solved using separation of variables.
 \begin{equation}
 \label{51}
@@ -217,37 +216,41 @@ u(y,t) = Ae^{i\omega t}e^{-(1+i)y\sqrt{\omega/2\eta}}
 \end{equation}
 
 
-After applying the surface boundary condition \ref{51} due to the oscillating plate we find A to be equal to U. After considering only the real part of Eq.\ref{w4}, we finally obtain the velocity distribution over the oscillating plate:
+After applying the surface boundary condition \ref{51} due to the oscillating plate we find A to be equal to U. After considering only the real part of equation\ref{54} we finally obtain the velocity distribution over the oscillating plate:
 
 \begin{equation}
 \label{55}
 u(y,t) = Ue^{-\omega t}\cos\Big(\omega t - y\sqrt{\omega/2\eta}\Big)
 \end{equation}
 
-\subsection{Solution}
-
-The cosine term in Eq. \ref{55} ris a representation of a wave signal propagating in the direction of y , while the exponential term represents the amplitude decay in that propagating wave. The flow therefore resembles a damped wave as displayed in figure \ref{q1}. 
+\section{Solution}
+The cosine term in equation\ref{55} is generalized as a representation of a wave signal propagating in the direction of y. The exponential term on the other hand represents the amplitude decay in that propagating wave described by the cosine term. The flow therefore resembles a damped wave as displayed in figure \ref{q1}. 
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.70\linewidth]{q1}
-\caption{Calculated Order of Accuracy}
+\caption{Displays the velocity profile as a function of depth for varying time levels}
 \label{q1}
 \end{figure}
 
-On an interesting note the problem to be clear is purely a diffusion problem and not wave-propagation problem. This is because there are no restoring forces involved here. The apparent propagation is merely a result of the oscillating boundary condition and the shear coupling between fluid particles. The distance at which the wave penetrates into the fluid domain is known as the penetration dept. When we select a value for y far from the wall say, $y = 4\sqrt{\eta/\omega}$, the amplitude of u is $U exp(-4\sqrt{2}) = O.O6U$ which is very small. Therefor we can say the influence of the wall is confined within a distance of approximately:
+On an interesting note the problem to be clear is purely a diffusion problem and not wave-propagation problem. This is because there are no restoring forces involved here. The apparent propagation is merely a result of the oscillating boundary condition and the shear coupling between fluid particles. 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\linewidth]{q2}
+\caption{Shows wave propagation as a function of time}
+\label{q2}
+\end{figure}
 
-
+The distance at which the wave penetrates into the fluid domain is known as the penetration dept. When we select a value for y far from the wall say, $y = 4\sqrt{\eta/\omega}$, the amplitude of u is $U exp(-4\sqrt{2}) = O.O6U$ which is very small. Therefor we can say the influence of the wall is confined within a distance of approximately:
 
 \begin{equation}
 \label{56}
 \delta \approx 4\sqrt{\eta/\omega}
 \end{equation}
 
-This parameter is known as the depth of penetration dept \cite{g}. This relations suggests that the distance over which the fluid feels the motion of the plate gets smaller as the frequency of the oscillations increases. 
-
+This parameter is known as the depth of penetration dept \cite{g}. This relations suggests that the distance over which the fluid feels the motion of the plate gets smaller as the frequency of the oscillations increases which is displayed in figure \ref{q4}. 
 
 
 As discussed earlier we noted that the solution \ref{55} cannot be represented by a single curve in terms of the non-dimensional variables. This is expected because the frequency of the boundary motion introduces a natural time scale l/o into the problem, thereby violating the requirements of self-similarity. There are two parameters in the governing set \ref{gov}, namely, U and w. The parameter U can be eliminated by regarding $u / U$ as the dependent variable. 
@@ -256,44 +259,41 @@ As discussed earlier we noted that the solution \ref{55} cannot be represented b
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.70\linewidth]{q2}
-\caption{Calculated Order of Accuracy}
-\label{ord}
+\includegraphics[width=0.70\linewidth]{q4}
+\caption{Wave as a function of frequency}
+\label{q4}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.70\linewidth]{q3}
-\caption{Calculated Order of Accuracy}
-\label{ord}
-\end{figure}
-
-An interesting point is that the oscillating plate has a constant diffusion distance $\delta = 4\sqrt{\eta/\omega}$ that is in contrast to the case of the impulsively started plate in which the diffusion distance increases with time. This can be understood from
-the governing equation \ref{gov}. In the problem of sudden acceleration of a plate,
-$\frac{\partial^2 u_x}{\partial y^2}$ is positive for all y (see Figure 9.10), which results in a positive au/at
-everywhere. The monotonic acceleration signifies that momentum is constantly
-diffused outward, which results in an ever-increasing width of flow. In contrast,
-in thc casc of an oscillating plate, a2u/i3y2 (and therefore a u / a r ) constantly
-changes sign in y and t . Therefore, momentum cannot diffuse outward monotonically,
-which results in a constant width of flow.
-The analogous problem in heat conduction is that of a semi-infinite solid, the
-surhce of which is subjected to a periodic fluctuation of temperature. The resulting
-solution, analogous to Eq. (9.59, has been used to estimate the effective “eddy”
-diffusiviry in thc upper layer of the ocean from measurements of the phase difference
-(that is, h e time lag between maxima) between the temperature fluctuations at two
-depths, generated by the diurnal cyclc of solar heating
-
-\subsection{Effect of Parameters}
-
-\subsection{Applications}
 
 
+
+It should be noted that the oscillating plate has a constant diffusion distance $\delta = 4\sqrt{\eta/\omega}$ which is only a function of frequency and viscosity. This is very different in contrast to the case of plate started suddenly in which the diffusion distance continues to increases with time. In the problem of sudden acceleration of a plate which shares the same governing equations as that for the oscillating plate,
+$\frac{\partial^2 u}{\partial y^2}$ is seen to be positive for all y which results in a positive $\frac{\partial u}{\partial t}$
+everywhere. The non varying acceleration indicates that momentum being put into the fluid is not changing direction and therefore is being constantly
+diffused outward. This ultimately results in a flow for which its width continues to grow. In the oscillating plate however the $\frac{\partial^2 u}{\partial y^2}$ term varies between positive and negative and therefore $\frac{\partial u}{\partial t}$ constantly changes sign in y and t. Therefore the momentum is unable to diffuse outward like seen in the impulsively started plate which will result in a constant width of flow over time.
+
+
+
+\section{Applications}
+There are many fields of engineering and science were this flow problem can be applied. 
+For fluid problems this solution can be applied in any situation were a periodic linear boundary oscillation occurs. One of such example includes the tank wall of a liquid rocket engine fuel cell. The tank will experience a range of vibrations during flight, and to ensure volatile fuels are not disturbed beyond safety limits the state of the flow near the tank walls can be approximated using this solution. Knowing that the penetration dept is a function of frequency and viscosity engineers will know how much of the fluid is affected near the tank boundary and subsequently which frequencies will require external filtering. 
+ In addition to describing flow properties of fluids it can also be used for describing the flow of temperature. In heat conduction the analogous version can be found in that of a semi-infinite solid, the surface of which is subjected to a periodic fluctuation of temperature. The resulting solution (The one explored in this report) has been used to estimate the effective diffuseness in the upper layer of the ocean from measurements of the phase difference between the temperature fluctuations at two
+depths which is generated by daily cycle of solar heating from the sun.
+One final application and importance of the exact solution is its used for validating numerical methods. When constructing a numerical solution its important to understand its error relative the exact solution. Computation Fluid Dynamic programs specialized for solving complicated fluid problems will have had to validate there system using either analytically or experimental methods. Analytic comparison proves to be the best for determining if the generated software is adequate for solving flow flow problems and provides a benchmark for determining the performance and order of error for the program.
 
 
 
 \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Celik, 2006]{p0}Ismail B. Celik1, Urmila Ghia, Patrick J.Roache and Christopher J. Freitas
-\newblock "Procedure for Esitmation and Reporting Uncertainty Due to Discretization in CFD apllications",  West Virginia University, Morgantown WV, USA
+\bibitem[Kundu, 2002]{p0}Pijush K. Kundu, Ira M. Cohen
+\newblock "Fluid Mechanics, Second Edition",  Department of Mechanical Engineering and Applied Mechanics, University of Pennsylvania, 2002
+
+\bibitem[Sekharan, 1990]{p1}Evelyn Chandra Sekharan; G. Ramanaiah
+\newblock "Unsteady Flow Between Two Oscillating Plates",  Faculty of Science, Madras Institute of Technology, Madras-600 044
+
+\bibitem[Papanastasiou, 1999]{p0}Tasos C. Papanastasiou; Georgios C. Georgiou
+\newblock "Viscous Fluid Flow",  Department of Mechanical Engineering
+Worcester Polytechnic Institute
+Worcester, MA
 
 \end{thebibliography}
 

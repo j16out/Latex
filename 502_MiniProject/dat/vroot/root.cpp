@@ -53,31 +53,31 @@ float h = 8.0*sqrt(vis/omega);
 
 				
 			for (int i = 0; y < h; ++i)
-			{		
+			{		omega = 1.0;
                    
-                    y = i*(0.001)*sqrt(omega/(2.0*vis));
+                    y = i*(0.001)*sqrt(1.0/(2.0*vis));
                     t = 0.0;
 					u = exp(-y*sqrt(omega/(2.0*vis)))*cos(omega*t-y*sqrt(omega/(2.0*vis)));
 					gr1->SetPoint(i,u,y);		
 		
-				
-                    t = (PI/2.0)/omega;
+				omega = 5.0;
+                    t = (0.0);
 					u = exp(-y*sqrt(omega/(2.0*vis)))*cos(omega*t-y*sqrt(omega/(2.0*vis)));
 					gr2->SetPoint(i,u,y);		
 		
-		
-                    t = (3.0*PI/2.0)/omega;
+		omega = 20.0;
+                    t = (0.0);
 					u = exp(-y*sqrt(omega/(2.0*vis)))*cos(omega*t-y*sqrt(omega/(2.0*vis)));
 					gr3->SetPoint(i,u,y);		
+	omega = 40.0;
 	
-	
-                    t = (PI)/omega;
+                    t = (0);
 					u = exp(-y*sqrt(omega/(2.0*vis)))*cos(omega*t-y*sqrt(omega/(2.0*vis)));
 					gr4->SetPoint(i,u,y);		
 	
+omega = 80.0;
 
-
-                    t = (PI)/omega;
+                    t = (0);
 					u = exp(-y*sqrt(omega/(2.0*vis)))*cos(omega*t-y*sqrt(omega/(2.0*vis)));
 					gr5->SetPoint(i,u,y);		
 			}
@@ -110,10 +110,11 @@ gr->SetPoint(1,-1,0);
 
 	TLegend *leg = new TLegend(0.6,0.3,0.7,0.55);
 
-leg->AddEntry(gr1,"t = 0","AP");
-leg->AddEntry(gr2,"t = PI/2","AP");
-leg->AddEntry(gr3,"t = 3PI/2","AP");
-leg->AddEntry(gr4,"t = PI","AP");
+leg->AddEntry(gr1,"w = 1","AP");
+leg->AddEntry(gr2,"w = 5","AP");
+leg->AddEntry(gr3,"w = 20","AP");
+leg->AddEntry(gr4,"w = 40","AP");
+leg->AddEntry(gr5,"w = 80","AP");
 
 leg->SetFillColor(0);
 

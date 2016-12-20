@@ -1,0 +1,445 @@
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Example: Project Report
+
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt, abstract=on]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+
+
+
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=[Visual]C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[english]{babel}															% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{url}
+%\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\scshape}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{ragged2e}
+
+\usepackage{nomencl}
+\makenomenclature
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty 
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+   \renewcommand*\abstractname{Summary}
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\title{
+		%\vspace{-1in} 	
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{} \\ [25pt]
+		\includegraphics[width=0.3\linewidth]{ubc.png} \\
+		%\includegraphics[width=0.4\linewidth]{tru}		
+		\horrule{0.5pt} \\[0.2cm]
+		\huge Programming Assignment \#3 : Solving Incompressible Energy Equation  \\
+		\horrule{2pt} \\[0.005cm]
+}
+\author{
+		\normalfont 								\normalsize
+        Jerin Roberts\\[-5pt]		\normalsize
+        \today
+}
+\date{}
+
+
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\begin{center}
+\begin{tabular}{l r}
+
+
+Supervisor: & Dr. Carl Ollivier-Gooch  \\ % supervisor
+Locations: & University of British Columbia
+
+
+\end{tabular}
+\end{center}
+
+
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\lstset{language=[Visual]C++}
+\section{Introduction}
+
+
+
+ The are many physical phenomenons in physics and engineering that require linear and non-linear partial differential equations to described the true nature of the system. Solving these systems analytically and finding exact solutions for these equations can be difficult and often require simplifications that ultimately don't fully represent the problem being investigated. Numerical methods for solving PDE's provides a means for finding approximations to the exact solutions without having to make sacrificial simplifications. With recent advancements in computational technology numerical methods can now be easily applied to large and difficult problems that would otherwise be impossible to solve. 
+\subsection{Problem Overview}
+Numerical problems are essentially solved by breaking the entire solution domain into small discrete points (mesh) and finding the solution at or around these areas. Each point requires the solving the differential equations that represent physical phenomenon being investigated. Since the exact solution cannot be computed, it is instead approximated using various techniques and methods. In this assignment the 2D in-compressible laminar energy equation is applied to a rectangular channel for a given velocity field. The problem will employ an second ordered centered flux calculation with both implicit and explicit euler timer advance methods. The implicit method will be solved using approximate factorization and Gauss-Jordan elimination via the Thomas algorithm. Boundary conditions will be implement using ghost cells allowing the interior scheme to remain the same during calculation of bordering cells. The ghost cells are calculated such the boundary condition is enforced at $i=1/2$.
+
+
+
+\section{Implementation}
+\subsection{Program Overview}
+The C/C++language was selected for this programming assignment. The scripts were compiled using g++/gcc version 5.4.0 on Ubuntu 16.04.02 and are available in the attached zip or for clone via the link provided: \url{https://github.com/j16out/cfd510} . The program itself is broken into 3 pieces and two levels to produce a modular set that makes it easier to apply to different problems. The highest level contains the "macro" or the main function which can be modified for different problems. 
+The numerical directory contains numerical.cpp script and its header file numerical.hpp. This set contains all the functions necessary for solving the problem numerically. The appendix contains the .hpp file which lists all functions with a short description of each. The vroot directory contains the scripts necessary for drawing data. These scripts make use of the ROOT-v6 libraries. ROOT is a popular data analysis framework primarily written in C++ and Phython. For more information on ROOT libraries visit the link provided: \url{https://root.cern.ch/} .
+The functions act on a structure called $carray$ which contains the solution domain array and its various parameters. The struct contains the main array, its defined working area (mesh size), data storage vectors, iteration count, and the represented dimension between points. Having these organized in a struct provides a compact way of passing and modifying the array and all its pertinent parameters. The outline of the struct used for the energy equation problem is shown below.
+
+ 
+
+\begin{lstlisting}
+struct carray{
+//arrays
+double f1 [maxx][maxy];//flux or temp space
+double T1 [maxx][maxy];//Temperature
+double v1 [maxx][maxy];//x velocity
+double u1 [maxx][maxy];//y velocity
+//array attributes
+int sizex = maxx;
+int sizey = maxy;
+double DIMx = 0.0;
+double DIMy = 0.0;
+//time
+double ctime = 0;
+};
+\end{lstlisting}
+ 
+\subsection{Solution Method}
+There are three general routes that can be taken to solve the Navier-Stokes equations each of which is characterized by the way it satisfies the continuity equation; Stream function-vorticity methods take and express the velocity field in terms of derivatives of the stream function. Because of this the momentum equations are replaced by a single vorticity transport equation, while a Poisson equation relates the stream function and vorticity.  This method works fine for 2D flows, but can be difficult to use in three dimensions as stream function is a 2D entity. The 2nd type is Pressure Poisson methods, which take the divergence of the momentum equations and manipulate this to get a Poisson equation for the pressure. This equation can be simplified by using the continuity equation to eliminate terms. These methods are well-known in the field, but have a reputation for being difficult to program. The method selected for this project is the artificial compressibility method. This method adds a physical time derivative of pressure to the continuity equation. This derivative is scaled by a parameter $\beta$ that effectively sets the pseudo-compressibility of the fluid.The addition of a
+time derivative of pressure enables the coupling of the continuity equation with the
+momentum equations which ideally allows us to advance pressure and velocity in time
+together.
+
+The non-dimensional Navier-Stokes equations in
+artificial compressibility form can be written as equations \ref{gov1} to \ref{gov2}
+
+\begin{equation}
+\label{gov1}
+\frac{\partial P}{\partial t}+\frac{1}{\beta}\frac{\partial u}{\partial x}+\frac{1}{\beta}\frac{\partial v}{\partial y} = 0
+\end{equation} 
+
+ \begin{equation}
+\label{nav}
+\frac{\partial u}{\partial t} +\frac{\partial u^2}{\partial x}+\frac{\partial vu}{\partial y} = -\frac{\partial P}{\partial x} + \frac{1}{Re} \Bigg(  \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \Bigg)
+\end{equation} 
+
+ \begin{equation}
+\label{gov2}
+\frac{\partial v}{\partial t} +\frac{\partial vu}{\partial x}+\frac{\partial v^2}{\partial y} = -\frac{\partial P}{\partial y} + \frac{1}{Re} \Bigg(  \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} \Bigg)
+\end{equation} 
+
+We can take this and write it in our standard form (eq \ref{stand} which enables to integrate over the computational cell by applying gauss's Theorem and dividing over the size of the finite volume.
+
+ \begin{equation}
+\label{stand}
+\frac{\partial U}{\partial t} + \frac{\partial F}{\partial x} + \frac{\partial G}{\partial y} = 0
+\end{equation} 
+
+where
+
+\begin{equation}
+\label{nav}
+U= \begin{bmatrix}
+   P    \\
+   u  \\
+    v
+\end{bmatrix}
+\end{equation} 
+
+\begin{equation}
+\label{nav}
+F= \begin{bmatrix}
+    \frac{u}{\beta}    \\
+   u^2+P-\frac{1}{Re}\frac{\partial u}{\partial x}  \\
+    uv-\frac{1}{Re}\frac{\partial v}{\partial x}
+\end{bmatrix}
+\end{equation} 
+
+
+\begin{equation}
+\label{nav}
+G= \begin{bmatrix}
+    \frac{v}{\beta}    \\
+   uv-\frac{1}{Re}\frac{\partial u}{\partial y} \\
+    v^2+P-\frac{1}{Re}\frac{\partial v}{\partial y} 
+\end{bmatrix}
+\end{equation} 
+Which leads to navier stokes in finite volume form as shown in equation \ref{fv}
+
+
+\begin{equation}
+\label{fv}
+\frac{d U_{ij}}{d t} = -\frac{F_{i+\frac{1}{2},j}-F_{i-\frac{1}{2},j}}{\triangle x} -\frac{G_{i, j+\frac{1}{2}}-G_{i,j-\frac{1}{2}}}{\triangle y}
+\end{equation} 
+
+Where the right hand side (RHS) represents the 2nd order approximation to the flux integral, where U, G, and F as before are represented as 3x1 matrices of Pressure and velocity components.
+\section{Validation}
+\subsection{Flux Computation}
+
+ The program was built and tested in small components to ensure its correctness. The flux integral was run and compared to the exact solution for the flux integral. The problem will employ a second ordered centered flux calculation which is found on the RHS of the discretized energy equation.
+
+
+The flux was calculated using the function $update\_ flux()$, which is shown below. The function calls two other functions which grab the necessary data using the $surr$ struct from the current solution. The flux calculated using $calc\_ newcell()$ is then stored on the $carray$ struct under the $f1$ array.
+
+\begin{lstlisting}
+void update_flux(carray & myarray){
+surr mysurr;
+vec ftemp;
+for(int j = 1; j < myarray.sizey-1; ++j)
+{
+    for(int i = 1; i < myarray.sizex-1; ++i)
+    {
+    //----get surrounding cells and compute new cell----//
+    get_nsurcells(myarray, i, j, mysurr);    
+    calc_flux(myarray, mysurr, ftemp); 
+    
+    //-----update current cell----//  
+    myarray.f1[i][j] = ftemp;   
+    }
+}
+}
+\end{lstlisting}
+
+
+
+
+The correctness of the flux integral was validated using the exact computed flux. The $L_2$ norms for the flux calculation are displayed in table \ref{norm1}. The order of accuracy for the scheme was determined using the log log method as displayed in figure \ref{ord}. The order of accuracy for this scheme was estimated to be 2nd order accurate based on the $L_2$ data from 8 different meshes.     
+    
+  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{flux}
+\caption{Order of Accuracy of Flux Integral for Pressure and Velocity components}
+\label{fluxo}
+\end{figure}
+
+
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | p{0.13\linewidth} | p{0.2\linewidth} |p{0.2\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Mesh Size}
+    &\RaggedRight \textbf{Pressure $L^2$norm}
+    &\RaggedRight \textbf{Velocity $L^2$norm}
+    &\RaggedRight \textbf{$\triangle x$}
+    &\RaggedRight \textbf{Order}
+    \\ \hline  
+           \RaggedRight 10 x 10
+    &\RaggedRight 4.7946 $*10^{-2}$
+    &\RaggedRight 1.9505 $*10^{-1}$
+    &\RaggedRight 0.1
+    &\RaggedRight -
+    \\ \hline 
+    \RaggedRight 20 x 20
+    &\RaggedRight 1.1983 $*10^{-2}$
+    &\RaggedRight 5.0025 $*10^{-2}$
+    &\RaggedRight 0.05
+    &\RaggedRight 1.952
+    \\ \hline 
+           \RaggedRight 40 x 40
+    &\RaggedRight 2.9957  $*10^{-3}$
+    &\RaggedRight 1.2585  $*10^{-2}$
+    &\RaggedRight 0.025
+    &\RaggedRight 1.980
+    \\ \hline 
+           \RaggedRight 80 x 80
+    &\RaggedRight 7.4892 $*10^{-4}$
+    &\RaggedRight 3.1514 $*10^{-3}$
+    &\RaggedRight 0.0125
+    &\RaggedRight 2.002
+    \\ \hline       
+   \end{tabular}
+\end{center} 
+\caption{Table of $L^2$ norms for increasing mesh size of flux integral}
+\label{norm1} 
+\end{table}
+
+This matches what was expect by implementing a 2nd order interior flux evaluation and boundary schemes. It should be noted as seen in figure \ref{qq22} the relative error decreases when refining the mesh. This is expect as the numerical solution is a discrete representation of the continuous exact solution. 
+\subsection{Pressure Oscillations}
+It was found that steady-state pressure distributions have
+some oscillations. These were present because of decoupling between pressure in alternate lines of the mesh. To fix this problem a term was added to the
+right-hand side of the pressure equation which is displayed as \ref{osc}. This essentially introduces a artificial viscosity component which for a properly selected $A$ can smooth out the pressure fluctuations while maintaining 2nd order accuracy.
+
+ \begin{equation}
+\label{osc}
+A\Bigg(\frac{\overline{P}_{i+1,j}-2\overline{P}_{i,j}+\overline{P}_{i-1,j} }{\triangle x^2} +\frac{\overline{P}_{i,j+1}-2\overline{P}_{i,j}+\overline{P}_{i,j-1} }{\triangle y^2}\Bigg)\triangle x \triangle y
+\end{equation} 
+
+ 
+\subsection{Flux Jacobian}
+For the time discetization of the navier stokes equations a implicit euler method was selected. The fully implicit time discretization of NS equations can be written as 
+
+
+ \begin{equation}
+  \begin{aligned}
+\delta U_{ij} + \triangle t A_x \delta U_{i-1,j} + \triangle t B_x \delta U_{i,j} + \triangle t C_x \delta U_{i+1,j}\\
+  +\triangle t A_y \delta U_{i,j-1} + \triangle t B_y \delta U_{i,j} + \triangle t A_y \delta U_{i,j+1} \\
+  = -\triangle t \frac{F_{i+\frac{1}{2},j}-F_{i-\frac{1}{2},j}}{\triangle x} -\triangle t \frac{G_{i, j+\frac{1}{2}}-G_{i,j-\frac{1}{2}}}{\triangle y}
+ \end{aligned}
+\end{equation}
+
+The implementation of the left hand side (LHS) can be validated by implementing a very small known change in solution for one cell between time steps. The difference between the flux calculated on the RHS from time level n to n+1 should be roughly equivalent to the LHS of the implementation (minus $\delta U_{ij}$). 
+
+
+
+ \begin{equation}
+  \begin{aligned}
+ \Bigg( \frac{F_{i+\frac{1}{2},j}-F_{i-\frac{1}{2},j}}{\triangle x} - \frac{G_{i, j+\frac{1}{2}}-G_{i,j-\frac{1}{2}}}{\triangle y}\Bigg)^{n+1}
+  \\ -\Bigg( \frac{F_{i+\frac{1}{2},j}-F_{i-\frac{1}{2},j}}{\triangle x} - \frac{G_{i, j+\frac{1}{2}}-G_{i,j-\frac{1}{2}}}{\triangle y}\Bigg)^{n} \\
+   = A_x \delta U_{i-1,j} +  B_x \delta U_{i,j} +  C_x \delta U_{i+1,j}\\
+  + A_y \delta U_{i,j-1} +  B_y \delta U_{i,j} +  A_y \delta U_{i,j+1}
+ \end{aligned}
+\end{equation}
+
+
+Since we've only selected one cell to change only 5 cells in total will see a calculated change which corresponds each to one term on the LHS being non-zero. This provides a great method for narrowing down which term was incorrect. If the error was found to be greater then $10^{-10}$ then the term was considered to be incorrect. The errors for each corresponding component of change are tabulated in table \ref{tLHS}.
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | p{0.2\linewidth} | p{0.2\linewidth} |p{0.2\linewidth} |p{0.2\linewidth}| }
+ \hline  
+     \RaggedRight \textbf{Component (i, j)}
+    &\RaggedRight \textbf{Pressure Error}
+    &\RaggedRight \textbf{u Error}
+    &\RaggedRight \textbf{v Error}
+    \\ \hline  
+           \RaggedRight Ax (11, 10)
+    &\RaggedRight 3.000 $*10^{-15}$
+    &\RaggedRight 5.001 $*10^{-12}$
+    &\RaggedRight 5.001  $*10^{-12}$
+    \\ \hline 
+    \RaggedRight Cx (9, 10)
+    &\RaggedRight 1.000 $*10^{-15}$
+    &\RaggedRight 5.002 $*10^{-12}$
+    &\RaggedRight 5.001  $*10^{-12}$
+    \\ \hline 
+           \RaggedRight Bx By (10, 10)
+    &\RaggedRight 1.000  $*10^{-15}$
+    &\RaggedRight 2.500  $*10^{-13}$
+    &\RaggedRight 2.500  $*10^{-13}$
+    \\ \hline 
+           \RaggedRight Cy (10, 9)
+    &\RaggedRight 1.000 $*10^{-15}$
+    &\RaggedRight 5.001 $*10^{-12}$
+    &\RaggedRight 5.000 $*10^{-12}$
+    \\ \hline       
+           \RaggedRight Ay (10, 11)
+    &\RaggedRight 3.000 $*10^{-15}$
+    &\RaggedRight 4.995 $*10^{-12}$
+    &\RaggedRight 4.995 $*10^{-12}$
+    \\ \hline    
+   \end{tabular}
+\end{center} 
+\caption{Table of $L^2$ norms for increasing mesh size of flux integral}
+\label{norm1} 
+\end{table}
+
+\subsection{Block Thomas}
+
+\begin{lstlisting}
+void solve_LinSys(carray & myarray, double tstep, double & mdiff)
+{
+//--linear system num 1---//
+crow myrow;
+for(int j = 1; j < myarray.sizey-1; ++j)
+{
+load_row(myarray, myrow, j, tstep);
+solve_block_thomas(myarray, myrow, myarray.sizex, j);
+}
+ccol mycol;
+for(int i = 1; i < myarray.sizex-1; ++i)
+{
+load_col(myarray, mycol, i, tstep);
+solve_block_thomas(myarray, mycol, myarray.sizey, i);
+}
+}
+
+\end{lstlisting}
+
+
+
+\section{Conclusion}
+This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Energy Equation applied to a steady state channel provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
+
+
+
+
+
+\newpage
+\appendix
+\section{Appendix} \label{App:Appendix}
+\subsection{Thomas Block Data Last Pass}
+\includegraphics[width=0.95\linewidth]{tom}
+
+\subsection{FinalProb.cpp}
+\begin{lstlisting}
+
+
+
+
+\end{lstlisting}
+
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[Celik, 2006]{p0}Ismail B. Celik1, Urmila Ghia, Patrick J.Roache and Christopher J. Freitas
+\newblock "Procedure for Esitmation and Reporting Uncertainty Due to Discretization in CFD apllications",  West Virginia University, Morgantown WV, USA
+
+\end{thebibliography}
+
+
+%%% End document
+\end{document}
