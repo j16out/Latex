@@ -7,6 +7,8 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Velocity u profile at x = 0.5 for $U_{top}=1$. Lid found at y = 0. \relax }}{13}{figure.caption.11}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Pressure Distribution (a) and u-Velocity (b) inside box for Solution $U_{top}=1$ and A = 0.5\relax }}{14}{figure.caption.12}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces convergence history of flow inside enclosed box for $\triangle t = 0.1$\relax }}{15}{figure.caption.13}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces A contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ displaying the program symmetry\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Identifying vortices using magnitude of v and u contour plot\relax }}{17}{figure.caption.15}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Displays an example of a velocity void due to a vortex (a) and a plot of the vertex centers crossing (b)\relax }}{18}{figure.caption.16}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces convergence history of flow inside enclosed box for $\triangle t = 0.1$\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces A contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ displaying the program symmetry\relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Identifying vortices using magnitude of v and u contour plot\relax }}{17}{figure.caption.16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Displays an example of a velocity void due to a vortex (a) and a plot of the vertex centers crossing (b)\relax }}{18}{figure.caption.17}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces A u velocity profile for varying grid sizes illustrating grid convergence for lid-driven cavity\relax }}{20}{figure.caption.21}

@@ -128,7 +128,7 @@ Locations: & University of British Columbia
 
  The are many physical phenomenons in physics and engineering that require linear and non-linear partial differential equations to described the true nature of the system. Solving these systems analytically and finding exact solutions for these equations can be difficult and often require simplifications that ultimately don't fully represent the problem being investigated. Numerical methods for solving PDE's provides a means for finding approximations to the exact solutions without having to make sacrificial simplifications. With recent advancements in computational technology numerical methods can now be easily applied to large and difficult problems that would otherwise be impossible to solve. 
 \subsection{Problem Overview}
-Numerical problems are essentially solved by breaking the entire solution domain into small discrete points (mesh) and finding the solution at or around these areas. Each point requires the solving the differential equations that represent physical phenomenon being investigated. Since the exact solution cannot be computed, it is instead approximated using various techniques and methods. In this assignment the 2D in-compressible laminar energy equation is applied to a rectangular channel for a given velocity field. The problem will employ an second ordered centered flux calculation with both implicit and explicit euler timer advance methods. The implicit method will be solved using approximate factorization and Gauss-Jordan elimination via the Thomas algorithm. Boundary conditions will be implement using ghost cells allowing the interior scheme to remain the same during calculation of bordering cells. The ghost cells are calculated such the boundary condition is enforced at $i=1/2$.
+Numerical problems are essentially solved by breaking the entire solution domain into small discrete points (mesh) and finding the solution at or around these areas. Each point requires the solving the differential equations that represent physical phenomenon being investigated. Since the exact solution cannot be computed, it is instead approximated using various techniques and methods. In this assignment the 2D in-compressible Navier-Stokes equations are applied to a lid-driven cavity problem. The program will employ an second ordered centered flux calculation with an implicit euler time advance method. The implicit method will solve using approximate factorization and Gauss-Jordan elimination via the Block Thomas algorithm. Boundary conditions will be implement using ghost cells allowing the interior scheme to remain the same during calculation of bordering cells. The ghost cells are calculated such the boundary condition is enforced at $i=1/2$ or $j=1/2$.
 
 
 
@@ -303,6 +303,7 @@ For the time discetization of the Navier-Stokes equations a implicit euler metho
   +\triangle t A_y \delta U_{i,j-1} + \triangle t B_y \delta U_{i,j} + \triangle t A_y \delta U_{i,j+1} \\
   = -\triangle t \frac{F_{i+\frac{1}{2},j}-F_{i-\frac{1}{2},j}}{\triangle x} -\triangle t \frac{G_{i, j+\frac{1}{2}}-G_{i,j-\frac{1}{2}}}{\triangle y}
  \end{aligned}
+ \label{m1} 
 \end{equation}
 
 The implementation of the left hand side (LHS) can be validated by implementing a very small known change in solution for one cell between time steps. The difference between the flux calculated on the RHS from time level n to n+1 should be roughly equivalent to the LHS of the implementation (minus $\delta U_{ij}$). 
@@ -362,7 +363,18 @@ Since we've only selected one cell to change only 5 cells in total will see a ca
 \end{table}
 
 \subsection{Block Thomas}
+We can re-write Equation \ref{m1} in a approximate factored form by combining the various small matrices (A, B, and C) into larger matrices as shown in equation \ref{m2}.
 
+
+ \begin{equation}
+  \begin{aligned}
+\Bigg( \frac{F_{i+\frac{1}{2},j}^n-F_{i-\frac{1}{2},j}^n}{\triangle x} - \frac{G_{i, j+\frac{1}{2}}^n-G_{i,j-\frac{1}{2}}^n}{\triangle y}\Bigg)
+= [I+\triangle t D_x][I + \triangle t D_y]\delta \overline U
+\end{aligned}
+\label{m2} 
+\end{equation}
+
+This approximately factored system can be solved by breaking the problem into two sets of line problems. In this case each line problem is a 3 × 3 block tridiagonal problem. An extension of the Thomas algorithm is used to solve this system of equations. The process for solving the system each time step is shown below.
 
 
 \begin{lstlisting}
@@ -385,6 +397,8 @@ solve_block_thomas(myarray, mycol, myarray.sizey, i);
 
 \end{lstlisting}
 
+The $load\_row()$ function is used to retrieve the required Jacobian values and load them into a format to be solved by the Block Thomson algorithm. Once all the rows have been solved, the same process is completed for the columns. The result is the change in solution for one time step, which is used to update the current solution. The data for the final iteration over the columns on the first time step is displayed in the appendix for validation.
+
 \subsection{Boundary Conditions}
 The boundary condition are divided into two types; explicit and implicit. The explicit ones are used to enforce the boundary conditions during the flux calculation for the RHS. They are set using the $set\_ghost\_cell()$ function which is displayed below. For this problem only wall boundaries are considered. For stationary walls, both the normal and tangential velocity are zero. Therefore  this means that for a wall at j = 1/2, we can set values in ghost cells using equations below \ref{bound}.
 
@@ -394,6 +408,7 @@ The boundary condition are divided into two types; explicit and implicit. The ex
   \\ v_{i,0} = -v_{i,1}\\
   P_{i,0} = P_{i,1}
  \end{aligned}
+ \label{bound} 
 \end{equation}
 
 For moving walls, the normal velocity is zero and the tangential velocity matches
@@ -406,7 +421,7 @@ the wall velocity. An example of a wall moving along x is shown below.
   P_{i,0} = P_{i,1}
  \end{aligned}
 \end{equation}
-Where the wall velocity is constant through out time. The implicit boundaries need not be altered for this case as the velocity of the wall is not change with time. There all four implicit wall boundaries implemented using the Jacobian matrix shown below which are loaded into the Thomas algorithm.
+Where the wall velocity is constant through out time. The implicit boundaries need not be altered for this case as the velocity of the wall does not change with time. There all four implicit wall boundaries implemented using the Jacobian matrix shown below which are loaded into the Block Thomas algorithm.
 
 \begin{equation}
 \label{nav2}
@@ -436,13 +451,13 @@ A value of 0.01 was selected for A. The effect of the correction is displayed in
 \begin{figure}[H]
         \centering
         \begin{subfigure}[h]{0.5\textwidth}
-                \includegraphics[width = 7.5cm]{o1}
+                \includegraphics[width = 8.0cm]{o1}
                 \caption{}
 				
         \end{subfigure}%
        ~~~~~
         \begin{subfigure}[h]{0.5\textwidth}
-                \includegraphics[width = 7.7cm]{o2}
+                \includegraphics[width = 8.2cm]{o2}
                 \caption{}
                 
         \end{subfigure}
@@ -454,7 +469,7 @@ A value of 0.01 was selected for A. The effect of the correction is displayed in
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.65\linewidth]{box}
+\includegraphics[width=0.55\linewidth]{box}
 \caption{diagram of box modeled in problem}
 \label{prob}
 \end{figure}
@@ -545,6 +560,13 @@ The solution for the flow inside the box was calculated when the speed of the li
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.80\linewidth]{con3}
+\caption{convergence history of flow inside enclosed box for $\triangle t = 0.1$}
+\label{conh}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{grid1}
 \caption{convergence history of flow inside enclosed box for $\triangle t = 0.1$}
 \label{conh}
 \end{figure}
@@ -730,6 +752,104 @@ When the height was increased to $h=3$ the cavity was observed to produce a tota
 
 
 
+
+\subsection{Relative Strength}
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | p{0.2\linewidth} | p{0.2\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Values}
+    &\RaggedRight \textbf{${u}{dA}$}
+     \\ \hline 
+      \RaggedRight $N_1, N_2, N_3$ 
+    &\RaggedRight 80, 60, 40
+    \\ \hline  
+           \RaggedRight $r_{21}$ 
+    &\RaggedRight 1.5
+    \\ \hline 
+           \RaggedRight $r_{32}$
+    &\RaggedRight 1.33
+    \\ \hline  
+           \RaggedRight ${u_1}{dA}$
+    &\RaggedRight 0.097330
+    \\ \hline 
+           \RaggedRight ${u_2}{dA}$
+    &\RaggedRight 0.095894
+    \\ \hline
+       \RaggedRight ${u_3}{dA}$
+    &\RaggedRight 0.091769
+    \\ \hline 
+           \RaggedRight $p$
+    &\RaggedRight 2.014
+    \\ \hline 
+       \RaggedRight $P_{ext}^{21}$
+    &\RaggedRight 0.099158  
+    \\ \hline  
+    \RaggedRight $e_a^{21}$
+    &\RaggedRight 0.014754
+    \\ \hline 
+       \RaggedRight $e_{ext}^{21}$
+    &\RaggedRight 0.018438   
+    \\ \hline 
+       \RaggedRight $GCI_{fine}^{21}$
+    &\RaggedRight 0.023480 
+    \\ \hline 
+    \end{tabular}
+
+\end{center} 
+\caption{Table of calculation of uncertainty in the fine-grid solution}
+\label{norm1} 
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | p{0.20\linewidth} | p{0.11\linewidth} |p{0.11\linewidth} |p{0.11\linewidth} |p{0.11\linewidth} |p{0.11\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Relative Strength}
+    &\RaggedRight 40 x 120
+    &\RaggedRight 60 x 180
+    &\RaggedRight 80 x 240
+        &\RaggedRight \textbf{$\overline{Ratio}$}
+    &\RaggedRight \textbf{$GCI_{fine}$}
+    \\ \hline  
+           \RaggedRight V1
+    &\RaggedRight 0.091769
+    &\RaggedRight 0.095894
+    &\RaggedRight 0.097330
+    &\RaggedRight 1.00
+    &\RaggedRight -
+    \\ \hline 
+    \RaggedRight V2
+    &\RaggedRight 0.000551
+    &\RaggedRight 0.000823
+    &\RaggedRight 0.000919
+    &\RaggedRight 129.65
+    &\RaggedRight -
+    \\ \hline 
+           \RaggedRight V3
+    &\RaggedRight 0.000387
+    &\RaggedRight 0.000435
+    &\RaggedRight 0.000448
+    &\RaggedRight 231.42
+    &\RaggedRight 0.023480 
+    \\ \hline      
+   \end{tabular}  
+   
+\end{center} 
+\caption{Calculated coordinates for each vortex 1-3 using curve fit method}
+\label{norm1} 
+\end{table}
+
+\subsection{Fine Grid Convergence}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{r4}
+\caption{A u velocity profile for varying grid sizes illustrating grid convergence for lid-driven cavity}
+\label{con}
+\end{figure}
 
 \section{Conclusion}
 This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Energy Equation applied to a steady state channel provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 

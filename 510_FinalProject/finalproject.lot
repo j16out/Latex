@@ -1,4 +1,6 @@
 \select@language {english}
 \contentsline {table}{\numberline {3.1}{\ignorespaces Table of $L^2$ norms for increasing mesh size of flux integral for RHS\relax }}{7}{table.caption.5}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Table of $L^2$ norms for increasing mesh size of flux integral\relax }}{8}{table.caption.6}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Calculated coordinates for each vortex 1-3 using curve fit method\relax }}{18}{table.caption.17}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Calculated coordinates for each vortex 1-3 using curve fit method\relax }}{18}{table.caption.18}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Table of calculation of uncertainty in the fine-grid solution\relax }}{19}{table.caption.19}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Calculated coordinates for each vortex 1-3 using curve fit method\relax }}{19}{table.caption.20}
