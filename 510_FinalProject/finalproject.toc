@@ -14,7 +14,9 @@
 \contentsline {subsection}{\numberline {4.1}Stability}{10}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Solution $U_{top} = 1$}{12}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Solution $U_{top} = -1$}{14}{subsection.4.3}
-\contentsline {section}{\numberline {5}Conclusion}{15}{section.5}
-\contentsline {section}{\numberline {A}Appendix}{16}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Thomas Block Data Last Pass}{16}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}FinalProb.cpp}{16}{subsection.A.2}
+\contentsline {section}{\numberline {5}Vortices problem}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Vortex Location}{15}{subsection.5.1}
+\contentsline {section}{\numberline {6}Conclusion}{17}{section.6}
+\contentsline {section}{\numberline {A}Appendix}{19}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Thomas Block Data Last Pass}{19}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}FinalProb.cpp}{19}{subsection.A.2}

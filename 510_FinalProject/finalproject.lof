@@ -6,5 +6,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces convergence history for flow inside enclosed box. \relax }}{11}{figure.caption.10}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Velocity u profile at x = 0.5 for $U_{top}=1$. Lid found at y = 0. \relax }}{12}{figure.caption.11}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Pressure Distribution (a) and u-Velocity (b) inside box for Solution $U_{top}=1$ and A = 0.5\relax }}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces convergence history of flow inside enclosed box for \relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces convergence history of flow inside enclosed box for $\triangle t = 0.1$\relax }}{14}{figure.caption.13}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces A contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ displaying the program symmetry\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Solutions approaching zero for Pressure (a) and Velocity u (b). Note the z scale is order $\approx 10^{-3}$ \relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces convergence history of flow inside enclosed box for $\triangle t = 0.1$\relax }}{17}{figure.caption.16}

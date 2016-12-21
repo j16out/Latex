@@ -511,7 +511,7 @@ The solution for the flow inside the box was calculated when the speed of the li
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.80\linewidth]{con3}
-\caption{convergence history of flow inside enclosed box for  }
+\caption{convergence history of flow inside enclosed box for $\triangle t = 0.1$}
 \label{conh}
 \end{figure}
 
@@ -526,6 +526,96 @@ $U_{top} = 1$.
 \end{figure}
 
 More specifically a contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ was found and displayed in figure \ref{san1}. This shows the continuity of the program by comparing the error for opposite symmetry problems. Because the error seen is really small its attributed to a lack of iterative convergence.
+
+
+
+
+\section{Vortices problem}
+For the Lid-driven cavity problem the height h of the box was increased. The single vortex seen in previous examples eventually becomes unstable, and a second vortex forms below it and eventually a third, and so on. The exploratory part of this problem will focus on this formation of additional vortices with an increase in the height of the cavity. 
+
+\subsection{Vortex Location}
+When the height was increased to $h=3$ the cavity was observed to produce a total of three vortices. The vortices were discovered using a contour plot of the magnitude of the velocity components u and v. By generating a contour plot of the magnitude of u and v one could easily search out locations where the magnitude was zero, suggesting a potential area for a vortex. Figure \ref{v1} displays three vortices identified for a cavity of $h=3$.
+
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.5\textwidth}
+        \centering
+                \includegraphics[width = 5.5cm]{v1}
+                \caption{}				
+        \end{subfigure}%
+       ~~~~~
+        \begin{subfigure}[h]{0.5\textwidth}
+        \centering
+                \includegraphics[width = 5.5cm]{v2}
+                \caption{}               
+        \end{subfigure}       
+         ~~~~~
+        \begin{subfigure}[h]{0.5\textwidth}
+        \centering
+                \includegraphics[width = 5.5cm]{v3}
+                \caption{}               
+        \end{subfigure}
+        \caption{Solutions approaching zero for Pressure (a) and Velocity u (b). Note the z scale is order $\approx 10^{-3}$ }
+        \label{zero1}
+\end{figure}
+
+
+
+ Once a vortex was identified a curve fitting method was employed to calculated its center. The method works by approximating the dip in velocity magnitude or the 'hole of the vortex' if you will, and approximates the center based on the fit of a parabolic arc. The program looks at individual slices for a set range fitting approx 10-20 points per slice. Each slice of the hole will contain a parabolic arc. The vertex of each arc for each slice is calculated and plotted; one plot for the y direction sweep and the other for the x sweep. Since the programs sweeps over both the x and y direction of the vortex hole, the lines mapping the vertex locations will eventually cross. This crossing point is used as the estimate for the center of the vortex. An example of the crossing point is shown in figure \ref{cross}. The crossing points were calculated for three different vortices for 5 different grid sizes. The data is displayed in table \ref{vortd}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\linewidth]{cross}
+\caption{convergence history of flow inside enclosed box for $\triangle t = 0.1$}
+\label{cross}
+\end{figure}
+
+
+1 vortice
+intercept x = 0.628863 y = 0.284613   40x120
+
+intercept x = 0.607763 y = 0.291379   60x180
+
+intercept x = 0.605327 y = 0.292402   70x210
+
+intercept x = 0.605493 y = 0.292715   80x240
+
+intercept x = 0.604404 y = 0.293177   90x270
+
+2 vortice
+
+intercept x = 0.614811 y = 1.352830   40x120
+
+intercept x = 0.521546 y = 1.365390   60x180
+
+intercept x = 0.518180 y = 1.367486   70x210
+
+intercept x = 0.516247 y = 1.370399   80x240
+
+intercept x = 0.515219 y = 1.371391   90x270
+
+3 vortice
+
+intercept x = 0.500413 y = 2.740107  40x120
+
+intercept x = 0.496878 y = 2.732679  60x180
+
+intercept x = 0.497183 y = 2.733485  70x210
+
+intercept x = 0.497947 y = 2.727510  80x240
+
+intercept x = 0.497706 y = 2.729092  90x270
+
+
+
+
+
+
+
+
+
+
 
 \section{Conclusion}
 This project provides great insight into the internal algorithms used for calculating numerical solutions for time varying problems. The Energy Equation applied to a steady state channel provided a great platform for developing and testing the program. Having the analytic solution really help fine tune the program and helped given an idea on how accurate the solutions could be. Investigating the error and how it changes relative to boundaries and mesh sizes will provides insight on how the methods should be applied to bigger problems to minimize time and error. Stability analysis provided a great means for understanding the computational limits of the program in terms of speed. Numerical methods provide a great way of solving difficult problems and until new methods are discovered for finding exact solution will remain the main method for finding solutions to difficult problems. 
