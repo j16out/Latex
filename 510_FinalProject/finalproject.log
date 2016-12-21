@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  21 DEC 2016 04:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.17)  21 DEC 2016 06:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1117,7 +1117,10 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 )
 (./finalproject.aux
 
-LaTeX Warning: Label `zero1' multiply defined.
+LaTeX Warning: Label `nav2' multiply defined.
+
+
+LaTeX Warning: Label `norm1' multiply defined.
 
 )
 \openout1 = `finalproject.aux'.
@@ -1342,11 +1345,11 @@ ne 121.
 
 Package tocbasic Info: character protrusion at lof deactivated on input line 12
 1.
-(./finalproject.lof [2])
+(./finalproject.lof)
 \tf@lof=\write6
 \openout6 = `finalproject.lof'.
 
-
+ [2]
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
@@ -1373,7 +1376,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [4] [5]
-<flux.png, id=188, 882.29625pt x 627.34375pt>
+<flux.png, id=190, 882.29625pt x 627.34375pt>
 File: flux.png Graphic file (type png)
  <use flux.png>
 Package pdftex.def Info: flux.png used on input line 246.
@@ -1381,175 +1384,203 @@ Package pdftex.def Info: flux.png used on input line 246.
  [6]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 257.
- [7 <./flux.png>] [8] <o1.png, id=235, 1058.95625pt x 556.0775pt>
+ [7 <./flux.png>] [8]
+
+LaTeX Warning: Reference `bound' on page 9 undefined on input line 389.
+
+[9] <o1.png, id=255, 1058.95625pt x 556.0775pt>
 File: o1.png Graphic file (type png)
  <use o1.png>
-Package pdftex.def Info: o1.png used on input line 405.
+Package pdftex.def Info: o1.png used on input line 439.
 (pdftex.def)             Requested size: 213.39566pt x 112.05354pt.
 
-Overfull \hbox (4.26788pt too wide) in paragraph at lines 405--406
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 439--440
 [][] 
  []
 
-<o2.png, id=236, 1089.06876pt x 543.02875pt>
+<o2.png, id=256, 1089.06876pt x 543.02875pt>
 File: o2.png Graphic file (type png)
  <use o2.png>
-Package pdftex.def Info: o2.png used on input line 411.
+Package pdftex.def Info: o2.png used on input line 445.
 (pdftex.def)             Requested size: 219.08612pt x 109.23355pt.
 
-Overfull \hbox (9.95834pt too wide) in paragraph at lines 411--412
+Overfull \hbox (9.95834pt too wide) in paragraph at lines 445--446
 [][] 
  []
 
 
-Overfull \hbox (10.31479pt too wide) in paragraph at lines 404--415
+Overfull \hbox (10.31479pt too wide) in paragraph at lines 438--449
  []$[]$      $[]$ 
  []
 
-[9 <./o1.png> <./o2.png>] <box.png, id=253, 609.27625pt x 653.44125pt>
+<box.png, id=257, 609.27625pt x 653.44125pt>
 File: box.png Graphic file (type png)
-
-<use box.png>
-Package pdftex.def Info: box.png used on input line 423.
+ <use box.png>
+Package pdftex.def Info: box.png used on input line 457.
 (pdftex.def)             Requested size: 271.86356pt x 291.5731pt.
- [10 <./box.png>] <z1.png, id=264, 939.51pt x 606.265pt>
+ [10 <./o1.png> <./o2.png>] [11 <./box.png>] <z1.png, id=274, 939.51pt x 606.26
+5pt>
 File: z1.png Graphic file (type png)
-
-<use z1.png>
-Package pdftex.def Info: z1.png used on input line 454.
+ <use z1.png>
+Package pdftex.def Info: z1.png used on input line 488.
 (pdftex.def)             Requested size: 213.39566pt x 137.69885pt.
 
-Overfull \hbox (4.26788pt too wide) in paragraph at lines 454--455
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 488--489
 [][] 
  []
 
-<z2.png, id=265, 944.52875pt x 604.2575pt>
+<z2.png, id=275, 944.52875pt x 604.2575pt>
 File: z2.png Graphic file (type png)
  <use z2.png>
-Package pdftex.def Info: z2.png used on input line 460.
+Package pdftex.def Info: z2.png used on input line 494.
 (pdftex.def)             Requested size: 213.39566pt x 136.5145pt.
 
-Overfull \hbox (4.26788pt too wide) in paragraph at lines 460--461
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 494--495
 [][] 
  []
 
 
-Overfull \hbox (10.31479pt too wide) in paragraph at lines 453--464
+Overfull \hbox (10.31479pt too wide) in paragraph at lines 487--498
  []$[]$      $[]$ 
  []
 
-<stabord.png, id=266, 864.22874pt x 628.3475pt>
+<stabord.png, id=276, 864.22874pt x 628.3475pt>
 File: stabord.png Graphic file (type png)
  <use stabord.png>
-Package pdftex.def Info: stabord.png used on input line 472.
+Package pdftex.def Info: stabord.png used on input line 506.
 (pdftex.def)             Requested size: 334.60571pt x 243.28079pt.
- [11 <./z1.png> <./z2.png> <./stabord.png>]
+ [12 <./z1.png> <./z2.png> <./stabord.png>]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 479.
+(Font)              scaled to size 11.03998pt on input line 513.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 479.
+(Font)              scaled to size 8.27998pt on input line 513.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 479.
+(Font)              scaled to size 6.43999pt on input line 513.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 479.
+(Font)              scaled to size 11.03998pt on input line 513.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 479.
+(Font)              scaled to size 8.27998pt on input line 513.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 479.
+(Font)              scaled to size 6.43999pt on input line 513.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
+(hyperref)                removing `math shift' on input line 513.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 479.
+(hyperref)                removing `subscript' on input line 513.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
+(hyperref)                removing `math shift' on input line 513.
 
-<con1.png, id=274, 876.27374pt x 624.3325pt>
+<con1.png, id=283, 876.27374pt x 624.3325pt>
 File: con1.png Graphic file (type png)
  <use con1.png>
-Package pdftex.def Info: con1.png used on input line 484.
+Package pdftex.def Info: con1.png used on input line 518.
 (pdftex.def)             Requested size: 334.60571pt x 238.40152pt.
 
-<con2.png, id=275, 864.22874pt x 613.29124pt>
+<con2.png, id=284, 864.22874pt x 613.29124pt>
 File: con2.png Graphic file (type png)
  <use con2.png>
-Package pdftex.def Info: con2.png used on input line 494.
+Package pdftex.def Info: con2.png used on input line 528.
 (pdftex.def)             Requested size: 355.65944pt x 252.38684pt.
 
-<con4.png, id=276, 872.25874pt x 639.38875pt>
+<con4.png, id=285, 872.25874pt x 639.38875pt>
 File: con4.png Graphic file (type png)
  <use con4.png>
-Package pdftex.def Info: con4.png used on input line 502.
+Package pdftex.def Info: con4.png used on input line 536.
 (pdftex.def)             Requested size: 355.65944pt x 260.70715pt.
- [12 <./con1.png>]
-<con3.png, id=281, 882.29625pt x 629.35126pt>
+ [13 <./con1.png>]
+<con3.png, id=291, 882.29625pt x 629.35126pt>
 File: con3.png Graphic file (type png)
  <use con3.png>
-Package pdftex.def Info: con3.png used on input line 513.
+Package pdftex.def Info: con3.png used on input line 547.
 (pdftex.def)             Requested size: 334.60571pt x 238.6758pt.
- [13 <./con2.png> <./con4.png>]
+ [14 <./con2.png> <./con4.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 518.
+(hyperref)                removing `math shift' on input line 552.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `subscript' on input line 552.
 
-<sanity.png, id=287, 1048.91875pt x 682.55pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 552.
+
+<sanity.png, id=296, 1048.91875pt x 682.55pt>
 File: sanity.png Graphic file (type png)
  <use sanity.png>
-Package pdftex.def Info: sanity.png used on input line 523.
+Package pdftex.def Info: sanity.png used on input line 557.
 (pdftex.def)             Requested size: 334.60571pt x 217.73308pt.
- [14 <./con3.png>]
-
-LaTeX Warning: Reference `v1' on page 15 undefined on input line 537.
-
-<v1.png, id=293, 887.315pt x 645.41125pt>
+ [15 <./con3.png>] <v1.png, id=303, 887.315pt x 645.41125pt>
 File: v1.png Graphic file (type png)
  <use v1.png>
-Package pdftex.def Info: v1.png used on input line 544.
-(pdftex.def)             Requested size: 156.49014pt x 113.82515pt.
+Package pdftex.def Info: v1.png used on input line 578.
+(pdftex.def)             Requested size: 213.39566pt x 155.21701pt.
 
-<v2.png, id=294, 886.31125pt x 629.35126pt>
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 578--579
+ [][] 
+ []
+
+<v2.png, id=304, 886.31125pt x 629.35126pt>
 File: v2.png Graphic file (type png)
  <use v2.png>
-Package pdftex.def Info: v2.png used on input line 550.
-(pdftex.def)             Requested size: 156.49014pt x 111.11763pt.
+Package pdftex.def Info: v2.png used on input line 584.
+(pdftex.def)             Requested size: 213.39566pt x 151.52754pt.
 
-<v3.png, id=295, 894.34125pt x 646.415pt>
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 584--585
+ [][] 
+ []
+
+<v3.png, id=305, 894.34125pt x 646.415pt>
 File: v3.png Graphic file (type png)
  <use v3.png>
-Package pdftex.def Info: v3.png used on input line 556.
-(pdftex.def)             Requested size: 156.49014pt x 113.10458pt.
+Package pdftex.def Info: v3.png used on input line 590.
+(pdftex.def)             Requested size: 213.39566pt x 154.23532pt.
 
-Overfull \hbox (10.31479pt too wide) in paragraph at lines 542--559
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 590--591
+ [][] 
+ []
+
+
+Overfull \hbox (10.31479pt too wide) in paragraph at lines 576--593
  []$[]$      $[]$ 
  []
 
-[15 <./sanity.png>]
+[16 <./sanity.png>]
 
-LaTeX Warning: Reference `vortd' on page 16 undefined on input line 565.
+LaTeX Warning: Reference `vortd' on page 17 undefined on input line 599.
 
-<cross.png, id=301, 859.21pt x 623.32875pt>
+<para.png, id=311, 811.03pt x 653.44125pt>
+File: para.png Graphic file (type png)
+ <use para.png>
+Package pdftex.def Info: para.png used on input line 606.
+(pdftex.def)             Requested size: 193.47882pt x 155.88188pt.
+
+<cross.png, id=312, 859.21pt x 623.32875pt>
 File: cross.png Graphic file (type png)
  <use cross.png>
-Package pdftex.def Info: cross.png used on input line 569.
-(pdftex.def)             Requested size: 334.60571pt x 242.74532pt.
- [16 <./v1.png> <./v2.png> <./v3.png>] [17 <./cross.png>] [18]
-<tom.png, id=314, 969.6225pt x 704.6325pt>
+Package pdftex.def Info: cross.png used on input line 612.
+(pdftex.def)             Requested size: 213.39566pt x 154.80458pt.
+
+Overfull \hbox (4.26788pt too wide) in paragraph at lines 612--613
+[][] 
+ []
+
+
+Overfull \hbox (10.31479pt too wide) in paragraph at lines 605--616
+ []$[]$      $[]$ 
+ []
+
+[17 <./v1.png> <./v2.png> <./v3.png>] [18 <./para.png> <./cross.png>] [19]
+<tom.png, id=326, 969.6225pt x 704.6325pt>
 File: tom.png Graphic file (type png)
  <use tom.png>
-Package pdftex.def Info: tom.png used on input line 631.
+Package pdftex.def Info: tom.png used on input line 745.
 (pdftex.def)             Requested size: 397.34149pt x 288.75067pt.
 
 
@@ -1558,16 +1589,16 @@ Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              from within a non compatible caller, that does not
 (scrartcl)              \scr@s@ct@@nn@m@ locally.
 (scrartcl)              This could result in several error messages on input li
-ne 641.
+ne 755.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
-[19 <./tom.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 763.
+[20 <./tom.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 763.
  (./finalproject.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 763.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 763.
 Package rerunfilecheck Info: File `finalproject.out' has not changed.
-(rerunfilecheck)             Checksum: F1055538451862E9F8EC6E163D7B2340;1258.
+(rerunfilecheck)             Checksum: 9DC020FB6FDE1DC429B82F038BA45540;1267.
 
 
 LaTeX Warning: There were undefined references.
@@ -1575,14 +1606,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 763.
  ) 
 Here is how much of TeX's memory you used:
- 15227 strings out of 493029
- 232521 string characters out of 6136234
- 416445 words of memory out of 5000000
- 18154 multiletter control sequences out of 15000+600000
- 129975 words of font info for 271 fonts, out of 8000000 for 9000
+ 15246 strings out of 493029
+ 232724 string characters out of 6136234
+ 416584 words of memory out of 5000000
+ 18159 multiletter control sequences out of 15000+600000
+ 130515 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,67p,1217b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
@@ -1595,10 +1626,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
 t1095.pfb>
-Output written on finalproject.pdf (19 pages, 946428 bytes).
+Output written on finalproject.pdf (20 pages, 995576 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
- 41219 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 41224 words of extra memory for PDF output out of 42996 (max. 10000000)
 

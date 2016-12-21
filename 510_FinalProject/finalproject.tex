@@ -386,7 +386,41 @@ solve_block_thomas(myarray, mycol, myarray.sizey, i);
 \end{lstlisting}
 
 \subsection{Boundary Conditions}
-The boundary condition are divided into twotypes; explicit and implicit. The explicit ones are used to enforce the boundary conditions during the flux calculation for the RHS. They are set using the $set\_ghost\_cell()$ function which is displayed below. For this problem only wall boundaries are used
+The boundary condition are divided into two types; explicit and implicit. The explicit ones are used to enforce the boundary conditions during the flux calculation for the RHS. They are set using the $set\_ghost\_cell()$ function which is displayed below. For this problem only wall boundaries are considered. For stationary walls, both the normal and tangential velocity are zero. Therefore  this means that for a wall at j = 1/2, we can set values in ghost cells using equations below \ref{bound}.
+
+\begin{equation}
+  \begin{aligned}
+ u_{i,0} = -u_{i,1}
+  \\ v_{i,0} = -v_{i,1}\\
+  P_{i,0} = P_{i,1}
+ \end{aligned}
+\end{equation}
+
+For moving walls, the normal velocity is zero and the tangential velocity matches
+the wall velocity. An example of a wall moving along x is shown below.
+
+\begin{equation}
+  \begin{aligned}
+ u_{i,0} = 2u_{wall}-u_{i,1}
+  \\ v_{i,0} = -v_{i,1}\\
+  P_{i,0} = P_{i,1}
+ \end{aligned}
+\end{equation}
+Where the wall velocity is constant through out time. The implicit boundaries need not be altered for this case as the velocity of the wall is not change with time. There all four implicit wall boundaries implemented using the Jacobian matrix shown below which are loaded into the Thomas algorithm.
+
+\begin{equation}
+\label{nav2}
+\begin{bmatrix}
+   -1 & 0& 0 \\
+   0 &1 &0 \\
+    0 &0& 1
+\end{bmatrix} = \begin{bmatrix}
+   0 \\
+   0 \\
+    0
+\end{bmatrix}
+\end{equation} 
+
 \subsection{Pressure Oscillations}
 It was found that steady-state pressure distributions have
 some oscillations. These were present because of decoupling between pressure in alternate lines of the mesh. To fix this problem a term was added to the
@@ -530,7 +564,7 @@ More specifically a contour of $u_{U_{top} = 1}(x,y) + u_{U_{top} = -1}(1-x,y)$ 
 
 
 
-\section{Vortices problem}
+\section{Lid-Driven Cavity Problem}
 For the Lid-driven cavity problem the height h of the box was increased. The single vortex seen in previous examples eventually becomes unstable, and a second vortex forms below it and eventually a third, and so on. The exploratory part of this problem will focus on this formation of additional vortices with an increase in the height of the cavity. 
 
 \subsection{Vortex Location}
@@ -541,78 +575,158 @@ When the height was increased to $h=3$ the cavity was observed to produce a tota
         \centering
         \begin{subfigure}[h]{0.5\textwidth}
         \centering
-                \includegraphics[width = 5.5cm]{v1}
+                \includegraphics[width = 7.5cm]{v1}
                 \caption{}				
         \end{subfigure}%
        ~~~~~
         \begin{subfigure}[h]{0.5\textwidth}
         \centering
-                \includegraphics[width = 5.5cm]{v2}
+                \includegraphics[width = 7.5cm]{v2}
                 \caption{}               
         \end{subfigure}       
          ~~~~~
         \begin{subfigure}[h]{0.5\textwidth}
         \centering
-                \includegraphics[width = 5.5cm]{v3}
+                \includegraphics[width = 7.5cm]{v3}
                 \caption{}               
         \end{subfigure}
-        \caption{Solutions approaching zero for Pressure (a) and Velocity u (b). Note the z scale is order $\approx 10^{-3}$ }
-        \label{zero1}
+        \caption{Identifying vortices using magnitude of v and u contour plot}
+        \label{v1}
 \end{figure}
 
 
 
  Once a vortex was identified a curve fitting method was employed to calculated its center. The method works by approximating the dip in velocity magnitude or the 'hole of the vortex' if you will, and approximates the center based on the fit of a parabolic arc. The program looks at individual slices for a set range fitting approx 10-20 points per slice. Each slice of the hole will contain a parabolic arc. The vertex of each arc for each slice is calculated and plotted; one plot for the y direction sweep and the other for the x sweep. Since the programs sweeps over both the x and y direction of the vortex hole, the lines mapping the vertex locations will eventually cross. This crossing point is used as the estimate for the center of the vortex. An example of the crossing point is shown in figure \ref{cross}. The crossing points were calculated for three different vortices for 5 different grid sizes. The data is displayed in table \ref{vortd}
 
+
+
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.80\linewidth]{cross}
-\caption{convergence history of flow inside enclosed box for $\triangle t = 0.1$}
-\label{cross}
+        \centering
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 6.8cm]{para}
+                \caption{}
+				
+        \end{subfigure}%
+       ~~~~~
+        \begin{subfigure}[h]{0.5\textwidth}
+                \includegraphics[width = 7.5cm]{cross}
+                \caption{}
+                
+        \end{subfigure}
+        \caption{Displays an example of a velocity void due to a vortex (a) and a plot of the vertex centers crossing (b)}
+        \label{cross}
 \end{figure}
 
 
-1 vortice
-intercept x = 0.628863 y = 0.284613   40x120
-
-intercept x = 0.607763 y = 0.291379   60x180
-
-intercept x = 0.605327 y = 0.292402   70x210
-
-intercept x = 0.605493 y = 0.292715   80x240
-
-intercept x = 0.604404 y = 0.293177   90x270
-
-2 vortice
-
-intercept x = 0.614811 y = 1.352830   40x120
-
-intercept x = 0.521546 y = 1.365390   60x180
-
-intercept x = 0.518180 y = 1.367486   70x210
-
-intercept x = 0.516247 y = 1.370399   80x240
-
-intercept x = 0.515219 y = 1.371391   90x270
-
-3 vortice
-
-intercept x = 0.500413 y = 2.740107  40x120
-
-intercept x = 0.496878 y = 2.732679  60x180
-
-intercept x = 0.497183 y = 2.733485  70x210
-
-intercept x = 0.497947 y = 2.727510  80x240
-
-intercept x = 0.497706 y = 2.729092  90x270
 
 
-
-
-
-
-
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | p{0.20\linewidth} | p{0.15\linewidth} |p{0.15\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Mesh Size V\#1}
+    &\RaggedRight \textbf{x coordinate}
+    &\RaggedRight \textbf{y coordinate}
+    &\RaggedRight \textbf{Relative Error}
+    &\RaggedRight \textbf{$GCI_{fine}$}
+    \\ \hline  
+           \RaggedRight 40 x 120
+    &\RaggedRight 0.618863 
+    &\RaggedRight 0.284613
+    &\RaggedRight -
+    &\RaggedRight -
+    \\ \hline 
+    \RaggedRight 60 x 180
+    &\RaggedRight 0.607763
+    &\RaggedRight 0.291379 
+    &\RaggedRight 0.0111
+    &\RaggedRight -
+    \\ \hline 
+           \RaggedRight 80 x 240
+    &\RaggedRight 0.605493
+    &\RaggedRight 0.292715
+    &\RaggedRight 0.0027
+    &\RaggedRight 0.2730
+    \\ \hline 
+           \RaggedRight 90 x 270
+    &\RaggedRight 0.604404
+    &\RaggedRight 0.293177
+    &\RaggedRight 0.001089
+    &\RaggedRight 0.3014
+    \\ \hline       
+   \end{tabular}
+   
+       \begin{tabular}{ | p{0.2\linewidth} | p{0.15\linewidth} |p{0.15\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Mesh Size V\#2}
+    &\RaggedRight \textbf{x coordinate}
+    &\RaggedRight \textbf{y coordinate}
+    &\RaggedRight \textbf{Relative Error}
+    &\RaggedRight \textbf{$GCI_{fine}$}
+    \\ \hline  
+           \RaggedRight 40 x 120
+    &\RaggedRight 0.614811 
+    &\RaggedRight 1.352830 
+    &\RaggedRight -
+    &\RaggedRight -
+    \\ \hline 
+    \RaggedRight 60 x 180
+    &\RaggedRight 0.521546
+    &\RaggedRight 1.365390
+    &\RaggedRight 0.0529
+    &\RaggedRight -
+    \\ \hline 
+           \RaggedRight 80 x 240
+    &\RaggedRight 0.516247
+    &\RaggedRight 1.370399
+    &\RaggedRight 0.005
+    &\RaggedRight 0.2730
+    \\ \hline 
+           \RaggedRight 90 x 270
+    &\RaggedRight 0.515219
+    &\RaggedRight 1.371391
+    &\RaggedRight 0.001
+    &\RaggedRight 0.2978
+    \\ \hline       
+   \end{tabular}
+   
+    \begin{tabular}{ | p{0.2\linewidth} | p{0.15\linewidth} |p{0.15\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |p{0.1\linewidth} |}
+ \hline  
+     \RaggedRight \textbf{Mesh Size V\#3}
+    &\RaggedRight \textbf{x coordinate}
+    &\RaggedRight \textbf{y coordinate}
+    &\RaggedRight \textbf{Relative Error}
+    &\RaggedRight \textbf{$GCI_{fine}$}
+    \\ \hline  
+           \RaggedRight 40 x 120
+    &\RaggedRight 0.500413 
+    &\RaggedRight 2.740107 
+    &\RaggedRight -
+    &\RaggedRight -
+    \\ \hline 
+    \RaggedRight 60 x 180
+    &\RaggedRight 0.496878 
+    &\RaggedRight 2.732679
+    &\RaggedRight 0.00548
+    &\RaggedRight -
+    \\ \hline 
+           \RaggedRight 80 x 240
+    &\RaggedRight 0.497947
+    &\RaggedRight  2.727510
+    &\RaggedRight 0.0031
+    &\RaggedRight 0.354
+    \\ \hline 
+           \RaggedRight 90 x 270
+    &\RaggedRight 0.497706 
+    &\RaggedRight 2.729092 
+    &\RaggedRight 0.0064
+    &\RaggedRight 0.327
+    \\ \hline       
+   \end{tabular}
+\end{center} 
+\caption{Calculated coordinates for each vortex 1-3 using curve fit method}
+\label{norm1} 
+\end{table}
 
 
 
